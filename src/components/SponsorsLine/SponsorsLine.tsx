@@ -4,76 +4,30 @@ import styles from "./SponsorsLine.module.css";
 import { GiSpoon } from "react-icons/gi";
 import { MY } from "@/constants";
 
-const sponsors = [
-  {
-    name: "diamond",
-    items: [
-      {
-        sponsorEntity: {
-          __typename: "Organization",
-          login: "facebook",
-          avatarUrl: "https://avatars.githubusercontent.com/u/69631?v=4",
-          name: "Facebook"
-        }
-      }
-    ]
-  },
-  {
-    name: "gold",
-    items: [
-      {
-        sponsorEntity: {
-          __typename: "Organization",
-          login: "facebook",
-          avatarUrl: "https://avatars.githubusercontent.com/u/69631?v=4",
-          name: "Facebook"
-        }
-      }
-    ]
-  },
+type SponsorTier = 'diamond' | 'gold' | 'coffee' | 'flower' | 'spiritual';
 
-  {
-    name: "coffee",
-    items: [
-      {
-        sponsorEntity: {
-          __typename: "Organization",
-          login: "facebook",
-          avatarUrl: "https://avatars.githubusercontent.com/u/69631?v=4",
-          name: "Facebook"
-        }
-      }
-    ]
-  },
-  {
-    name: "flower",
-    items: [
-      {
-        sponsorEntity: {
-          __typename: "Organization",
-          login: "facebook",
-          avatarUrl: "https://avatars.githubusercontent.com/u/69631?v=4",
-          name: "Facebook"
-        }
-      }
-    ]
-  },
-  {
-    name: "spiritual",
-    items: [
-      {
-        sponsorEntity: {
-          __typename: "Organization",
-          login: "facebook",
-          avatarUrl: "https://avatars.githubusercontent.com/u/69631?v=4",
-          name: "Facebook"
-        }
-      }
-    ]
-  }
+interface SponsorTierData {
+  name: SponsorTier;
+  items: unknown[];
+}
+
+const SPONSOR_TIERS: SponsorTierData[] = [
+  { name: 'diamond', items: [] },
+  { name: 'gold', items: [] },
+  { name: 'coffee', items: [] },
+  { name: 'flower', items: [] },
+  { name: 'spiritual', items: [] }
 ];
 
-const sponsorTypes = {
+interface SponsorTypeConfig {
+  emoji: string;
+  header: string;
+  hasName: boolean;
+  hasCard: boolean;
+  size: number;
+}
+
+const SPONSOR_TYPE_CONFIG: Record<SponsorTier, SponsorTypeConfig> = {
   diamond: {
     emoji: "💎",
     header: "Diamond",
@@ -84,27 +38,6 @@ const sponsorTypes = {
   gold: {
     emoji: "🥇",
     header: "Gold",
-    hasName: true,
-    hasCard: true,
-    size: 60
-  },
-  silver: {
-    emoji: "🥈",
-    header: "Silver",
-    hasName: true,
-    hasCard: true,
-    size: 60
-  },
-  bronze: {
-    emoji: "🥉",
-    header: "Bronze",
-    hasName: true,
-    hasCard: true,
-    size: 60
-  },
-  community: {
-    emoji: "👥",
-    header: "Community",
     hasName: true,
     hasCard: true,
     size: 60
@@ -147,43 +80,27 @@ const SponsorsLine = () => {
       </div>
       <div className={styles.wrapper}>
         <div className={styles.scroll}>
-          {sponsors &&
-            sponsors.map(
-              (type) =>
-                type.items.length > 0 && (
-                  <div key={type.name} className={styles.sponsors}>
-                    <div>
-                      <header className={styles.sponsors_header}>
-                        <div className={styles.type_header}>
-                          <span className={styles.emoji}>
-                            {sponsorTypes[type.name].emoji}
-                          </span>
-                          <span>
-                            {`${sponsorTypes[type.name].header} sponsors`}
-                          </span>
-                        </div>
-                      </header>
-                      <div className={`${styles.cards} ${styles[type.name]}`}>
-                        {type.items.map((sponsor) => (
-                          <p className="font-plex italic text-sm capitalize ">
-                            be the first
-                          </p>
-                        ))}
-                        {/* {type.items.map((sponsor) => (
-                    <SponsorItem
-                      key={sponsor.sponsorEntity.login}
-                      sponsor={sponsor}
-                      hasName={sponsorTypes[type.name].hasName}
-                      hasCard={sponsorTypes[type.name].hasCard}
-                      isUser={sponsor.sponsorEntity.__typename === 'User'}
-                      imgSize={sponsorTypes[type.name].size}
-                    />
-                  ))} */}
-                      </div>
-                    </div>
+          {SPONSOR_TIERS.map((tier) => (
+            <div key={tier.name} className={styles.sponsors}>
+              <div>
+                <header className={styles.sponsors_header}>
+                  <div className={styles.type_header}>
+                    <span className={styles.emoji}>
+                      {SPONSOR_TYPE_CONFIG[tier.name].emoji}
+                    </span>
+                    <span>
+                      {`${SPONSOR_TYPE_CONFIG[tier.name].header} sponsors`}
+                    </span>
                   </div>
-                )
-            )}
+                </header>
+                <div className={`${styles.cards} ${styles[tier.name]}`}>
+                  <p className="font-plex italic text-sm capitalize">
+                    be the first
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
         <div className={styles["gradient-left"]} />
         <div className={styles["gradient-right"]} />
@@ -193,39 +110,10 @@ const SponsorsLine = () => {
           <div className={styles.sponsors}>
             <header className={styles["special-sponsors_header"]}>
               <div className={styles.type_header}>
-                <span>
-                  ❤️
-                  <a
-                    className={styles["stream-link"]}
-                    href=""
-                    target="_blank"
-                    rel="nofollow noreferrer">
-                    {/* Donation */}
-                  </a>
-                  special sponsors
-                </span>
+                <span>❤️ special sponsors</span>
               </div>
             </header>
-            <div className={styles["special-sponsors_cards"]}>
-              {/* <a
-                href="https://pothos-graphql.dev/"
-                target="_blank"
-                rel="noreferrer nofollow">
-                <div className={styles["special-sponsor_card"]}>
-                  <div className={styles["special-sponsor_card_image"]}>
-                    <div className={styles["light-image"]}>
-                      <img src="/svg/potos-dark.svg" alt="pothos" />
-                    </div>
-                    <div className={styles["dark-image"]}>
-                      <img src="/svg/potos-light.svg" alt="pothos" />
-                    </div>
-                  </div>
-                  <div className={styles["special-sponsor_card_name"]}>
-                    Pothos
-                  </div>
-                </div>
-              </a> */}
-            </div>
+            <div className={styles["special-sponsors_cards"]}></div>
           </div>
         </div>
       </div>

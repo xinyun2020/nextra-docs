@@ -8,12 +8,9 @@ type CvLabelWithTimeProps = {
 
 const CvLabelWithTime = ({ label, time, highlight = true }) => {
   return (
-    <div
-      className={`flex flex-col md:flex-row font-bold justify-between pt-2 ${
-        highlight && " text-[#0AAFCE] dark:text-[#0AAFCE]"
-      }`}>
-      <span className="text-lg ">{label}</span>
-      <span className="text-right">{time}</span>
+    <div className="flex flex-col md:flex-row font-bold justify-between gap-2">
+      <span className="text-sm">{label}</span>
+      <span className="text-right text-xs font-mono">{time}</span>
     </div>
   );
 };

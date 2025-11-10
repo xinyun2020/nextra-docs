@@ -1,11 +1,43 @@
-import Typer from "../components/Typer/Typer.tsx";
+import HomePage from '../components/HomePage/HomePage';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-<div className="w-full font-plex italic pt-16">
-  <div className="mx-auto text-4xl font-bold w-fit">
-    <h1>Who is Xinyun Zhang</h1>
-    <Typer />
-  </div>
-  <div className="text-center text-xl pt-8 w-fit">
-    This is a personal knowledge base to share the learning process publicly
-  </div>
-</div>
+export const getStaticProps = () => {
+  const NOTE_DIRECTORIES = ['fleeting-notes', 'literature-notes', 'permanent-notes'];
+  const pagesDir = path.join(process.cwd(), 'src', 'pages');
+  const allNotes = [];
+
+  NOTE_DIRECTORIES.forEach(dirName => {
+    const dirPath = path.join(pagesDir, dirName);
+    try {
+      const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
+      files.forEach(file => {
+        const filePath = path.join(dirPath, file);
+        const content = fs.readFileSync(filePath, 'utf8');
+        const { data: frontmatter } = matter(content);
+        const filename = file.replace(/\.mdx?$/, '');
+
+        const title = frontmatter.title || filename.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        const date = frontmatter.date || new Date().toISOString().split('T')[0];
+        const description = frontmatter.description || '';
+
+        allNotes.push({
+          title,
+          path: `/${dirName}/${filename}`,
+          category: dirName.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' '),
+          date,
+          description
+        });
+      });
+    } catch {}
+  });
+
+  return {
+    props: {
+      allNotes: allNotes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    }
+  };
+};
+
+export default HomePage;

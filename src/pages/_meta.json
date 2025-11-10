@@ -34,6 +34,7 @@
       "typesetting": "article"
     }
   },
-  "zettelkasten-note":"🖋️ Summary Notes #blog",
-  "zettelkasten-src":"🖋️ Fleeting Notes #til"
+  "fleeting-notes": "✍️ Fleeting Notes",
+  "literature-notes": "📚 Literature Notes",
+  "permanent-notes": "💎 Permanent Notes"
 }

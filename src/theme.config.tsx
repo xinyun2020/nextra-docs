@@ -10,7 +10,8 @@ import DocslyClient from "@/components/DocslyClient";
 
 const currentYear = new Date().getFullYear();
 
-// node_modules/nextra-theme-docs/dist/index.tsx
+const HYPERLINK_PRIMARY_HUE = 210.0;
+
 const config: DocsThemeConfig = {
   banner: {
     key: `${currentYear}-CV-released`,
@@ -20,13 +21,9 @@ const config: DocsThemeConfig = {
       </a>
     )
   },
-  // head: <Head />,
   logo: <Logo />,
   darkMode: false,
-
-  // primaryHue: 172.5,
-  // primaryHue: 190.0,
-  primaryHue: 210.0, // hyperlink color
+  primaryHue: HYPERLINK_PRIMARY_HUE,
   themeSwitch: {},
   nextThemes: {
     defaultTheme: "system"
@@ -45,28 +42,20 @@ const config: DocsThemeConfig = {
   },
 
   footer: {
-    text: `\xA9 ${/* @__PURE__ */ new Date().getFullYear()} Xinyun Zhang.`,
-    component: () => (
-      <>
-        {/* Your footer code */}
-        <DocslyClient />
-      </>
-    )
+    text: `\xA9 ${new Date().getFullYear()} Xinyun Zhang.`,
+    component: () => <DocslyClient />
   },
   components: {
     pre: Pre
   },
   sidebar: {
-    // defaultMenuCollapseLevel: 2,
-    toggleButton: false,
+    defaultMenuCollapseLevel: 1,
+    toggleButton: true,
     titleComponent({ title, type }) {
       if (type === "separator") {
         return (
           <div style={{ background: "teal", textAlign: "center" }}>{title}</div>
         );
-      }
-      if (title === "About") {
-        return <>❓ {title}</>;
       }
       return <>{title}</>;
     }

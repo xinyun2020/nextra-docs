@@ -1,28 +1,34 @@
-# Docker #infrastructure
+---
+title: "Docker"
+date: "2025-11-10"
+description: "Container platform for virtualizing applications. Package software with dependencies into isolated containers that can be deployed on cloud infrastructure."
+---
+
+# Docker
 
 ## What?
 
-- Virtualize the [Application Layer (Layer 7)](https://www.notion.so/Application-Layer-Layer-7-90c06527d7f7462badeddcf755fa792f)
+- Virtualize the Application Layer (Layer 7)
   - create, deploy, run app in isolated containers, containers can be deployed on cloud infrastructure
 - Not a Cloud Computing Platform or Service
-  docker is used to facilitate [cloud computing](https://www.notion.so/Cloud-Computing-3c29698bad514011a6f0b8c756a1a96d)
+  docker is used to facilitate cloud computing
 - package software
   - 代码和所有依赖项打包到单个容器中来简化构建、部署和扩展应用程序的过程
 - Options
   - docker in docker
     - Docker Desktop Application
   - docker outside docker
-    - docker extension in VSCode [Dev Containers (container configuration)](https://www.notion.so/Dev-Containers-container-configuration-a15a19e96b6245e9a50d3c3ca3fb94cf)
+    - docker extension in VSCode Dev Containers (container configuration)
 - Docker Desktop
-  - uses a [Virtual Machine Monitor(VMM)/Hypervisor Layer 虚拟机监控程序](https://www.notion.so/Virtual-Machine-Monitor-VMM-Hypervisor-Layer-4cbfc917413a435f9c7414c81f4470e1) with a lightweight Linux distro
+  - uses a Virtual Machine Monitor(VMM)/Hypervisor Layer 虚拟机监控程序 with a lightweight Linux distro
 
 ### What Concepts?
 
 - CORE
-  - [Dockerfile (builds image)](https://www.notion.so/Dockerfile-builds-image-3468fd180f9444b580a7b4cb29f1a12c) [.devcontainer/devcontainer.json (container configuration)](https://www.notion.so/devcontainer-devcontainer-json-container-configuration-ea8b717812704f9eb9b92589d91cf17c)
+  - Dockerfile (builds image) .devcontainer/devcontainer.json (container configuration)
     - blueprint/code for building a docker image ⇒ run app as container
-  - [Docker Image (run containers) #immutable(read-only) #layers #templates](https://www.notion.so/Docker-Image-run-containers-immutable-read-only-layers-templates-43beda67dacb4b75a114512c28fd5ef5)
-    - [Docker Registries (get images)](https://www.notion.so/Docker-Registries-get-images-ea90742b00b54f378b690d4136add45a)
+  - Docker Image (run containers) - immutable (read-only), layers, templates
+    - Docker Registries (get images)
     - **Docker Repository** - collection of related **Docker Images** with same name but different versions
       - **[Docker Hub](https://hub.docker.com)** is a Public **Docker Registry**, can host private/public repositories for app
         - a centralized resource for working with Docker and its components
@@ -38,30 +44,30 @@
       docker pull node:buster            ## node with tag buster
       docker pull node:8                 ## might be intel based image => but actually arm based
       ```
-  - [Docker Container (running process) #instanceOfImage](https://www.notion.so/Docker-Container-running-process-instanceOfImage-2161789c467940ba860178474d9e64a4)
+  - Docker Container (running process) - instance of image
     - 1 **image** ⇒ can run **multiple containers**
     - app inside container runs in **Isolated Docker Network**
       - allows run same app ⇒ on **same port multiple times**
     - need to **expose** the container port to the **host** (the machine the container runs on)
       - **Port Binding** - bind the container’s port to the host’s port to make the service available to the outside world
-- [Docker Compose #multiple #containers #single-host](https://www.notion.so/Docker-Compose-multiple-containers-single-host-0fe5e0a104484cd789b20eabebaaacf2)
-  - [docker-compose.yml (docker-compose.yaml) #multiple #dependency](https://www.notion.so/docker-compose-yml-docker-compose-yaml-multiple-dependency-38a8a2819bf0488f84214aa892bc066c)
-  - can use but don't have to have [Dockerfile (builds image)](https://www.notion.so/Dockerfile-builds-image-3468fd180f9444b580a7b4cb29f1a12c)
-  - [`docker-compose` start containers in [docker-compose.yml (docker-compose.yaml) #multiple #dependency](https://www.notion.so/docker-compose-yml-docker-compose-yaml-multiple-dependency-38a8a2819bf0488f84214aa892bc066c) ](https://www.notion.so/docker-compose-start-containers-in-eef96440c95f474abdb5bf5cb291eb6f)
-- [Docker Volumes (Persist data in Docker) #multipleContainers](https://www.notion.so/Docker-Volumes-Persist-data-in-Docker-multipleContainers-72bad165006e4a12a8b2baec08876ab2)
-- [Docker SWARM mode #orchestration #multi-host](https://www.notion.so/Docker-SWARM-mode-orchestration-multi-host-5411c96d981540e8aeceec35124971aa)
-- **"bridge"**: containers share the same port, each with a different IP, and expose a host port, making them visible externally. (https://docs.docker.com/network/)
-- [Dev Containers (container configuration)](https://www.notion.so/Dev-Containers-container-configuration-a15a19e96b6245e9a50d3c3ca3fb94cf) ⇒ [.devcontainer/devcontainer.json (container configuration)](https://www.notion.so/devcontainer-devcontainer-json-container-configuration-ea8b717812704f9eb9b92589d91cf17c)
+- Docker Compose - multiple containers, single-host
+  - docker-compose.yml (docker-compose.yaml) - multiple containers, dependency management
+  - can use but don't have to have Dockerfile (builds image)
+  - docker-compose start containers in docker-compose.yml
+- Docker Volumes (Persist data in Docker) - multiple containers
+- Docker SWARM mode - orchestration, multi-host
+- **"bridge"**: containers share the same port, each with a different IP, and expose a host port, making them visible externally. ([Docker Network Documentation](https://docs.docker.com/network/))
+- Dev Containers (container configuration) ⇒ .devcontainer/devcontainer.json (container configuration)
   - uses one of
-    - [Dockerfile (builds image)](https://www.notion.so/Dockerfile-builds-image-3468fd180f9444b580a7b4cb29f1a12c)
-    - [docker-compose.yml (docker-compose.yaml) #multiple #dependency](https://www.notion.so/docker-compose-yml-docker-compose-yaml-multiple-dependency-38a8a2819bf0488f84214aa892bc066c) ⇒ can use **Dockerfile**
+    - Dockerfile (builds image)
+    - docker-compose.yml (docker-compose.yaml) - multiple containers, dependency ⇒ can use **Dockerfile**
 
 ### What are Docker CLI? (Docker Commands)
 
 - **Check** image/container status
-  - `docker images` list all [Docker Image (run containers) #immutable(read-only) #layers #templates](https://www.notion.so/Docker-Image-run-containers-immutable-read-only-layers-templates-43beda67dacb4b75a114512c28fd5ef5) #image
+  - `docker images` list all Docker Images (run containers) - immutable (read-only), layers, templates
     - `docker images [OPTIONS] [REPOSITORY[:TAG]]` ⇒ list all images `docker image ls` or `docker images`
-  - `docker ps` list running [containers](https://www.notion.so/Docker-Container-running-process-instanceOfImage-2161789c467940ba860178474d9e64a4) #container (container port, container id)
+  - `docker ps` list running containers (container port, container id)
     - every container has a unique id ⇒ also linked to an image
     ```bash copy
     docker ps       # lists all containers (running)
@@ -71,7 +77,7 @@
     ```
 - **Main process**
 
-  - `docker pull` - pull **image** #image (can skip as `run` also `pull`)
+  - `docker pull` - pull **image** (can skip as `run` also `pull`)
     ```bash copy
     docker pull NAME[:TAG]
     docker pull nginx
@@ -119,9 +125,9 @@
           ```
 
         - other use case
-          - [Start a Container (Named Volume)](https://www.notion.so/Start-a-Container-Named-Volume-20b421736ad94f4cb9a7922186f2afab)
-          - [Start a Container (Bind Mount)](https://www.notion.so/Start-a-Container-Bind-Mount-8a3973d4963e4af59825023f99bb0052)
-          - [Create a **container** from the **image**](https://www.notion.so/Create-a-container-from-the-image-24fb1daf82734ea382bbdffbb87ebbf2)
+          - Start a Container (Named Volume)
+          - Start a Container (Bind Mount)
+          - Create a container from the image
 
   - **Modify existing Docker CONTAINER**
     - `docker stop` 🛑 stop the **container**
@@ -139,13 +145,13 @@
     - `docker rm` ➖ remove a non-running **container**
       - `docker rm -f nginx` ➖ remove a running **container**
   - **Create a Docker IMAGE**
-    - `docker build` 🟢 build docker **image** with [Dockerfile (builds image)](https://www.notion.so/Dockerfile-builds-image-3468fd180f9444b580a7b4cb29f1a12c) (run Docker) [Dev Containers (container configuration)](https://www.notion.so/Dev-Containers-container-configuration-a15a19e96b6245e9a50d3c3ca3fb94cf)
+    - `docker build` 🟢 build docker **image** with Dockerfile (builds image) (run Docker) Dev Containers (container configuration)
       - ready repo ⇒ deploy to server ⇒ we want to deploy our app as a Docker Container
       - image ⇒ run ⇒ container
-        - need [Dockerfile (builds image)](https://www.notion.so/Dockerfile-builds-image-3468fd180f9444b580a7b4cb29f1a12c)
+        - need Dockerfile (builds image)
       - Syntax `docker build [OPTIONS] PATH`
         - `-t` /`--tag` sets `name:tag` or `userName/imageName:versionNumber`
-        - `.` path to the [Dockerfile (builds image)](https://www.notion.so/Dockerfile-builds-image-3468fd180f9444b580a7b4cb29f1a12c) (in this case `.`)
+        - `.` path to the Dockerfile (builds image) (in this case `.`)
         1. Build New **Image** => with `./Dockerfile` => with name "demo2"
            - `docker build -t angular-app:1.0 .`
            - `docker build -t fireship/demoapp:1.0 .` ## name and path to the docker file (in this case .)
@@ -155,10 +161,10 @@
              - Create container on [`localhost:3000`](http://localhost:3000) in `detached` mode with `node-app:1.0` image
            - `docker run --name demo2 -e WELCOME_STRING="COMP90024" -p 8081:80 -d demo2`
              - Create container “`demo2`” on [`localhost:8081`](http://localhost:8081) in `detached` mode with `demo2` image with environment variable `WELCOME_STRING=”COMP90024”`
-  - `docker-compose` start containers in [docker-compose.yml (docker-compose.yaml) #multiple #dependency](https://www.notion.so/docker-compose-yml-docker-compose-yaml-multiple-dependency-38a8a2819bf0488f84214aa892bc066c)
+  - `docker-compose` start containers in docker-compose.yml (docker-compose.yaml) - multiple containers, dependency
     1. Check no containers running
-       - [`docker ps` list running [containers](https://www.notion.so/Docker-Container-running-process-instanceOfImage-2161789c467940ba860178474d9e64a4) #container (container port, container id)](https://www.notion.so/docker-ps-list-running-containers-container-container-port-container-id-636418c411d6498084194b7a254e715f)
-    2. Start the containers with [docker-compose.yml (docker-compose.yaml) #multiple #dependency](https://www.notion.so/docker-compose-yml-docker-compose-yaml-multiple-dependency-38a8a2819bf0488f84214aa892bc066c)
+       - docker ps list running containers (container port, container id)
+    2. Start the containers with docker-compose.yml (docker-compose.yaml) - multiple containers, dependency
        - `docker compose up -d` for docker v2
          - `-d` detached mode
          - `-f` filename
@@ -173,7 +179,7 @@
 
 - 🐞 debugging
 
-  - `docker log`s - see app log in the container #debugging
+  - `docker logs` - see app log in the container
     ```bash copy
     docker ps               # show the container id
     docker logs ea491e4t0fd7 # docker logs {CONTAINER_ID/NAME} view logs from service running inside the container (chich are present at the time of execution)
@@ -183,7 +189,7 @@
     docker exec -ti w /usr/share/nginx/html/ nginx sh
     sed -i 's/nginx!/nginx inDocker!/g' index.html    ## replace text
     ```
-    - [./list-volume-mount.sh](https://www.notion.so/list-volume-mount-sh-ceff338f922f44aab5b7a35223aeac60)
+    - ./list-volume-mount.sh
   - `docker volume` - manage volume
 
     - `ls` - list all volumes
@@ -293,14 +299,14 @@
 
 ### How to Dockerize Existing Repo in GitHub With Dev Container?
 
-- [.devcontainer/devcontainer.json (container configuration)](https://www.notion.so/devcontainer-devcontainer-json-container-configuration-ea8b717812704f9eb9b92589d91cf17c)
+- .devcontainer/devcontainer.json (container configuration)
 
-1. Create a [Dockerfile (builds image)](https://www.notion.so/Dockerfile-builds-image-3468fd180f9444b580a7b4cb29f1a12c)
-   - [`docker run` 🟢 Run & Pull **Image** ⇒ show log (create new container everything, don't re-use previous container)](https://www.notion.so/docker-run-Run-Pull-Image-show-log-create-new-container-everything-don-t-re-use-previous-co-d9a8a627431046f5ac41936f8f4806cf)
-2. Build [Docker Image (run containers) #immutable(read-only) #layers #templates](https://www.notion.so/Docker-Image-run-containers-immutable-read-only-layers-templates-43beda67dacb4b75a114512c28fd5ef5)
-   - [`docker build` 🟢 build docker **image** with [Dockerfile (builds image)](https://www.notion.so/Dockerfile-builds-image-3468fd180f9444b580a7b4cb29f1a12c) (run Docker) [Dev Containers (container configuration)](https://www.notion.so/Dev-Containers-container-configuration-a15a19e96b6245e9a50d3c3ca3fb94cf) ](https://www.notion.so/docker-build-build-docker-image-with-run-Docker-f73b4d0d074349d3bd639ab6962473af)
-3. Run [Docker Container (running process) #instanceOfImage](https://www.notion.so/Docker-Container-running-process-instanceOfImage-2161789c467940ba860178474d9e64a4)
-   1. [**Run a Docker CONTAINER**](https://www.notion.so/Run-a-Docker-CONTAINER-276dc1e17e3b4eef9a3dd96033196b00)
+1. Create a Dockerfile (builds image)
+   - docker run - Run & Pull Image ⇒ show log (create new container everything, don't re-use previous container)
+2. Build Docker Image (run containers) - immutable (read-only), layers, templates
+   - docker build - build docker image with Dockerfile (run Docker) Dev Containers (container configuration)
+3. Run Docker Container (running process) - instance of image
+   1. Run a Docker CONTAINER
 
 - With Existing NextJS
 
@@ -339,7 +345,7 @@
 
 ### How to ignore node_modules?
 
-- [.dockerignore](https://www.notion.so/dockerignore-b6972b56f09d40c2b5fd1a6dd86ab3a9)
+- .dockerignore
 
 ### How to debugging? ⇒ use docker app
 

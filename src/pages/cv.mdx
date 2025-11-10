@@ -8,224 +8,298 @@ import { MY } from "../constants.ts";
 
 <SignInWrapper>
 
-<div className='font-sans not-italic'>
+<div className='font-sans not-italic prose prose-slate dark:prose-invert max-w-none'>
 
-<div className="flex flex-col md:flex-row gap-4 justify-between">
-<h1 className="text-center text-3xl font-plex italic font-semibold">
-  Alice Zhang
-</h1>
-
-<div className="flex flex-col justify-evenly ">
-  <span>📫 Email: xinyunzhang2016@gmail.com</span>
-  <span>📞 Phone: +61 479 189 008</span>
-</div>
-<div className="flex flex-row md:flex-col justify-evenly">
-  <span>[GitHub](https://github.com/XinYun2020)</span>
-  <span>[LinkedIn](https://www.linkedin.com/in/xinyun2020/)</span>
+{/* Header Section */}
+<div className="border-b border-black dark:border-white pb-4 mb-6">
+<div className="flex flex-col md:flex-row gap-4 justify-between items-start md:items-end">
+<div>
+  <h1 className="text-4xl font-bold tracking-tight mb-1 italic" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>
+    Alice Zhang
+  </h1>
+  <div className="text-xs font-mono opacity-60">Software Engineer</div>
 </div>
 
+<div className="flex flex-col gap-1 text-xs font-mono md:text-right">
+  <div className="flex justify-end">
+    <a href="mailto:xinyunzhang2016@gmail.com" className="hover:opacity-60 transition-opacity">
+      xinyunzhang2016@gmail.com
+    </a>
+  </div>
+  <div>+61 479 189 008</div>
+  <div className="flex gap-1.5 justify-start md:justify-end mt-0.5">
+    <a href="https://github.com/XinYun2020" className="hover:opacity-60 transition-opacity border-b border-black dark:border-white pb-0.5">github.com/xinyun2020</a>
+    <span className="opacity-40">|</span>
+    <a href="https://www.linkedin.com/in/xinyun2020/" className="hover:opacity-60 transition-opacity border-b border-black dark:border-white pb-0.5">linkedin.com/in/xinyun2020</a>
+  </div>
 </div>
 
-### Summary
-
-<hr />
-<div className="text-justify">
-Versatile and results-driven Software Engineer with 6 years in full-stack and frontend development, specializing in scalable, high-performance applications and modern UI/UX. Passionate about making AI accessible and driving workflow automation. Skilled in leading cross-functional teams, architecting robust solutions, and elevating code quality through mentorship and best practices. Recognized as a proactive problem solver who leads by example, listens to team input, and delivers effective solutions. Recently completed all requirements for a Master of Data Science at the University of Melbourne, with a focus on NLP and applied AI. Committed to continuous learning, CLI mastery, and clear documentation to streamline collaboration.
+</div>
 </div>
 
-### Professional Experience
+{/* Summary Section */}
+<div className="mb-6">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Professional Summary</h2>
+<p className="leading-relaxed text-sm text-justify">
+Software engineer building enterprise-scale customer experience platforms. Drive technical architecture and cross-team initiatives with measurable business impact—delivered systems reducing resolution time by 80% (8 months to 3 weeks). Master of Data Science combining deep engineering expertise with ML/NLP capabilities. Specialize in modern full-stack development (React, Vue, TypeScript, GraphQL, Golang), system design, and engineering excellence through mentorship and standards.
+</p>
+</div>
 
-<hr />
+{/* Professional Experience Section */}
+<div className="mb-6">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Professional Experience</h2>
+
+<div className="mb-4 border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={
-    "Full Stack Developer, WISE Employment, Melbourne, Australia"
+    "Senior Software Engineer, Zendesk, VIC, Australia"
   }
-  time={"Nov 2023 - Present"}
+  time={"Sep 2025 - Present"}
 />
 
-<ul>
-- **Architected** and led the transformation of a legacy Vue 2 application into a modern **Vue 3 + Vite** structure, significantly improving maintainability, performance, and scalability.
-- **Designed and implemented** a custom **headless design system** with reusable components and UX best practices, enhancing developer productivity and consistency across the UI.
-- **Delivered** a high-impact internal dashboard, improving visibility and reducing claim processing delays, projected to increase claims processed by 400+ monthly and boost revenue by ~$175k.
-- **Integrated** secure data pipelines with **AWS Blob Storage**, schema design, and Java-based decryption to ensure secure and efficient data handling.
-- **Enhanced** CI/CD workflows using GitLab, Docker, and OpenShift, introducing automated testing and deployment pipelines for faster release cycles.
-- **Collaborated** across frontend, backend (Java, Golang), and DevOps teams to deliver robust features with scalable architecture.
-- **Provided** high-quality code reviews and mentored peers to raise team engineering standards.
-- **Demonstrated** strong leadership and communication by listening to team suggestions, giving actionable feedback, and driving consensus to solve complex problems efficiently.
-</ul>
+<div className="mt-2 space-y-1 text-sm leading-relaxed">
+- Contributing to enterprise-scale customer experience platform development.
+</div>
 
-<label className="block font-bold">Technical Skills:</label>
-<ul>
-<CvStringToBadges items="VueJS, JavaScript, TypeScript, Java, Golang, Vite, Headless UI, Tailwind CSS, Jest, GraphQL, GitLab, Docker, Azure, RedHat OCP, Figma, Agile, Design Systems, UI/UX Design, Accessibility, Code Reviews, Architecture" />
-</ul>
+<div className="mt-3">
+<div className="font-bold text-xs mb-1.5 opacity-60">STACK</div>
+<CvStringToBadges items="TypeScript, Golang, ReactJS, GraphQL, Jest, Cypress, Storybook, Jenkins, Docker, Kubernetes, AWS, Sentry, Datadog, AI Integration, Automation" />
+</div>
+</div>
 
+<div className="mb-4 border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={
-    "Software Engineer, IPIC Pty Ltd, George & Matilda, Melbourne, Australia"
+    "Full Stack Developer, WISE Employment, VIC, Australia"
+  }
+  time={"Nov 2023 - Sep 2025"}
+/>
+
+<div className="mt-2 space-y-1 text-sm leading-relaxed">
+- Led architectural migration from Vue 2 to Vue 3 + Vite, improving application performance, maintainability, and developer experience.
+- Architected headless design system with reusable component library, establishing UI/UX standards and accelerating feature delivery.
+- Delivered internal analytics dashboard reducing claim processing bottlenecks, projected to process 400+ additional monthly claims and generate $175K revenue impact.
+- Implemented secure data pipelines integrating AWS Blob Storage with Java-based decryption and schema validation.
+- Optimized CI/CD infrastructure using GitLab, Docker, and OpenShift, implementing automated testing and deployment workflows.
+- Collaborated across frontend, backend (Java, Golang), and DevOps teams to deliver enterprise-grade features.
+- Established code review standards and mentored team members on software engineering best practices.
+- Facilitated technical decision-making through collaborative problem-solving and stakeholder alignment.
+</div>
+
+<div className="mt-3">
+<div className="font-bold text-xs mb-1.5 opacity-60">STACK</div>
+<CvStringToBadges items="TypeScript, JavaScript, Java, Golang, VueJS, Vite, GraphQL, Headless UI, Tailwind CSS, Jest, GitLab, Docker, Azure, RedHat OCP, Figma" />
+</div>
+</div>
+
+<div className="mb-4 border-l border-black dark:border-white pl-3">
+<CvLabelWithTime
+  label={
+    "Software Engineer, IPIC Pty Ltd, George & Matilda, VIC, Australia"
   }
   time={"Sep 2021 - Nov 2023"}
 />
 
-<ul>
-- **Built** a finance investigation portal in AngularJS, reducing unresolved issues by **80%** and cutting resolution time from 8 months to 3 weeks.
-- **Delivered** a React-based clinical appointment system and created a **custom design system** with Tailwind CSS, significantly speeding up UI development.
-- **Worked across** frontend and backend, including GraphQL APIs and Prisma/tRPC stack, to implement robust and scalable solutions.
-- **Managed** CI/CD with Bitbucket Pipelines and Docker, improving deployment reliability.
-- **Collaborated** closely with finance, product, and design stakeholders to ensure solutions met real-world business needs.
-</ul>
+<div className="mt-2 space-y-1 text-sm leading-relaxed">
+- Developed finance investigation portal using AngularJS, reducing unresolved issues by 80% and decreasing resolution time from 8 months to 3 weeks.
+- Built React-based clinical appointment system with custom Tailwind CSS design system, streamlining UI development workflows.
+- Implemented full-stack features using GraphQL, Prisma, and tRPC, ensuring robust API design and data integrity.
+- Managed CI/CD pipelines via Bitbucket and Docker, improving deployment reliability and release cadence.
+- Partnered with finance, product, and design stakeholders to deliver user-centered solutions aligned with business objectives.
+</div>
 
-<label className="block font-bold">Technical Skills:</label>
-<ul>
-<CvStringToBadges items="ReactJS, NextJS, AngularJS, TypeScript, GraphQL, Tailwind CSS, Bootstrap, Prisma, tRPC, Jest, Storybook, Bitbucket Pipelines, Docker, Figma, Agile, Design System, UI/UX Design, API Design" />
-</ul>
+<div className="mt-3">
+<div className="font-bold text-xs mb-1.5 opacity-60">STACK</div>
+<CvStringToBadges items="TypeScript, ReactJS, NextJS, AngularJS, GraphQL, tRPC, Prisma, Tailwind CSS, Jest, Storybook, Bitbucket, Docker, Figma" />
+</div>
+</div>
 
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
-  label={"Engineering Intern, Rose Plastic, Melbourne, Australia"}
-  time={"Sep 2018 – Sep 2020"}
+  label={"Engineering Intern, Rose Plastic, VIC, Australia"}
+  time={"Sep 2018 - Sep 2020"}
 />
-<ul>
-- **Supported** the tech lead in maintaining internal systems and performing data analysis.
-- **Conducted** market research and requirement gathering to support product decisions.
-</ul>
+<div className="mt-2 space-y-1 text-sm leading-relaxed">
+- Supported technical lead in system maintenance and data analysis initiatives.
+- Conducted market research and requirements gathering to inform product development.
+</div>
 
-### Technical Skills
+<div className="mt-3">
+<div className="font-bold text-xs mb-1.5 opacity-60">STACK</div>
+<CvStringToBadges items="Data Analysis, System Maintenance, Security, SOP Development, Requirements Gathering, Agile" />
+</div>
+</div>
+</div>
 
-<hr />
-<ul>
-- 👩🏻‍💻 **Programming Languages:** JavaScript, TypeScript, Java, Golang, Python, SQL, HTML/CSS/SASS/LESS, R, C, MATLAB, Swift
-- 🧰 **Frameworks & Libraries:** ReactJS, NextJS, VueJS, AngularJS, NodeJS, ExpressJS, Flask, Django, Spring Boot, Tailwind CSS, Bootstrap, Jest, Vitest, Cypress, Storybook
-- 🛠️ **DevOps & Tools:** Docker, Git, GitLab, GitHub, Bitbucket, Jenkins, GitHub Actions, OpenShift, Ansible, CLI Mastery
-- 🗄️ **Databases:** PostgreSQL, MySQL, CouchDB, MongoDB, Firebase, Core Data
-- ☁️ **Cloud Platforms:** AWS, Azure, Render, Vercel
-- 🔧 **Testing & Automation:** Jest, Vitest, Cypress, Postman, Unit Testing, Integration Testing
-- 🎨 **Other Skills:** RESTful APIs, GraphQL, Microservices, Monorepo, Agile Scrum, Design Patterns, UI/UX Design, Figma, JWT Auth, Documentation, AI-Powered Tools
-- 💻 **Operating Systems:** macOS, Windows, Linux, Ubuntu
-</ul>
+{/* Technical Skills Section */}
+<div className="mb-6">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Technical Expertise</h2>
 
-### Projects
+<div className="space-y-1.5 text-sm">
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">Languages: </span>
+    <span>JavaScript, TypeScript, Java, Golang, Python, SQL, HTML/CSS/SASS/LESS, R, C, MATLAB, Swift</span>
+  </div>
 
-<hr />
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">Frameworks: </span>
+    <span>ReactJS, NextJS, VueJS, AngularJS, NodeJS, ExpressJS, Flask, Django, Spring Boot, Tailwind CSS, Bootstrap, Jest, Vitest, Cypress, Storybook</span>
+  </div>
 
-<CvLabelWithTime label={"Legal Policy Project"} time={"2023"} />
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">DevOps: </span>
+    <span>Docker, Git, GitLab, GitHub, Bitbucket, Jenkins, GitHub Actions, OpenShift, Ansible</span>
+  </div>
 
-<ul>
-- **Built** an AI-based legal policy generator using **Python, OpenAI, and NLP**, reducing documentation time and increasing consistency.
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">Databases: </span>
+    <span>PostgreSQL, MySQL, CouchDB, MongoDB, Firebase, Core Data</span>
+  </div>
 
-<CvStringToBadges items="Python, OpenAI API, NLP, Streamlit, Docker, Render, Git" />
-</ul>
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">Cloud: </span>
+    <span>AWS, Azure, Render, Vercel</span>
+  </div>
 
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">Architecture: </span>
+    <span>RESTful APIs, GraphQL, Microservices, Monorepo, Design Patterns, Design Systems</span>
+  </div>
+</div>
+</div>
+
+{/* Projects Section */}
+<div className="mb-6">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Selected Projects</h2>
+
+<div className="space-y-3">
+
+<div className="border-l border-black dark:border-white pl-3">
+<CvLabelWithTime label={"AI Legal Policy Generator"} time={"2023"} />
+<p className="mt-2 text-sm leading-relaxed text-justify">
+Developed AI-powered legal policy generation system using OpenAI API and NLP, reducing documentation time and improving consistency across organizational policies.
+</p>
+<div className="mt-3">
+<CvStringToBadges items="Python, OpenAI API, Streamlit, NLP, Docker, Render" />
+</div>
+</div>
+
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
-  label={"Wind Turbine Anomaly Detection Project | Master of Data Science"}
+  label={"Wind Turbine Anomaly Detection | Master of Data Science"}
   time={"2024"}
 />
+<p className="mt-2 text-sm leading-relaxed text-justify">
+Implemented machine learning pipeline for anomaly detection in wind turbine mechanical systems. Conducted literature review, performed data preprocessing, and developed modular Python solutions for time-series sensor analysis.
+</p>
+</div>
 
-<ul>
-- **Developed** and implemented state-of-the-art machine learning methods for anomaly detection in wind turbine mechanical systems, including literature review, data preprocessing, and modular Python solutions for time-series sensor data.
-</ul>
-
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
-  label={"Cluster Cloud Computing Data Analytics Project | University of Melbourne"}
+  label={"Cloud-Based Social Media Analytics | University of Melbourne"}
   time={"2023"}
 />
+<p className="mt-2 text-sm leading-relaxed text-justify">
+Led development of real-time social media sentiment analysis dashboard. Managed end-to-end deployment including distributed computing infrastructure, NLP processing, and interactive visualization.
+</p>
+<div className="mt-3">
+<CvStringToBadges items="Python, TypeScript, ReactJS, Flask, CouchDB, NLP, Docker, Ansible" />
+</div>
+</div>
 
-<ul>
-- **Led** the development of a data visualization dashboard for real-time social media sentiment analysis, managing end-to-end deployment.
-
-<CvStringToBadges items="ReactJS, Flask, Python, TypeScript, CouchDB, Docker, NLP, Tailwind CSS, GitHub, Ansible" />
-</ul>
-
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
-  label={"Keyboard Commercial Website"}
+  label={"E-commerce Platform for Mechanical Keyboards"}
   time={"2022"}
 />
+<p className="mt-2 text-sm leading-relaxed text-justify">
+Built commercial platform with payment processing integration and headless CMS architecture.
+</p>
+<div className="mt-3">
+<CvStringToBadges items="TypeScript, ReactJS, NextJS, Tailwind CSS, Stripe API, Sanity CMS, Vercel" />
+</div>
+</div>
 
-<ul>
-- **Created** a commercial platform with Stripe integration and CMS-based content management.
+</div>
+</div>
 
-<CvStringToBadges items="ReactJS, NextJS, Tailwind CSS, Stripe API, TanStack Query, Sanity CMS, Vercel" />
-</ul>
+{/* Education Section */}
+<div className="mb-6">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Education</h2>
 
-<CvLabelWithTime
-  label={"BARD AI Automatic API Deployment | Monash University"}
-  time={"2021"}
-/>
-
-<ul>
-- **Developed** a frontend interface for dynamically creating and deploying backend APIs with user-defined configurations.
-
-<CvStringToBadges items="ReactJS, Django, Flask, PostgreSQL, GitHub Actions, JWT, Jenkins" />
-</ul>
-
-<CvLabelWithTime
-  label={"Comfort Lens iOS App | Monash University"}
-  time={"2021"}
-/>
-
-<ul>
-- **Built** an iOS app with real-time location and reminders for lens management.
-
-<CvStringToBadges items="Swift, Firebase, Core Data, Google Places API, GitHub, Figma" />
-</ul>
-
-### Education
-
-<hr />
+<div className="mb-3 border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={`Master of Data Science | The University of Melbourne`}
   time={
     <div className="flex flex-col">
-      <span>Mar 2022 - Expected Aug 2025</span>
-      <span className="me-0 ms-auto text-justify leading-tight text-sm my-auto">
-        focused on NLP, ML, and applied AI.
-      </span>
+      <span className="font-bold">2022 - 2025</span>
+      <span className="text-xs">NLP, ML, Applied AI</span>
     </div>
   }
 />
-<div className="text-justify leading-tight">
-    Deep interest in leveraging AI and language models to improve usability, automation, and developer workflows.
-    Hands-on experience with time-series anomaly detection, scalable data pipelines, and applying advanced ML techniques to real-world engineering datasets.
+<p className="mt-2 text-sm leading-relaxed text-justify">
+Specialized in natural language processing, machine learning, and applied AI. Conducted research in time-series anomaly detection, scalable data pipelines, and production ML systems for engineering applications.
+</p>
 </div>
 
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={`Bachelor of Software Engineering (Honours) | Monash University`}
-  time={"Mar 2018 - Oct 2021"}
+  time={"2018 - 2021"}
 />
-
-<div className="text-justify leading-tight">
-    Published research on accessible software design at IEEE COMPSAC 2022: <a href="https://ieeexplore.ieee.org/abstract/document/9842733">"A Curated Personas and Design Guidelines Tool for Better Supporting Diverse End-users."</a>
+<p className="mt-2 text-sm leading-relaxed text-justify">
+Published research at IEEE COMPSAC 2022: <a href="https://ieeexplore.ieee.org/abstract/document/9842733" className="border-b border-black dark:border-white hover:opacity-60 transition-opacity">A Curated Personas and Design Guidelines Tool for Better Supporting Diverse End-users</a>
+</p>
+</div>
 </div>
 
-### Extra-Curricular Activities
+{/* Professional Activities Section */}
+<div className="mb-6">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Professional Activities</h2>
 
-<hr />
-<CvLabelWithTime label={"Member, Chinese Association of Professionals and Scholars Australia (CAPS)"} time={"Nov 2022 - Present"} />
-
-<CvLabelWithTime label={"Participant, 2023 Global Game Jam"} time={"Mar 2023"} />
-<div className="text-justify">
-  Achieved Challenge Accomplishment Certificate in a 3-day game development hackathon.
+<div className="space-y-3">
+<div className="border-l border-black dark:border-white pl-3">
+<CvLabelWithTime label={"Member, Chinese Association of Professionals and Scholars Australia"} time={"2022 - Present"} />
 </div>
 
+<div className="border-l border-black dark:border-white pl-3">
+<CvLabelWithTime label={"Global Game Jam Participant"} time={"2023"} />
+<p className="text-sm mt-1 leading-relaxed">
+Challenge Accomplishment Certificate in 3-day game development hackathon.
+</p>
+</div>
+
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
-  label={"Competitor, NexStar Melbourne-Nanjing Sprint Pitch Competition"}
-  time={"Apr 2022"}
+  label={"NexStar Melbourne-Nanjing Sprint Pitch Competition"}
+  time={"2022"}
 />
-<div className="text-justify">
-  Awarded Second Prize and Startup's Choice Award.
+<p className="text-sm mt-1 leading-relaxed">
+Second Prize and Startup's Choice Award recipient.
+</p>
+</div>
+</div>
 </div>
 
-### Additional Information
+{/* Additional Information Section */}
+<div className="mb-6">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Additional Information</h2>
 
-<hr />
-<>
-  <div className="text-md">
-    **Passions:** Building tools that make AI more usable in real-world workflows. Avid reader on AI theory, language models, and software architecture. 
+<div className="space-y-1.5 text-sm">
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">Areas of Interest: </span>
+    <span>AI integration, developer tools, system architecture, workflow automation, language models</span>
   </div>
-  <div className="text-md">
-    **Languages:** English (Bilingual Proficiency), Mandarin Chinese (Native), Shanghainese
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">Languages: </span>
+    <span>English (Bilingual), Mandarin Chinese (Native), Shanghainese</span>
   </div>
-</>
+</div>
+</div>
 
+<div className="mt-8 pt-6 border-t border-black dark:border-white text-center">
 <CvPDFDownloadButton />
+</div>
 
 </div>
 

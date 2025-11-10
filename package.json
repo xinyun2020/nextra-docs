@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "Nextra docs template",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "ts-node src/scripts/generateNotesData.ts && next dev",
+    "build": "ts-node src/scripts/generateNotesData.ts && next build",
     "start": "next start"
   },
   "repository": {
@@ -26,11 +26,12 @@
     "@react-spring/parallax": "^9.7.2",
     "class-variance-authority": "^0.6.0",
     "google-fonts-plugin": "^5.0.2",
+    "gray-matter": "^4.0.3",
     "html2pdf.js": "^0.10.1",
     "next": "13.0.6",
     "next-themes": "^0.2.1",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
+    "nextra": "2.13.4",
+    "nextra-theme-docs": "2.13.4",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",

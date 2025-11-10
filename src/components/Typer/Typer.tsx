@@ -1,102 +1,54 @@
-/* eslint-disable prefer-const */
-/* eslint-disable no-plusplus */
-import React from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./Typer.module.css";
 
-let indexWord = 1;
-let timeOut: NodeJS.Timeout;
+const WORDS = [
+  "Full Stack Developer",
+  "UX & DX",
+  "Data Science Postgrad",
+  "Keyboard Enthusiast",
+  "Software Engineer",
+  "Amateur Photographer",
+  "Monash University Alumni",
+  "University of Melbourne Alumni"
+] as const;
 
-function Typer() {
-  const words = [
-    "Front-end Developer",
-    "Full Stack Developer",
-    "UI/UX Designer",
-    "Data Science Student",
-    "Keyboard Enthusiast",
-    "Software Engineer",
-    "Amateur Photographer",
-    "Monash University University Alumni",
-    "The University of Melbourne Alumni"
-  ];
+const Typer = () => {
+  const [text, setText] = useState(WORDS[0]);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const wordIndexRef = useRef(0);
+  const charIndexRef = useRef(0);
 
-  const [canAnimate, setCanAnimate] = React.useState(false);
-  const [reverse, setRevers] = React.useState(true);
+  useEffect(() => {
+    const currentWord = WORDS[wordIndexRef.current];
 
-  const [state, setState] = React.useState({
-    index: 0,
-    sentence: words[0]
-  });
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setText(currentWord.slice(0, charIndexRef.current - 1));
+        charIndexRef.current -= 1;
 
-  let { index, sentence } = state;
+        if (charIndexRef.current === 0) {
+          setIsDeleting(false);
+          wordIndexRef.current = (wordIndexRef.current + 1) % WORDS.length;
+        }
+      } else {
+        setText(currentWord.slice(0, charIndexRef.current + 1));
+        charIndexRef.current += 1;
 
-  const reduceText = () => {
-    const sentenceLength = sentence.length;
-
-    timeOut = setTimeout(() => {
-      setState({
-        ...state,
-        sentence: sentence.slice(0, -1),
-        index: 0
-      });
+        if (charIndexRef.current === currentWord.length) {
+          setTimeout(() => setIsDeleting(true), 3000);
+        }
+      }
     }, 32);
 
-    if (sentenceLength === 0) {
-      clearTimeout(timeOut);
-      setRevers(false);
-      increaseText();
-    }
-  };
-
-  const increaseText = () => {
-    const sentenceLength = sentence.length;
-    const wordLength = words[indexWord].length;
-
-    if (sentenceLength < wordLength) {
-      timeOut = setTimeout(() => {
-        setState({
-          ...state,
-          sentence: sentence + words[indexWord][index],
-          index: ++index
-        });
-      }, 32);
-    } else {
-      clearTimeout(timeOut);
-
-      setRevers(true);
-
-      if (indexWord === words.length - 1) {
-        indexWord = 0;
-      } else {
-        ++indexWord;
-      }
-
-      setTimeout(reduceText, 3000);
-    }
-  };
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      reduceText();
-      setCanAnimate(true);
-    }, 3000);
-  }, []);
-
-  React.useEffect(() => {
-    if (canAnimate) {
-      if (reverse) {
-        reduceText();
-      } else {
-        increaseText();
-      }
-    }
-  }, [sentence]);
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting]);
 
   return (
     <div className={styles.contentTitle}>
-      <span className={styles.underline}>{sentence}</span>{" "}
+      <span className={styles.underline}>{text}</span>
       <div className={styles.cursor}>&#8203;</div>
     </div>
   );
-}
+};
 
 export default Typer;

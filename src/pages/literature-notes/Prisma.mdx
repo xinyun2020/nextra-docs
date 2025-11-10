@@ -1,22 +1,27 @@
-# Prisma #ORM #async
+---
+title: "Prisma"
+date: "2025-11-10"
+---
+
+# Prisma
 
 ## What?
 
-- [ORM (Object–Relational Mapping)](https://www.notion.so/ORM-Object-Relational-Mapping-8772643420624c7db67f4b2f262049ff)
+- ORM (Object–Relational Mapping)
 - Client - Server(Prisma) - Database
   - **Database communication**: communicate and interact with any type of **database** using **same syntax**
-    - [PostgreSQL #rdbms](https://www.notion.so/PostgreSQL-rdbms-339fddf0c6cf46d3a71171db8251e047)
-    - [MySQL #rdbms](https://www.notion.so/MySQL-rdbms-66f8a7f73e6f4c898f0f0fca683954a9)
-    - [Microsoft SQL Server #MSSQL #rdbms](https://www.notion.so/Microsoft-SQL-Server-MSSQL-rdbms-b13688e1c2634893b6123778a93cace2)
-    - [CockroachDB #rdbms](https://www.notion.so/CockroachDB-rdbms-4ad672f849324170b535291709632af5)
-    - [SQLite #ORM](https://www.notion.so/SQLite-ORM-fdf126d3c7214971ac24f2aec087ba63)
-    - [MongoDB #nosql #MERN](https://www.notion.so/MongoDB-nosql-MERN-9f199cb4d934410a8e219df942f81df9)
+    - PostgreSQL - rdbms
+    - MySQL - rdbms
+    - Microsoft SQL Server - MSSQL - rdbms
+    - CockroachDB - rdbms
+    - SQLite - ORM
+    - MongoDB - nosql, MERN
     - CockroachDB
-  - **Server safe**: a type-safe way of interacting with databases by generating SQL queries at runtime based on [prisma/schema.prisma](https://www.notion.so/prisma-schema-prisma-d90ea45f16b048beae68ce4ff092a089)
+  - **Server safe**: a type-safe way of interacting with databases by generating SQL queries at runtime based on prisma/schema.prisma
 
 ### What Is the Process?
 
-1. Prisma Schema [prisma/schema.prisma](https://www.notion.so/prisma-schema-prisma-d90ea45f16b048beae68ce4ff092a089)
+1. Prisma Schema prisma/schema.prisma
    - Data model [🔗](https://www.prisma.io/docs/concepts/components/prisma-schema/data-model#:~:text=Components%20%2F%20Prisma%20schema-,data%20model,-The%20data%20model)
    - clear schema language ⇒ express data relationship in human-readable way
    - Or schema can also be automatically inferred from any existing DB
@@ -32,45 +37,45 @@
 
 - Keeps database schema in sync
 - and maintaining existing data
-- code is significantly more concise than write in raw [SQL (Structured Query Language)](https://www.notion.so/SQL-Structured-Query-Language-ec04088cbc424a2c87fdd6e19480db7d)
+- code is significantly more concise than write in raw SQL (Structured Query Language)
 
 ### Why Shouldn't?
 
 - competitor
-  - [DrizzleORM ](https://www.notion.so/DrizzleORM-1ae823992db841ba84fb5f0be7ece715)
+  - DrizzleORM 
 
 ## How?
 
 ### How to Setup the Project?
 
 - [Quickstart with TypeScript & SQLite (prisma.io)](https://www.prisma.io/docs/getting-started/quickstart)
-  - [Start from scratch with relational databases (15 min) | typescript-postgresql (prisma.io)](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgresql) [MySQL #rdbms](https://www.notion.so/MySQL-rdbms-66f8a7f73e6f4c898f0f0fca683954a9) / [PostgreSQL #rdbms](https://www.notion.so/PostgreSQL-rdbms-339fddf0c6cf46d3a71171db8251e047) / [Microsoft SQL Server #MSSQL #rdbms](https://www.notion.so/Microsoft-SQL-Server-MSSQL-rdbms-b13688e1c2634893b6123778a93cace2)…
+  - [Start from scratch with relational databases (15 min) | typescript-postgresql (prisma.io)](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgresql) MySQL - rdbms / PostgreSQL - rdbms / Microsoft SQL Server - MSSQL - rdbms…
     ```bash
     npm init -y ## create package.json
     npm install prisma typescript ts-node @types/node --save-dev
     npm i --save-dev nodemon
     ```
     - `nodemon` ⇒ refresh server every time we make changes
-    1. `npx tsc --init` create [tsconfig.json (`npx tsc --init`)](https://www.notion.so/tsconfig-json-npx-tsc-init-5874fb3a066c4db786e591e44b1cf975) [🔗](https://v1.prisma.io/docs/1.34/get-started/01-setting-up-prisma-demo-server-TYPESCRIPT-t001/#:~:text=Create%20your-,tsconfig.json,-with%20the%20following)
+    1. `npx tsc --init` create tsconfig.json (`npx tsc --init`) [🔗](https://v1.prisma.io/docs/1.34/get-started/01-setting-up-prisma-demo-server-TYPESCRIPT-t001/#:~:text=Create%20your-,tsconfig.json,-with%20the%20following)
     2. `npx prisma` invoke Prisma CLI
-    3. `npx prisma init` creating [prisma/schema.prisma](https://www.notion.so/prisma-schema-prisma-d90ea45f16b048beae68ce4ff092a089) (setup Prisma project & setup database)
+    3. `npx prisma init` creating prisma/schema.prisma (setup Prisma project & setup database)
        1. `npx prisma init --datasource-provider SQLite`
        2. `npx prisma init --datasource-provider postgresql` init basic file and use Postgres by default
-    4. setup database URL and the [.env.local #security](https://www.notion.so/env-local-security-70a3ee6802d54a8a9156637a961ff5cb)
+    4. setup database URL and the .env.local - security
        - `.env`
          - find `DATABASE_URL=”postgresql://...”` from
-           - [Railway.app](https://www.notion.so/Railway-app-8a03286a575d42adb6e6d54af515a5ab)
+           - Railway.app
     5. `npm i @prisma/client` install Prisma Client
-       1. Instantiate client ⇒ [client.js](https://www.notion.so/client-js-3a8648356fac4e58a3bfd0ac2974f365)
-    6. modify [prisma/schema.prisma](https://www.notion.so/prisma-schema-prisma-d90ea45f16b048beae68ce4ff092a089)
+       1. Instantiate client ⇒ client.js
+    6. modify prisma/schema.prisma
     - migrate: `npx prisma migrate dev --name init` ⇒ generating
       - check table created in
-        - [Railway.app](https://www.notion.so/Railway-app-8a03286a575d42adb6e6d54af515a5ab)
-  - [Start from scratch with MongoDB (15 min) | typescript-mongodb (prisma.io)](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/mongodb-typescript-mongodb) [MongoDB #nosql #MERN](https://www.notion.so/MongoDB-nosql-MERN-9f199cb4d934410a8e219df942f81df9)
+        - Railway.app
+  - [Start from scratch with MongoDB (15 min) | typescript-mongodb (prisma.io)](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/mongodb-typescript-mongodb) MongoDB - nosql, MERN
 
 ### How to use Prisma?
 
-1. Define/create schema [prisma/schema.prisma](https://www.notion.so/prisma-schema-prisma-d90ea45f16b048beae68ce4ff092a089)
+1. Define/create schema prisma/schema.prisma
 2. /update database structure can be handled automatically
    - `npx prisma migrate`
      - or `npx prisma migrate dev --name init` ## give the name of init
