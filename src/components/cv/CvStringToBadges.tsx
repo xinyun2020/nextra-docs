@@ -6,6 +6,10 @@ import React from "react";
 // array of string render as badge
 
 const CvStringToBadges = ({ items }: { items: string }) => {
+  if (!items || items.trim() === "") {
+    return null;
+  }
+
   const itemsArray = items.toString().split(",");
 
   return (

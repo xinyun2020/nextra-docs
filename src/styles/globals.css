@@ -46,3 +46,7 @@
 .nextra-content {
   max-width: 100% !important;
 }
+
+a, summary {
+  border-radius: 0 !important;
+}

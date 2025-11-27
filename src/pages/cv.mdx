@@ -11,23 +11,23 @@ import { MY } from "../constants.ts";
 <div className='font-sans not-italic prose prose-slate dark:prose-invert max-w-none'>
 
 {/* Header Section */}
-<div className="border-b border-black dark:border-white pb-4 mb-6">
-<div className="flex flex-col md:flex-row gap-4 justify-between items-start md:items-end">
+<div className="border-b border-black dark:border-white pb-2 mb-4">
+<div className="flex flex-col md:flex-row gap-3 justify-between items-start md:items-end">
 <div>
-  <h1 className="text-4xl font-bold tracking-tight mb-1 italic" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>
+  <h1 className="text-4xl font-bold tracking-tight mb-0.5 italic" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>
     Alice Zhang
   </h1>
   <div className="text-xs font-mono opacity-60">Software Engineer</div>
 </div>
 
-<div className="flex flex-col gap-1 text-xs font-mono md:text-right">
-  <div className="flex justify-end">
+<div className="flex flex-col gap-0.5 text-xs font-mono md:text-right">
+  <div>
     <a href="mailto:xinyunzhang2016@gmail.com" className="hover:opacity-60 transition-opacity">
       xinyunzhang2016@gmail.com
     </a>
   </div>
   <div>+61 479 189 008</div>
-  <div className="flex gap-1.5 justify-start md:justify-end mt-0.5">
+  <div className="flex gap-1.5 justify-start md:justify-end">
     <a href="https://github.com/XinYun2020" className="hover:opacity-60 transition-opacity border-b border-black dark:border-white pb-0.5">github.com/xinyun2020</a>
     <span className="opacity-40">|</span>
     <a href="https://www.linkedin.com/in/xinyun2020/" className="hover:opacity-60 transition-opacity border-b border-black dark:border-white pb-0.5">linkedin.com/in/xinyun2020</a>
@@ -38,18 +38,19 @@ import { MY } from "../constants.ts";
 </div>
 
 {/* Summary Section */}
-<div className="mb-6">
-<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Professional Summary</h2>
-<p className="leading-relaxed text-sm text-justify">
-Software engineer building enterprise-scale customer experience platforms. Drive technical architecture and cross-team initiatives with measurable business impact—delivered systems reducing resolution time by 80% (8 months to 3 weeks). Master of Data Science combining deep engineering expertise with ML/NLP capabilities. Specialize in modern full-stack development (React, Vue, TypeScript, GraphQL, Golang), system design, and engineering excellence through mentorship and standards.
+<div className="mb-4">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Professional Summary</h2>
+<p className="text-sm text-justify">
+Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in distributed systems and workflow automation. Currently developing IAP workflow orchestration platform at Zendesk with distributed systems architecture. Previously delivered $175K revenue-generating analytics dashboard and Vue 3 migration of 200+ components. Full-stack expertise (TypeScript, Golang, React, GraphQL, gRPC) with Master of Data Science in ML/NLP. Proven track record in technical leadership, mentorship, and system architecture.
 </p>
 </div>
 
 {/* Professional Experience Section */}
-<div className="mb-6">
-<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Professional Experience</h2>
+<div className="mb-4">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Professional Experience</h2>
 
-<div className="mb-4 border-l border-black dark:border-white pl-3">
+<div className="space-y-3">
+<div className="border-l border-black dark:border-white pl-2">
 <CvLabelWithTime
   label={
     "Senior Software Engineer, Zendesk, VIC, Australia"
@@ -57,17 +58,16 @@ Software engineer building enterprise-scale customer experience platforms. Drive
   time={"Sep 2025 - Present"}
 />
 
-<div className="mt-2 space-y-1 text-sm leading-relaxed">
-- Contributing to enterprise-scale customer experience platform development.
+<div className="text-sm">
+- Contributing to IAP workflow orchestration platform, delivered critical bug fixes before GA launch.
+- Developing distributed systems with Golang gRPC microservices, Node.js GraphQL BFF, and React TypeScript frontend.
+- Supporting team growth through pair programming and code reviews.
 </div>
 
-<div className="mt-3">
-<div className="font-bold text-xs mb-1.5 opacity-60">STACK</div>
-<CvStringToBadges items="TypeScript, Golang, ReactJS, GraphQL, Jest, Cypress, Storybook, Jenkins, Docker, Kubernetes, AWS, Sentry, Datadog, AI Integration, Automation" />
-</div>
+<CvStringToBadges items="TypeScript, Golang, ReactJS, Node.js, Express, GraphQL, gRPC, Protocol Buffers, Apollo Client, MySQL, Redis, Kafka, TypeORM, Jest, Cypress, React Testing Library, Storybook, Jenkins, Docker, Kubernetes, AWS, Sentry, Datadog" />
 </div>
 
-<div className="mb-4 border-l border-black dark:border-white pl-3">
+<div className="border-l border-black dark:border-white pl-2">
 <CvLabelWithTime
   label={
     "Full Stack Developer, WISE Employment, VIC, Australia"
@@ -75,24 +75,18 @@ Software engineer building enterprise-scale customer experience platforms. Drive
   time={"Nov 2023 - Sep 2025"}
 />
 
-<div className="mt-2 space-y-1 text-sm leading-relaxed">
-- Led architectural migration from Vue 2 to Vue 3 + Vite, improving application performance, maintainability, and developer experience.
-- Architected headless design system with reusable component library, establishing UI/UX standards and accelerating feature delivery.
-- Delivered internal analytics dashboard reducing claim processing bottlenecks, projected to process 400+ additional monthly claims and generate $175K revenue impact.
+<div className="text-sm">
+- Led Vue 2 to Vue 3 + Vite migration across 200+ components, architected reusable component system and headless design library improving developer velocity and UI consistency.
+- Delivered internal analytics dashboard reducing claim processing bottlenecks, projected 400+ additional monthly claims ($175K annual revenue impact), used by hundreds of staff members.
 - Implemented secure data pipelines integrating AWS Blob Storage with Java-based decryption and schema validation.
-- Optimized CI/CD infrastructure using GitLab, Docker, and OpenShift, implementing automated testing and deployment workflows.
-- Collaborated across frontend, backend (Java, Golang), and DevOps teams to deliver enterprise-grade features.
-- Established code review standards and mentored team members on software engineering best practices.
-- Facilitated technical decision-making through collaborative problem-solving and stakeholder alignment.
+- Optimized CI/CD infrastructure (GitLab, Docker, OpenShift), improving deployment workflows and release cadence.
+- Mentored team on engineering best practices and facilitated technical decisions through stakeholder alignment.
 </div>
 
-<div className="mt-3">
-<div className="font-bold text-xs mb-1.5 opacity-60">STACK</div>
 <CvStringToBadges items="TypeScript, JavaScript, Java, Golang, VueJS, Vite, GraphQL, Headless UI, Tailwind CSS, Jest, GitLab, Docker, Azure, RedHat OCP, Figma" />
 </div>
-</div>
 
-<div className="mb-4 border-l border-black dark:border-white pl-3">
+<div className="border-l border-black dark:border-white pl-2">
 <CvLabelWithTime
   label={
     "Software Engineer, IPIC Pty Ltd, George & Matilda, VIC, Australia"
@@ -100,204 +94,174 @@ Software engineer building enterprise-scale customer experience platforms. Drive
   time={"Sep 2021 - Nov 2023"}
 />
 
-<div className="mt-2 space-y-1 text-sm leading-relaxed">
-- Developed finance investigation portal using AngularJS, reducing unresolved issues by 80% and decreasing resolution time from 8 months to 3 weeks.
-- Built React-based clinical appointment system with custom Tailwind CSS design system, streamlining UI development workflows.
-- Implemented full-stack features using GraphQL, Prisma, and tRPC, ensuring robust API design and data integrity.
+<div className="text-sm">
+- Developed finance investigation portal using AngularJS reducing unresolved issues by 80%, decreasing resolution time from 8 months to 3 weeks.
+- Built React clinical appointment system with GraphQL/Prisma/tRPC backend and custom Tailwind CSS design system.
 - Managed CI/CD pipelines via Bitbucket and Docker, improving deployment reliability and release cadence.
-- Partnered with finance, product, and design stakeholders to deliver user-centered solutions aligned with business objectives.
+- Partnered with finance, product, and design teams to align technical solutions with business objectives.
 </div>
 
-<div className="mt-3">
-<div className="font-bold text-xs mb-1.5 opacity-60">STACK</div>
 <CvStringToBadges items="TypeScript, ReactJS, NextJS, AngularJS, GraphQL, tRPC, Prisma, Tailwind CSS, Jest, Storybook, Bitbucket, Docker, Figma" />
 </div>
-</div>
 
-<div className="border-l border-black dark:border-white pl-3">
+<div className="border-l border-black dark:border-white pl-2">
 <CvLabelWithTime
   label={"Engineering Intern, Rose Plastic, VIC, Australia"}
   time={"Sep 2018 - Sep 2020"}
 />
-<div className="mt-2 space-y-1 text-sm leading-relaxed">
-- Supported technical lead in system maintenance and data analysis initiatives.
-- Conducted market research and requirements gathering to inform product development.
+<div className="text-sm">
+- Supported system maintenance, data analysis, and requirements gathering for product development.
 </div>
 
-<div className="mt-3">
-<div className="font-bold text-xs mb-1.5 opacity-60">STACK</div>
 <CvStringToBadges items="Data Analysis, System Maintenance, Security, SOP Development, Requirements Gathering, Agile" />
 </div>
 </div>
 </div>
 
 {/* Technical Skills Section */}
-<div className="mb-6">
-<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Technical Expertise</h2>
+<div className="mb-4">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Technical Skills</h2>
 
-<div className="space-y-1.5 text-sm">
+<div className="space-y-0.5 text-sm">
   <div>
     <span className="font-bold text-xs uppercase tracking-wide">Languages: </span>
-    <span>JavaScript, TypeScript, Java, Golang, Python, SQL, HTML/CSS/SASS/LESS, R, C, MATLAB, Swift</span>
+    <span>TypeScript, JavaScript, Golang, Java, Python, SQL</span>
   </div>
 
   <div>
-    <span className="font-bold text-xs uppercase tracking-wide">Frameworks: </span>
-    <span>ReactJS, NextJS, VueJS, AngularJS, NodeJS, ExpressJS, Flask, Django, Spring Boot, Tailwind CSS, Bootstrap, Jest, Vitest, Cypress, Storybook</span>
+    <span className="font-bold text-xs uppercase tracking-wide">Frontend: </span>
+    <span>React, Vue, Next.js, Angular, Apollo Client, Tailwind CSS, Jest, Cypress, React Testing Library, Storybook</span>
   </div>
 
   <div>
-    <span className="font-bold text-xs uppercase tracking-wide">DevOps: </span>
-    <span>Docker, Git, GitLab, GitHub, Bitbucket, Jenkins, GitHub Actions, OpenShift, Ansible</span>
+    <span className="font-bold text-xs uppercase tracking-wide">Backend: </span>
+    <span>Node.js, Express, Spring Boot, GraphQL, gRPC, Protocol Buffers, RESTful APIs</span>
   </div>
 
   <div>
-    <span className="font-bold text-xs uppercase tracking-wide">Databases: </span>
-    <span>PostgreSQL, MySQL, CouchDB, MongoDB, Firebase, Core Data</span>
+    <span className="font-bold text-xs uppercase tracking-wide">Data: </span>
+    <span>MySQL, PostgreSQL, MongoDB, Redis, Kafka, TypeORM, Prisma</span>
   </div>
 
   <div>
-    <span className="font-bold text-xs uppercase tracking-wide">Cloud: </span>
-    <span>AWS, Azure, Render, Vercel</span>
+    <span className="font-bold text-xs uppercase tracking-wide">Infrastructure: </span>
+    <span>Docker, Kubernetes, AWS, Azure, Jenkins, Sentry, Datadog, Git, GitHub, GitLab, Bitbucket, OpenShift</span>
   </div>
 
   <div>
-    <span className="font-bold text-xs uppercase tracking-wide">Architecture: </span>
-    <span>RESTful APIs, GraphQL, Microservices, Monorepo, Design Patterns, Design Systems</span>
+    <span className="font-bold text-xs uppercase tracking-wide">Others: </span>
+    <span>Ginkgo, Mockery, Microservices, Design Patterns, Design Systems, HTML/CSS/SASS/LESS, Bootstrap, GitHub Actions, Flask, Django, Ansible, Firebase, Vitest, Monorepo, Render, Vercel, CouchDB, Core Data, R, C, MATLAB, Swift</span>
   </div>
 </div>
 </div>
 
 {/* Projects Section */}
-<div className="mb-6">
-<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Selected Projects</h2>
+<div className="mb-4">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Selected Projects</h2>
 
-<div className="space-y-3">
-
-<div className="border-l border-black dark:border-white pl-3">
-<CvLabelWithTime label={"AI Legal Policy Generator"} time={"2023"} />
-<p className="mt-2 text-sm leading-relaxed text-justify">
-Developed AI-powered legal policy generation system using OpenAI API and NLP, reducing documentation time and improving consistency across organizational policies.
-</p>
-<div className="mt-3">
-<CvStringToBadges items="Python, OpenAI API, Streamlit, NLP, Docker, Render" />
-</div>
-</div>
-
-<div className="border-l border-black dark:border-white pl-3">
-<CvLabelWithTime
-  label={"Wind Turbine Anomaly Detection | Master of Data Science"}
-  time={"2024"}
-/>
-<p className="mt-2 text-sm leading-relaxed text-justify">
-Implemented machine learning pipeline for anomaly detection in wind turbine mechanical systems. Conducted literature review, performed data preprocessing, and developed modular Python solutions for time-series sensor analysis.
-</p>
-</div>
-
-<div className="border-l border-black dark:border-white pl-3">
-<CvLabelWithTime
-  label={"Cloud-Based Social Media Analytics | University of Melbourne"}
-  time={"2023"}
-/>
-<p className="mt-2 text-sm leading-relaxed text-justify">
-Led development of real-time social media sentiment analysis dashboard. Managed end-to-end deployment including distributed computing infrastructure, NLP processing, and interactive visualization.
-</p>
-<div className="mt-3">
-<CvStringToBadges items="Python, TypeScript, ReactJS, Flask, CouchDB, NLP, Docker, Ansible" />
-</div>
-</div>
-
-<div className="border-l border-black dark:border-white pl-3">
-<CvLabelWithTime
-  label={"E-commerce Platform for Mechanical Keyboards"}
-  time={"2022"}
-/>
-<p className="mt-2 text-sm leading-relaxed text-justify">
-Built commercial platform with payment processing integration and headless CMS architecture.
-</p>
-<div className="mt-3">
-<CvStringToBadges items="TypeScript, ReactJS, NextJS, Tailwind CSS, Stripe API, Sanity CMS, Vercel" />
-</div>
-</div>
-
+<div className="space-y-1.5 text-sm">
+  <div className="border-l border-black dark:border-white pl-2">
+    <CvLabelWithTime label={"AI Legal Policy Generator"} time={"2023"} />
+    <p>AI-powered legal policy generation improving efficiency & consistency across organizational policies.</p>
+    <CvStringToBadges items="Python, OpenAI API, Streamlit, NLP, Docker, Render" />
+  </div>
+  <div className="border-l border-black dark:border-white pl-2">
+    <CvLabelWithTime label={"Wind Turbine Anomaly Detection"} time={"2024"} />
+    <p>ML pipeline for anomaly detection in wind turbine systems. Developed modular solutions with 2 years of time-series sensor data.</p>
+    <CvStringToBadges items="" />
+  </div>
+  <div className="border-l border-black dark:border-white pl-2">
+    <CvLabelWithTime label={"Cloud-Based Social Media Analytics"} time={"2023"} />
+    <p>Led real-time sentiment analysis project on Mastodon with distributed computing, NLP, and live data visualization.</p>
+    <CvStringToBadges items="Python, TypeScript, ReactJS, Flask, CouchDB, NLP, Docker, Ansible" />
+  </div>
+  <div className="border-l border-black dark:border-white pl-2">
+    <CvLabelWithTime label={"E-commerce Platform for Mechanical Keyboards"} time={"2022"} />
+    <p>Commercial platform with Stripe payment integration and headless CMS architecture</p>
+    <CvStringToBadges items="TypeScript, ReactJS, NextJS, Tailwind CSS, Stripe API, Sanity CMS, Vercel" />
+  </div>
 </div>
 </div>
 
 {/* Education Section */}
-<div className="mb-6">
-<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Education</h2>
+<div className="mb-4">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Education</h2>
 
-<div className="mb-3 border-l border-black dark:border-white pl-3">
+<div className="space-y-2">
+<div className="border-l border-black dark:border-white pl-2">
 <CvLabelWithTime
   label={`Master of Data Science | The University of Melbourne`}
   time={
-    <div className="flex flex-col">
-      <span className="font-bold">2022 - 2025</span>
+    <div className="flex flex-row justify-between items-center gap-2">
       <span className="text-xs">NLP, ML, Applied AI</span>
+      <span className="font-bold">2022 - 2025</span>
     </div>
   }
 />
-<p className="mt-2 text-sm leading-relaxed text-justify">
-Specialized in natural language processing, machine learning, and applied AI. Conducted research in time-series anomaly detection, scalable data pipelines, and production ML systems for engineering applications.
+<p className="text-sm">
+Completed part-time while working full-time.
 </p>
 </div>
 
-<div className="border-l border-black dark:border-white pl-3">
+<div className="border-l border-black dark:border-white pl-2">
 <CvLabelWithTime
   label={`Bachelor of Software Engineering (Honours) | Monash University`}
-  time={"2018 - 2021"}
+  time={
+    <div className="flex flex-row justify-between items-center gap-2">
+      <span className="font-bold">2018 - 2021</span>
+    </div>
+  }
 />
-<p className="mt-2 text-sm leading-relaxed text-justify">
-Published research at IEEE COMPSAC 2022: <a href="https://ieeexplore.ieee.org/abstract/document/9842733" className="border-b border-black dark:border-white hover:opacity-60 transition-opacity">A Curated Personas and Design Guidelines Tool for Better Supporting Diverse End-users</a>
-</p>
-</div>
-</div>
-
-{/* Professional Activities Section */}
-<div className="mb-6">
-<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Professional Activities</h2>
-
-<div className="space-y-3">
-<div className="border-l border-black dark:border-white pl-3">
-<CvLabelWithTime label={"Member, Chinese Association of Professionals and Scholars Australia"} time={"2022 - Present"} />
-</div>
-
-<div className="border-l border-black dark:border-white pl-3">
-<CvLabelWithTime label={"Global Game Jam Participant"} time={"2023"} />
-<p className="text-sm mt-1 leading-relaxed">
-Challenge Accomplishment Certificate in 3-day game development hackathon.
-</p>
-</div>
-
-<div className="border-l border-black dark:border-white pl-3">
-<CvLabelWithTime
-  label={"NexStar Melbourne-Nanjing Sprint Pitch Competition"}
-  time={"2022"}
-/>
-<p className="text-sm mt-1 leading-relaxed">
-Second Prize and Startup's Choice Award recipient.
+<p className="text-sm">
+Published: <a href="https://ieeexplore.ieee.org/abstract/document/9842733" className="border-b border-black dark:border-white hover:opacity-60 transition-opacity">IEEE COMPSAC 2022</a>
 </p>
 </div>
 </div>
 </div>
 
-{/* Additional Information Section */}
-<div className="mb-6">
-<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-3">Additional Information</h2>
+{/* Professional Activities & Additional Information Section */}
+<div className="mb-4">
+<h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Professional Activities & Additional Information</h2>
 
-<div className="space-y-1.5 text-sm">
-  <div>
+<div className="space-y-0.5 text-sm">
+  <div className="border-l border-black dark:border-white pl-2">
+    <CvLabelWithTime
+      label={"Member, Chinese Association of Professionals and Scholars Australia"}
+      time={"2022 - Present"}
+    />
+  </div>
+  <div className="border-l border-black dark:border-white pl-2">
+    <CvLabelWithTime
+      label={
+        <span>
+          Global Game Jam Participant: <span className="font-normal opacity-75">Challenge Accomplishment Certificate in 3-day game development hackathon</span>
+        </span>
+      }
+      time={"2023"}
+    />
+  </div>
+  <div className="border-l border-black dark:border-white pl-2">
+    <CvLabelWithTime
+      label={
+        <span>
+          NexStar Melbourne-Nanjing Sprint Pitch Competition: <span className="font-normal opacity-75">Second Prize and Startup's Choice Award recipient</span>
+        </span>
+      }
+      time={"2022"}
+    />
+  </div>
+  <div className="border-l border-black dark:border-white pl-2 mt-1">
     <span className="font-bold text-xs uppercase tracking-wide">Areas of Interest: </span>
     <span>AI integration, developer tools, system architecture, workflow automation, language models</span>
   </div>
-  <div>
+  <div className="border-l border-black dark:border-white pl-2">
     <span className="font-bold text-xs uppercase tracking-wide">Languages: </span>
     <span>English (Bilingual), Mandarin Chinese (Native), Shanghainese</span>
   </div>
 </div>
 </div>
 
-<div className="mt-8 pt-6 border-t border-black dark:border-white text-center">
+<div className="mt-6 pt-4 border-t border-black dark:border-white text-center">
 <CvPDFDownloadButton />
 </div>
 

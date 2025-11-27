@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Typer.module.css";
 
 const WORDS = [
+  "Computer Programmer",
   "Full Stack Developer",
   "UX & DX",
   "Data Science Postgrad",
@@ -15,10 +16,13 @@ const WORDS = [
 const Typer = () => {
   const [text, setText] = useState(WORDS[0]);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const wordIndexRef = useRef(0);
   const charIndexRef = useRef(0);
 
   useEffect(() => {
+    if (isPaused) return;
+
     const currentWord = WORDS[wordIndexRef.current];
 
     const timeout = setTimeout(() => {
@@ -35,13 +39,24 @@ const Typer = () => {
         charIndexRef.current += 1;
 
         if (charIndexRef.current === currentWord.length) {
-          setTimeout(() => setIsDeleting(true), 3000);
+          setIsPaused(true);
         }
       }
     }, 32);
 
     return () => clearTimeout(timeout);
-  }, [text, isDeleting]);
+  }, [text, isDeleting, isPaused]);
+
+  useEffect(() => {
+    if (!isPaused) return;
+
+    const pauseTimeout = setTimeout(() => {
+      setIsPaused(false);
+      setIsDeleting(true);
+    }, 3000);
+
+    return () => clearTimeout(pauseTimeout);
+  }, [isPaused]);
 
   return (
     <div className={styles.contentTitle}>
