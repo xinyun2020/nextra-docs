@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import Typer from "../Typer/Typer";
 import RecentPosts from "../RecentPosts/RecentPosts";
-
-// Lazy-load TextString — no SSR (uses DOM APIs: canvas, Intl.Segmenter, pointer events)
-const TextString = dynamic(() => import("../TextString"), { ssr: false });
 
 export interface Note {
   title: string;
@@ -26,12 +22,7 @@ const HomePage = ({ allNotes }: HomePageProps) => {
           <Typer />
         </div>
         <div className="text-center text-xl pt-8 w-full">
-          <TextString
-            text="This is a personal knowledge base to share the learning process publicly"
-            fontSize={20}
-            fontFamily="'IBM Plex Mono', monospace"
-            initialUnlocked={8}
-          />
+          This is a personal knowledge base to share the learning process publicly
         </div>
       </div>
       <RecentPosts allNotes={allNotes} />
