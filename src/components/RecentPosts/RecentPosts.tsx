@@ -17,7 +17,7 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
 
   return (
     <div
-      className="mt-12 px-4"
+      className="mt-8 sm:mt-12 px-4 sm:px-6"
       style={{
         maxWidth: isWide ? 'none' : '896px',
         width: isWide ? '100vw' : 'auto',
@@ -35,16 +35,16 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
           <Link
             key={index}
             href={post.path}
-            className="flex items-baseline gap-3 hover:text-gray-600 dark:hover:text-gray-300 transition-colors group"
+            className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 py-2 sm:py-1 hover:text-gray-600 dark:hover:text-gray-300 transition-colors group"
           >
-            <span className="text-sm text-gray-400 dark:text-gray-500 shrink-0">
+            <span className="text-xs sm:text-sm text-gray-400 dark:text-gray-500 shrink-0 font-mono tabular-nums">
               {post.date}
             </span>
-            <span className="font-medium group-hover:underline shrink-0">
+            <span className="font-medium group-hover:underline">
               {post.title}
             </span>
             {post.description && (
-              <span className="text-sm text-gray-600 dark:text-gray-400 flex-1 truncate min-w-0">
+              <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 flex-1 truncate min-w-0 hidden sm:inline">
                 {post.description}
               </span>
             )}
@@ -52,11 +52,11 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
         ))}
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-4">
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-4">
         {hasMorePosts && (
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            className="px-6 py-3 sm:py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
             aria-label={showAll ? 'Show fewer posts' : 'Show all posts'}
           >
             {showAll ? '− Show Less' : '··· Load More'}
@@ -64,7 +64,7 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
         )}
         <button
           onClick={() => setIsWide(!isWide)}
-          className="px-6 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors flex items-center gap-2"
+          className="px-6 py-3 sm:py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors hidden sm:flex items-center gap-2"
           aria-label={isWide ? 'Narrow width' : 'Expand width'}
         >
           <span className="font-mono">{isWide ? '><' : '<>'}</span>

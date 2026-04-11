@@ -64,17 +64,54 @@ const config: DocsThemeConfig = {
     float: true,
     title: "Page Contents"
   },
-  useNextSeoProps: () => ({
-    titleTemplate: "%s \u2013 Xinyun Zhang",
-    description: "Xinyun Zhang | %s"
-  }),
+  useNextSeoProps: () => {
+    const { asPath } = useRouter();
+    const siteUrl = "https://xinyun-zettelkasten.vercel.app";
+    return {
+      titleTemplate: "%s \u2013 Xinyun Zhang",
+      description: "Xinyun Zhang | %s",
+      canonical: `${siteUrl}${asPath}`,
+      openGraph: {
+        type: "article",
+        url: `${siteUrl}${asPath}`,
+        siteName: "Xinyun Zettelkasten",
+      },
+      additionalMetaTags: [
+        { name: "author", content: "Xinyun Zhang (xinyun2020)" },
+        { name: "rights", content: `© ${currentYear} xinyun2020. All rights reserved.` },
+      ],
+    };
+  },
   navigation: {
     prev: true,
     next: true
   },
   gitTimestamp: <></>,
   main: ({ children }) => (
-    <div style={{ maxWidth: 1024, margin: "0 auto" }}>{children}</div>
+    <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 1rem" }}>
+      {children}
+      {/* Site-wide watermark overlay */}
+      <div style={{
+        position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+        pointerEvents: 'none', zIndex: 9999,
+        backgroundImage: `repeating-linear-gradient(
+          -45deg,
+          transparent 0px, transparent 120px,
+          rgba(0,0,0,0.012) 120px, rgba(0,0,0,0.012) 121px
+        )`,
+        backgroundSize: '200px 200px',
+      }}>
+        <div style={{
+          position: 'fixed', top: '50%', left: '50%',
+          transform: 'translate(-50%, -50%) rotate(-35deg)',
+          fontSize: '4rem', color: 'rgba(128,128,128,0.04)',
+          fontFamily: 'system-ui', whiteSpace: 'nowrap',
+          userSelect: 'none', pointerEvents: 'none',
+        }}>
+          xinyun2020 © {currentYear}
+        </div>
+      </div>
+    </div>
   ),
   navbar: {
     extraContent: <NavbarIcons />

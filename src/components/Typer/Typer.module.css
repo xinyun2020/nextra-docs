@@ -27,7 +27,7 @@ html[class~="dark"] .cursor {
 .cursor {
   display: inline-block;
   position: relative;
-  width: 2px;
+  width: 3px;
   color: rgb(15, 23, 42);
   background-color: rgb(15, 23, 42);
   line-height: 1;
@@ -36,6 +36,12 @@ html[class~="dark"] .cursor {
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+@media (max-width: 640px) {
+  .cursor {
+    width: 2px;
+  }
 }
 
 .underline {

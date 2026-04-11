@@ -10,62 +10,9 @@ tags:
   - remote-work
 ---
 
-import Head from 'next/head';
-
-{/* === 防盗层 1: Meta tags + Canonical URL === */}
-<Head>
-  <link rel="canonical" href="https://xinyun-zettelkasten.vercel.app/permanent-notes/my-system-architecture" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="我如何用一台笔记本和一部手机，搭建了一个会自己进化的工作系统" />
-  <meta property="og:description" content="A software engineer's personal system architecture — five layers from knowledge to mobile access. By xinyun2020." />
-  <meta property="og:url" content="https://xinyun-zettelkasten.vercel.app/permanent-notes/my-system-architecture" />
-  <meta property="article:author" content="xinyun2020" />
-  <meta property="article:published_time" content="2026-04-11" />
-  <meta name="author" content="Xinyun Zhang (xinyun2020)" />
-  <meta name="rights" content="© 2026 xinyun2020. All rights reserved." />
-</Head>
-
-export const Callout = ({ children }) => (
-  <div style={{ background: 'var(--nextra-callout-background, #f0ede6)', borderLeft: '4px solid var(--nextra-primary-hue, #333)', padding: '12px 16px', margin: '16px 0', borderRadius: '4px' }}>
-    {children}
-  </div>
-);
-
-{/* === 防盗层 2: 半透明水印覆盖全页 === */}
-export const Watermark = () => (
-  <div style={{
-    position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-    pointerEvents: 'none', zIndex: 9999,
-    backgroundImage: `repeating-linear-gradient(
-      -45deg,
-      transparent 0px, transparent 120px,
-      rgba(0,0,0,0.012) 120px, rgba(0,0,0,0.012) 121px
-    )`,
-    backgroundSize: '200px 200px',
-  }}>
-    <div style={{
-      position: 'fixed', top: '50%', left: '50%',
-      transform: 'translate(-50%, -50%) rotate(-35deg)',
-      fontSize: '4rem', color: 'rgba(0,0,0,0.025)',
-      fontFamily: 'system-ui', whiteSpace: 'nowrap',
-      userSelect: 'none', pointerEvents: 'none',
-    }}>
-      xinyun2020 © 2026
-    </div>
-  </div>
-);
-
-{/* === 防盗层 3: 隐形零宽字符指纹 (嵌入在文本中，复制时一起被复制) === */}
+{/* === 防盗: 隐形零宽字符指纹 (嵌入在文本中，复制时一起被复制) === */}
 {/* 编码: x=\u200B i=\u200C n=\u200D y=\uFEFF u=\u2060 n=\u200D 2=\u200B 0=\u200C 2=\u200B 0=\u200C */}
 export const F = () => <span style={{fontSize:0,lineHeight:0}}>{"\u200B\u200C\u200D\uFEFF\u2060\u200D\u200B\u200C\u200B\u200C"}</span>;
-
-<Watermark />
-
-> *一个软件工程师的个人系统架构全解析*
->
-> [📄 下载 PDF 版本](/my-system-architecture-article.pdf)
-
----
 
 ## 问题：知识散落一地，每天都在重新发明轮子<F />
 
@@ -113,11 +60,9 @@ export const F = () => <span style={{fontSize:0,lineHeight:0}}>{"\u200B\u200C\u2
 
 比如"如何防止程序内存溢出"就是一张永久笔记。里面记录了：问题是什么、为什么发生、怎么解决、什么时候需要重新评估。
 
-<Callout>
-**核心原则：一个事实只存一个地方。**
-
-如果同一个信息存在两个地方，迟早有一个会过期。工具的使用方法存在工具自己的笔记页，架构决策存在架构文档，日记只放链接不复制内容。任何信息只需要更新一个地方，全系统自动保持一致。
-</Callout>
+> **核心原则：一个事实只存一个地方。**
+>
+> 如果同一个信息存在两个地方，迟早有一个会过期。工具的使用方法存在工具自己的笔记页，架构决策存在架构文档，日记只放链接不复制内容。任何信息只需要更新一个地方，全系统自动保持一致。
 
 还有一个重要理念：**被动消费不等于学习。** AI 可以每天给你生成一份技术新闻摘要，但如果你只是看一眼就划过去，那不是你的知识，那是噪音。日记里只放你真正参与思考过的内容。
 
@@ -137,11 +82,9 @@ export const F = () => <span style={{fontSize:0,lineHeight:0}}>{"\u200B\u200C\u2
 
 所有这些文件都存在 Obsidian 里，通过 Git 同步到 GitHub。笔记本坏了？换一台，一个命令，所有配置和知识都回来了。
 
-<Callout>
-**配置管理的关键：一个入口，不重复。**
-
-所有 AI 配置都从 Obsidian 的一个文件夹管理，通过符号链接（类似快捷方式）映射到系统目录。改一个地方，所有地方生效。版本可控，可以回滚。
-</Callout>
+> **配置管理的关键：一个入口，不重复。**
+>
+> 所有 AI 配置都从 Obsidian 的一个文件夹管理，通过符号链接（类似快捷方式）映射到系统目录。改一个地方，所有地方生效。版本可控，可以回滚。
 
 ---
 
@@ -206,11 +149,9 @@ mosh 用 UDP 协议。UDP 没有"连接"的概念，所以 IP 变了它根本不
 
 如果手机彻底断网了呢？笔记本上的 tmux 会保持会话。AI 继续在笔记本上运行，不受影响。手机重新连上后，一个命令就能恢复——AI 可能已经把活干完了。
 
-<Callout>
-**三层安全叠加：**
-
-① Tailscale WireGuard 加密隧道 → ② mosh AES-128 加密 → ③ SSH 密钥认证。手机上不存储任何代码或凭证，只是一个显示终端文字的窗口。手机丢了？攻击者需要同时突破三道独立的锁。
-</Callout>
+> **三层安全叠加：**
+>
+> ① Tailscale WireGuard 加密隧道 → ② mosh AES-128 加密 → ③ SSH 密钥认证。手机上不存储任何代码或凭证，只是一个显示终端文字的窗口。手机丢了？攻击者需要同时突破三道独立的锁。
 
 流量消耗：用手机 4G 工作一小时，大约消耗 **10-30MB**。因为所有重活都在笔记本上通过家里宽带完成，手机只传输终端文字。1GB 的流量套餐可以用几十个小时。
 
@@ -247,3 +188,5 @@ mosh 用 UDP 协议。UDP 没有"连接"的概念，所以 IP 变了它根本不
 *© 2026 xinyun2020. All rights reserved. 未经授权禁止转载。*
 
 *写于 2026 年 4 月 11 日。作者是一个相信好记性不如烂笔头的软件工程师。*
+
+*[PDF 版本 →](/my-system-architecture-article.pdf)*
