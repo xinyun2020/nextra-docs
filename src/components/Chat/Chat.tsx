@@ -167,9 +167,9 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
   };
 
   return (
-    <div className="font-plex mt-4 flex flex-col" style={{ height: "calc(100vh - 200px)", minHeight: "400px" }}>
+    <div className="font-plex mt-2 sm:mt-4 -mx-2 sm:mx-0 flex flex-col h-[calc(100vh-120px)] sm:h-[calc(100vh-180px)] min-h-[400px]">
       {/* messages */}
-      <div className="flex-1 overflow-y-auto space-y-4 pb-4 px-1">
+      <div className="flex-1 overflow-y-auto space-y-4 pb-24 sm:pb-4 px-1">
         {messages.map((msg, i) => (
           <div
             key={i}
@@ -183,7 +183,6 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
               }`}
             >
               {msg.text.split("\n").map((line, j) => {
-                // parse markdown bold and links
                 const parsed = line.replace(
                   /\*\*\[(.+?)\]\((.+?)\)\*\*/g,
                   '<a href="$2" class="font-bold underline hover:text-blue-500">$1</a>'
@@ -203,25 +202,25 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
           </div>
         ))}
         <div ref={messagesEndRef} />
+
+        {/* suggestions inline */}
+        {messages.length <= 1 && (
+          <div className="flex flex-wrap gap-2 px-1">
+            {SUGGESTIONS.map((s) => (
+              <button
+                key={s}
+                onClick={() => handleSubmit(s)}
+                className="text-xs px-3 py-1.5 rounded-full bg-slate-500/10 text-gray-600 dark:text-gray-400 hover:bg-slate-500/20 transition-colors"
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* suggestions */}
-      {messages.length <= 1 && (
-        <div className="flex flex-wrap gap-2 pb-3 px-1">
-          {SUGGESTIONS.map((s) => (
-            <button
-              key={s}
-              onClick={() => handleSubmit(s)}
-              className="text-xs px-3 py-1.5 rounded-full bg-slate-500/10 text-gray-600 dark:text-gray-400 hover:bg-slate-500/20 transition-colors"
-            >
-              {s}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {/* input */}
-      <div className="border-t border-gray-200 dark:border-gray-700 pt-3">
+      {/* input — fixed bottom on mobile, inline on desktop */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700 p-3 sm:static sm:bg-transparent sm:dark:bg-transparent sm:backdrop-blur-none sm:border-t sm:border-gray-200 sm:dark:border-gray-700 sm:pt-3 sm:p-0">
         <div className="flex gap-2">
           <input
             ref={inputRef}
