@@ -7,6 +7,8 @@ const NOTE_DIRECTORIES = {
   'permanent-notes': 'Permanent Notes'
 } as const;
 
+const EXCLUDE = ['example-component', 'scroll-animation', 'test', '_meta'];
+
 const pagesDir = path.join(process.cwd(), 'src', 'pages');
 const notes: string[] = [];
 
@@ -16,6 +18,7 @@ Object.keys(NOTE_DIRECTORIES).forEach(dirName => {
     const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
     files.forEach(file => {
       const filename = file.replace(/\.mdx?$/, '');
+      if (EXCLUDE.includes(filename)) return;
       notes.push(`/${dirName}/${filename}`);
     });
   } catch {
