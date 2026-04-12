@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useConfig } from "nextra-theme-docs";
 import { Pre } from "./components/Pre";
 import DocslyClient from "@/components/DocslyClient";
+import PdfDownload from "./components/PdfDownload";
 
 const currentYear = new Date().getFullYear();
 
@@ -87,9 +88,19 @@ const config: DocsThemeConfig = {
     next: true
   },
   gitTimestamp: <></>,
-  main: ({ children }) => (
-    <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 1rem" }}>{children}</div>
-  ),
+  main: ({ children }) => {
+    const { frontMatter } = useConfig();
+    return (
+      <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 1rem" }}>
+        {frontMatter.pdf && (
+          <div style={{ marginBottom: "1.5rem" }}>
+            <PdfDownload href={frontMatter.pdf} />
+          </div>
+        )}
+        {children}
+      </div>
+    );
+  },
   navbar: {
     extraContent: <NavbarIcons />
   }
