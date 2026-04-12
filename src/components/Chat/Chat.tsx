@@ -143,14 +143,15 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // keep input bar above virtual keyboard on mobile
+  // shrink chat container when virtual keyboard opens
+  const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const vv = window.visualViewport;
     if (!vv) return;
     const onResize = () => {
-      if (inputBarRef.current) {
-        const offset = window.innerHeight - vv.height;
-        inputBarRef.current.style.bottom = `${offset}px`;
+      if (containerRef.current) {
+        const navHeight = 64; // 4rem top navbar
+        containerRef.current.style.height = `${vv.height - navHeight}px`;
       }
     };
     vv.addEventListener('resize', onResize);
@@ -185,7 +186,7 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
   };
 
   return (
-    <div className="font-plex fixed inset-0 top-16 flex flex-col" style={{ zIndex: 10 }}>
+    <div ref={containerRef} className="font-plex fixed inset-0 top-16 flex flex-col" style={{ zIndex: 10, height: 'calc(100dvh - 4rem)' }}>
       {/* messages */}
       <div className="flex-1 overflow-y-auto space-y-4 p-4">
         {messages.map((msg, i) => (
