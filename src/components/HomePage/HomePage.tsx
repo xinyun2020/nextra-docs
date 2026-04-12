@@ -16,7 +16,7 @@ interface HomePageProps {
 const HomePage = ({ allNotes }: HomePageProps) => {
   return (
     <>
-      <div className="mt-12 sm:mt-16 px-1 sm:px-8 mx-auto" style={{ maxWidth: '896px' }}>
+      <div className="mt-12 sm:mt-16 px-2 sm:px-8 mx-auto max-w-4xl">
         <blockquote className="font-plex italic overflow-visible">
           <a href="/about" className="no-underline relative group/learn inline-block" aria-label="Learning — learn about me">
             <u>Learning</u>

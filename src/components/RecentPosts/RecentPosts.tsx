@@ -23,9 +23,8 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
 
   return (
     <div
-      className="mt-6 sm:mt-12 px-1 sm:px-8"
+      className={`mt-6 sm:mt-12 px-2 sm:px-8 ${isWide ? '' : 'max-w-4xl'}`}
       style={{
-        maxWidth: isWide ? 'none' : '896px',
         width: isWide ? '100vw' : 'auto',
         position: isWide ? 'relative' : 'static',
         left: isWide ? '50%' : 'auto',
@@ -43,7 +42,7 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
             href={post.path}
             className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 py-2 sm:py-1 hover:text-gray-600 dark:hover:text-gray-300 transition-colors group"
           >
-            <span className="text-xs sm:text-sm text-gray-400 dark:text-gray-500 shrink-0 font-fira tabular-nums">
+            <span className="text-sm text-gray-400 dark:text-gray-500 shrink-0 font-fira tabular-nums">
               {post.date}
             </span>
             <span className="font-medium group-hover:underline">

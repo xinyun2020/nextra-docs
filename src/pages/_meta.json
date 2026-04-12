@@ -54,6 +54,7 @@
   "souvenirs": {
     "title": "Souvenirs",
     "type": "page",
+    "display": "hidden",
     "newWindow": false,
     "theme": {
       "breadcrumb": false,
