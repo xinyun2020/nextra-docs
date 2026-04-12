@@ -185,9 +185,9 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
   };
 
   return (
-    <div className="font-plex mt-2 sm:mt-4 -mx-2 sm:mx-0 flex flex-col h-[calc(100vh-120px)] sm:h-[calc(100vh-180px)] min-h-[400px]">
+    <div className="font-plex fixed inset-0 top-16 flex flex-col" style={{ zIndex: 10 }}>
       {/* messages */}
-      <div className="flex-1 overflow-y-auto space-y-4 pb-24 sm:pb-4 px-1">
+      <div className="flex-1 overflow-y-auto space-y-4 p-4">
         {messages.map((msg, i) => (
           <div
             key={i}
@@ -221,9 +221,9 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
         ))}
         <div ref={messagesEndRef} />
 
-        {/* suggestions inline */}
+        {/* suggestions */}
         {messages.length <= 1 && (
-          <div className="flex flex-wrap gap-2 px-1">
+          <div className="flex flex-wrap gap-2">
             {SUGGESTIONS.map((s) => (
               <button
                 key={s}
@@ -237,9 +237,9 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
         )}
       </div>
 
-      {/* input — fixed bottom on mobile, inline on desktop */}
-      <div ref={inputBarRef} className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700 p-3 sm:static sm:bg-transparent sm:dark:bg-transparent sm:backdrop-blur-none sm:border-t sm:border-gray-200 sm:dark:border-gray-700 sm:pt-3 sm:p-0">
-        <div className="flex gap-2">
+      {/* input — always at bottom */}
+      <div ref={inputBarRef} className="shrink-0 bg-white dark:bg-zinc-900 border-t border-gray-200 dark:border-gray-700 p-3">
+        <div className="flex gap-2 max-w-3xl mx-auto">
           <input
             ref={inputRef}
             type="text"
@@ -247,7 +247,6 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             className="font-plex flex-1 p-3 rounded-lg bg-slate-500/10 outline-none text-base"
-            style={{ fontSize: '16px' }}
             placeholder="Ask my notes something..."
             spellCheck={false}
             autoComplete="off"
