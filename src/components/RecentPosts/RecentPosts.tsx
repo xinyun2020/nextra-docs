@@ -78,11 +78,6 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
         </button>
       </div>
 
-      <div className="mt-4 text-center">
-        <Link href="/fleeting-notes/favourite-fonts" className="text-sm text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors font-fira">
-          Favourite Fonts →
-        </Link>
-      </div>
     </div>
   );
 };
