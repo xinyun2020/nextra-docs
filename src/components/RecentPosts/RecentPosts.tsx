@@ -23,7 +23,7 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
 
   return (
     <div
-      className="mt-6 sm:mt-12 px-3 sm:px-8"
+      className="mt-6 sm:mt-12 px-1 sm:px-8"
       style={{
         maxWidth: isWide ? 'none' : '896px',
         width: isWide ? '100vw' : 'auto',

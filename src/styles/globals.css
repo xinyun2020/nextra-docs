@@ -69,6 +69,25 @@ a, summary {
   border-radius: 0 !important;
 }
 
+/* more breathing room for navbar logo */
+nav.nextra-nav-container > div,
+nav.nextra-nav-container-blur > div {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* homepage body: use full width on mobile */
+article.nextra-content {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+@media (min-width: 640px) {
+  article.nextra-content {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
 u, a u, .underline {
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
