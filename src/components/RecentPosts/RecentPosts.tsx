@@ -61,7 +61,7 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
         {hasMorePosts && (
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-3 sm:py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            className="px-6 py-3 sm:py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors rounded-lg focus-visible:ring-2 focus-visible:ring-[#0AAFCE]"
             aria-label={showAll ? 'Show fewer posts' : 'Show all posts'}
           >
             {showAll ? '− Show Less' : '··· Load More'}
@@ -69,7 +69,7 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
         )}
         <button
           onClick={() => setIsWide(!isWide)}
-          className="px-6 py-3 sm:py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors hidden sm:flex items-center gap-2"
+          className="px-6 py-3 sm:py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors hidden sm:flex items-center gap-2 rounded-lg focus-visible:ring-2 focus-visible:ring-[#0AAFCE]"
           aria-label={isWide ? 'Narrow width' : 'Expand width'}
         >
           <span className="font-mono">{isWide ? '><' : '<>'}</span>

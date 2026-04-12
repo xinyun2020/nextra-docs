@@ -272,9 +272,9 @@ const FrenchTypingGame: React.FC = () => {
       <div className={`flex items-center justify-between gap-x-2 text-xs text-gray-600 dark:text-gray-400`}>
         <span role="status" aria-live="polite" aria-label={`${wpm} words per minute, ${accuracy}% accuracy, line ${currentLine} of ${lines.length}`}>{wpm} WPM · {accuracy}% · {currentLine}/{lines.length}</span>
         <span className="flex items-center gap-x-2">
-          <button onClick={() => setSoundIdx((prev) => (prev + 1) % 3)} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label={`Sound: ${SOUND_PROFILES[soundIdx]}, click to change`}>{SOUND_PROFILES[soundIdx]} ♪</button>
-          <button onClick={() => { const next = (fontIdx + 1) % 3; setFontIdx(next); setUserFontIdx(next); }} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label={`Font: ${FONTS[fontIdx]}, click to change`}>{FONTS[fontIdx]} ↻</button>
-          <button onClick={switchLang} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label={`Language: ${LANG_LABELS[langIdx]}, click to change`}>{LANG_LABELS[langIdx]} ↻</button>
+          <button onClick={() => setSoundIdx((prev) => (prev + 1) % 3)} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors rounded focus-visible:ring-2 focus-visible:ring-[#0AAFCE]" aria-label={`Sound: ${SOUND_PROFILES[soundIdx]}, click to change`}>{SOUND_PROFILES[soundIdx]} ♪</button>
+          <button onClick={() => { const next = (fontIdx + 1) % 3; setFontIdx(next); setUserFontIdx(next); }} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors rounded focus-visible:ring-2 focus-visible:ring-[#0AAFCE]" aria-label={`Font: ${FONTS[fontIdx]}, click to change`}>{FONTS[fontIdx]} ↻</button>
+          <button onClick={switchLang} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors rounded focus-visible:ring-2 focus-visible:ring-[#0AAFCE]" aria-label={`Language: ${LANG_LABELS[langIdx]}, click to change`}>{LANG_LABELS[langIdx]} ↻</button>
         </span>
       </div>
 

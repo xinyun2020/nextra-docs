@@ -229,7 +229,7 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
               <button
                 key={s}
                 onClick={() => handleSubmit(s)}
-                className="text-xs px-3 py-1.5 rounded-full bg-slate-500/10 text-gray-600 dark:text-gray-400 hover:bg-slate-500/20 transition-colors"
+                className="text-xs px-3 py-1.5 rounded-full bg-slate-500/10 text-gray-600 dark:text-gray-400 hover:bg-slate-500/20 transition-colors focus-visible:ring-2 focus-visible:ring-[#0AAFCE]"
               >
                 {s}
               </button>
@@ -257,7 +257,7 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
           <button
             onClick={() => handleSubmit(input)}
             aria-label="Submit search"
-            className="px-4 py-3 rounded-lg bg-slate-500/10 hover:bg-slate-500/20 transition-colors text-sm font-medium"
+            className="px-4 py-3 rounded-lg bg-slate-500/10 hover:bg-slate-500/20 transition-colors text-sm font-medium focus-visible:ring-2 focus-visible:ring-[#0AAFCE]"
           >
             Ask
           </button>

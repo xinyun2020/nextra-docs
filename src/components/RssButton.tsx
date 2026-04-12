@@ -20,7 +20,8 @@ export function RssButton({ label, path }: { label: string; path: string }) {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }}
-      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium bg-slate-500/10 hover:bg-slate-500/20 transition-colors cursor-pointer border-none"
+      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium bg-slate-500/10 hover:bg-slate-500/20 transition-colors cursor-pointer border-none focus-visible:ring-2 focus-visible:ring-[#0AAFCE]"
+      aria-live="polite"
       aria-label={`Copy ${label} RSS feed URL`}
     >
       {RSS_ICON}

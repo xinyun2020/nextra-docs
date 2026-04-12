@@ -6,7 +6,7 @@ export function CustomDrawer() {
   return (
     <Drawer.Root>
       <Drawer.Trigger asChild>
-        <button className="custom-drawer__button font-bold text-xl self-center align-middle">
+        <button className="custom-drawer__button font-bold text-xl self-center align-middle rounded-lg px-4 py-2 hover:bg-slate-500/10 transition-colors focus-visible:ring-2 focus-visible:ring-[#0AAFCE]" aria-label="Show social links">
           More ···
         </button>
       </Drawer.Trigger>
