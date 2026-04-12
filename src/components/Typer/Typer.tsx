@@ -3,14 +3,10 @@ import styles from "./Typer.module.css";
 
 const WORDS = [
   "Computer Programmer",
-  "Full Stack Developer",
-  "UX & DX",
-  "Data Science Postgrad",
+  "Data Scientist",
   "Keyboard Enthusiast",
   "Software Engineer",
   "Amateur Photographer",
-  "Monash University Alumni",
-  "University of Melbourne Alumni"
 ] as const;
 
 const Typer = () => {

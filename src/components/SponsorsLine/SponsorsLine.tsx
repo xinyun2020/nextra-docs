@@ -94,7 +94,7 @@ const SponsorsLine = () => {
                   </div>
                 </header>
                 <div className={`${styles.cards} ${styles[tier.name]}`}>
-                  <p className="font-plex italic text-sm capitalize">
+                  <p className="font-plex italic text-sm capitalize text-gray-500 dark:text-gray-400">
                     be the first
                   </p>
                 </div>

@@ -8,11 +8,21 @@
 .title {
   font-size: 32px;
   font-weight: 600;
+  color: #1a1a1a;
+}
+
+html[class~="dark"] .title {
+  color: #e2e8f0;
 }
 
 .description {
   font-size: 20px;
   font-weight: 500;
+  color: #333;
+}
+
+html[class~="dark"] .description {
+  color: #cbd5e1;
 }
 
 html[class~="dark"] .wrapper {

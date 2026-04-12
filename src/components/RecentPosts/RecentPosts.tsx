@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { Note } from '../HomePage/HomePage';
 
@@ -6,14 +6,20 @@ interface RecentPostsProps {
   allNotes: Note[];
 }
 
-const INITIAL_POSTS_COUNT = 3;
+const POSTS_MOBILE = 3;
+const POSTS_DESKTOP = 10;
 
 const RecentPosts = ({ allNotes }: RecentPostsProps) => {
   const [showAll, setShowAll] = useState(false);
   const [isWide, setIsWide] = useState(false);
+  const [initialCount, setInitialCount] = useState(POSTS_DESKTOP);
 
-  const displayedPosts = showAll ? allNotes : allNotes.slice(0, INITIAL_POSTS_COUNT);
-  const hasMorePosts = allNotes.length > INITIAL_POSTS_COUNT;
+  useEffect(() => {
+    setInitialCount(window.innerHeight < 800 ? POSTS_MOBILE : POSTS_DESKTOP);
+  }, []);
+
+  const displayedPosts = showAll ? allNotes : allNotes.slice(0, initialCount);
+  const hasMorePosts = allNotes.length > initialCount;
 
   return (
     <div
@@ -37,7 +43,7 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
             href={post.path}
             className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 py-2 sm:py-1 hover:text-gray-600 dark:hover:text-gray-300 transition-colors group"
           >
-            <span className="text-xs sm:text-sm text-gray-400 dark:text-gray-500 shrink-0 font-mono tabular-nums">
+            <span className="text-xs sm:text-sm text-gray-400 dark:text-gray-500 shrink-0 font-fira tabular-nums">
               {post.date}
             </span>
             <span className="font-medium group-hover:underline">
@@ -70,6 +76,12 @@ const RecentPosts = ({ allNotes }: RecentPostsProps) => {
           <span className="font-mono">{isWide ? '><' : '<>'}</span>
           <span>{isWide ? 'Narrow' : 'Widen'}</span>
         </button>
+      </div>
+
+      <div className="mt-4 text-center">
+        <Link href="/fleeting-notes/favourite-fonts" className="text-sm text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors font-fira">
+          Favourite Fonts →
+        </Link>
       </div>
     </div>
   );

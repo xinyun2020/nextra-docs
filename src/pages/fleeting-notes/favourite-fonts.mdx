@@ -1,31 +1,15 @@
 ---
 title: "Favourite Fonts"
 date: "2023-06-02"
-description: "My favourite monospace fonts for coding — IBM Plex Mono and Fira Code."
+description: "My favourite monospace fonts for coding — IBM Plex Mono and Fira Code. With a French typing game."
 ---
 
-import { Tab, Tabs } from "nextra-theme-docs";
+import FrenchTypingGame from "../../components/FrenchTypingGame";
 
 # Favourite Font
 
-<div className="relative">
-  <Tabs items={["IBM Plex Mono", "Fira Code"]}>
-    <img
-      src="https://avatars.githubusercontent.com/u/58672569?s=400&u=52a747a6d381480aa679b3eee362d4b87a27acba&v=4"
-      alt="Avator"
-      className="absolute -z-20 opacity-60 rounded-full  top-24 right-6 w-12"
-    />
-    <Tab>
-      <textarea className="font-plex italic w-full bg-slate-500/10 rounded-md outline-none p-8 h-64"></textarea>
-    </Tab>
-    <Tab>
-      <textarea className="font-fira w-full bg-slate-500/10 rounded-md outline-none p-8 h-64"></textarea>
-    </Tab>
-  </Tabs>
-</div>
+My favourite monospace fonts for coding: IBM Plex Mono (italic, elegant, great for prose) and Fira Code (ligatures, crisp, great for code). I also love ELEYANG Reading for Chinese handwriting.
 
-- What more do i want to with the font
-  - make a typing game!
-    - for language learning
-  - make a todolist
-  - make use of langchain
+Type the letter below to try them out — switch between fonts and keyboard sounds.
+
+<FrenchTypingGame />

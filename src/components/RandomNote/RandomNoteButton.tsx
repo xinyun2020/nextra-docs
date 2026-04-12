@@ -19,14 +19,25 @@ const RandomNoteButton = () => {
 
   if (!isNotePage || notePaths.length === 0) return null;
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setIsAnimating(true);
-    const randomPath = notePaths[Math.floor(Math.random() * notePaths.length)];
+    const currentPath = router.asPath;
+    const candidates = notePaths.filter(p => p !== currentPath);
+    const randomPath = candidates[Math.floor(Math.random() * candidates.length)] || '/';
 
-    setTimeout(() => {
-      router.push(randomPath);
+    try {
+      const res = await fetch(randomPath, { method: 'HEAD' });
+      if (res.ok) {
+        router.push(randomPath);
+      } else {
+        const fallback = candidates.filter(p => p !== randomPath)[0] || '/';
+        router.push(fallback);
+      }
+    } catch {
+      router.push('/');
+    } finally {
       setIsAnimating(false);
-    }, 300);
+    }
   };
 
   return (
@@ -35,7 +46,7 @@ const RandomNoteButton = () => {
       disabled={isAnimating}
       className={`
         fixed bottom-8 right-8 z-50
-        px-4 py-3
+        min-w-[120px] px-4 py-3
         bg-white dark:bg-gray-900
         border-2 border-gray-800 dark:border-gray-200
         text-gray-800 dark:text-gray-200

@@ -9,9 +9,22 @@
     "type": "page",
     "newWindow": false
   },
+  "chat": {
+    "title": "Chat",
+    "type": "page",
+    "newWindow": false,
+    "theme": {
+      "breadcrumb": false,
+      "footer": false,
+      "sidebar": false,
+      "toc": false,
+      "pagination": false
+    }
+  },
   "cv": {
     "title": "Resume ↗",
     "type": "page",
+    "display": "hidden",
     "newWindow": false,
     "theme":{
       "breadcrumb": false,

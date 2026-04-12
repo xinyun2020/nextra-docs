@@ -10,24 +10,25 @@ const PdfDownload: React.FC<PdfDownloadProps> = ({ href }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    style={{
-      display: "inline-flex",
-      alignItems: "center",
-      gap: "0.5rem",
-      padding: "0.5rem 1rem",
-      border: "1px solid currentColor",
-      borderRadius: "0.375rem",
-      fontSize: "0.875rem",
-      textDecoration: "none",
-      color: "inherit",
-      opacity: 0.8,
-      transition: "opacity 0.2s",
-    }}
-    onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-    onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.8")}
+    className={`
+      fixed bottom-24 right-8 z-50
+      min-w-[120px] px-4 py-3
+      bg-white dark:bg-gray-900
+      border-2 border-gray-800 dark:border-gray-200
+      text-gray-800 dark:text-gray-200
+      font-mono text-sm
+      transition-all duration-200
+      hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.8)]
+      active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:active:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.8)]
+      active:translate-x-[2px] active:translate-y-[2px]
+      no-underline
+    `}
+    title="Download PDF"
   >
-    <BsFileEarmarkPdf />
-    PDF Version
+    <div className="flex items-center gap-2">
+      <BsFileEarmarkPdf className="w-4 h-4" />
+      <span>PDF</span>
+    </div>
   </a>
 );
 

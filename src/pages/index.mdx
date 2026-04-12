@@ -4,7 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 export const getStaticProps = () => {
-  const NOTE_DIRECTORIES = ['fleeting-notes', 'literature-notes', 'permanent-notes'];
+  const NOTE_DIRECTORIES = ['literature-notes', 'permanent-notes'];
   const pagesDir = path.join(process.cwd(), 'src', 'pages');
   const allNotes = [];
 

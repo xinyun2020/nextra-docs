@@ -14,14 +14,14 @@ const currentYear = new Date().getFullYear();
 const HYPERLINK_PRIMARY_HUE = 210.0;
 
 const config: DocsThemeConfig = {
-  banner: {
-    key: `${currentYear}-CV-released`,
-    text: (
-      <a href="/cv" target="_blank" rel="noopener noreferrer">
-        🎉 {currentYear} CV is released. Read more →
-      </a>
-    )
-  },
+  // banner: {
+  //   key: `${currentYear}-CV-released`,
+  //   text: (
+  //     <a href="/cv" target="_blank" rel="noopener noreferrer">
+  //       🎉 {currentYear} CV is released. Read more →
+  //     </a>
+  //   )
+  // },
   logo: <Logo />,
   darkMode: false,
   primaryHue: HYPERLINK_PRIMARY_HUE,
@@ -92,12 +92,8 @@ const config: DocsThemeConfig = {
     const { frontMatter } = useConfig();
     return (
       <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 1rem" }}>
-        {frontMatter.pdf && (
-          <div style={{ marginBottom: "1.5rem" }}>
-            <PdfDownload href={frontMatter.pdf} />
-          </div>
-        )}
         {children}
+        {frontMatter.pdf && <PdfDownload href={frontMatter.pdf} />}
       </div>
     );
   },
