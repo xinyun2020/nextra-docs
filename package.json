@@ -7,8 +7,8 @@
   },
   "scripts": {
     "postinstall": "node patches/fix-nextra-webpack.js",
-    "dev": "ts-node src/scripts/generateNotesData.ts && next dev",
-    "build": "ts-node src/scripts/generateNotesData.ts && next build",
+    "dev": "ts-node src/scripts/generateNotesData.ts && ts-node src/scripts/generateRss.ts && next dev",
+    "build": "ts-node src/scripts/generateNotesData.ts && ts-node src/scripts/generateRss.ts && next build",
     "start": "next start"
   },
   "repository": {

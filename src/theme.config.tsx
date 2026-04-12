@@ -15,7 +15,10 @@ const HYPERLINK_PRIMARY_HUE = 187;
 
 const config: DocsThemeConfig = {
   head: (
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link rel="alternate" type="application/rss+xml" title="Xinyun Zettelkasten" href="/feed.xml" />
+    </>
   ),
   // banner: {
   //   key: `${currentYear}-CV-released`,
