@@ -243,7 +243,7 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
           </button>
         </div>
         <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 text-center">
-          No AI — just full-text search over my actual notes
+          No AI — just full-text search over my actual notes, powered by 🔗 XinyunChain
         </p>
       </div>
     </div>

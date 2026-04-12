@@ -11,7 +11,7 @@ import PdfDownload from "./components/PdfDownload";
 
 const currentYear = new Date().getFullYear();
 
-const HYPERLINK_PRIMARY_HUE = 210.0;
+const HYPERLINK_PRIMARY_HUE = 187;
 
 const config: DocsThemeConfig = {
   // banner: {

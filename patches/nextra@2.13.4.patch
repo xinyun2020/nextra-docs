@@ -1,0 +1,19 @@
+diff --git a/dist/index.js b/dist/index.js
+index 1234567..abcdefg 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -380,11 +380,13 @@ var import_webpack = require("next/dist/compiled/webpack/webpack");
+ var NextraSearchPlugin = class {
+   apply(compiler) {
+     const pluginName = this.constructor.name;
+-    compiler.hooks.make.tap(pluginName, (compilation) => {
++    const _wp = import_webpack.webpack;
++    if (!_wp || !_wp.Compilation) return;
++    compiler.hooks.make.tap(pluginName, (compilation) => {
+       compilation.hooks.processAssets.tap(
+         {
+           name: pluginName,
+-          stage: import_webpack.webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS
++          stage: _wp.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS
+         },
+         (assets) => {

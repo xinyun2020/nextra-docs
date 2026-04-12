@@ -2,6 +2,7 @@
   "sponsor": {
     "title": "Sponsor",
     "type": "page",
+    "display": "hidden",
     "newWindow": false
   },
   "about": {

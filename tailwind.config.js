@@ -26,9 +26,14 @@ module.exports = {
           '25%': { transform: 'translateY(-4px) rotate(-5deg)' },
           '75%': { transform: 'translateY(-2px) rotate(3deg)' },
         },
+        popUp: {
+          '0%': { opacity: '0', transform: 'translate(-50%, 4px) scale(0.8)' },
+          '100%': { opacity: '1', transform: 'translate(-50%, 0) scale(1)' },
+        },
       },
       animation: {
         fly: 'fly 0.6s ease-in-out infinite',
+        'pop-up': 'popUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
       },
     },
   },
