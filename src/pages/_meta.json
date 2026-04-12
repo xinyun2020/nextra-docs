@@ -50,17 +50,5 @@
   },
   "fleeting-notes": "✍️ Fleeting Notes",
   "literature-notes": "📚 Literature Notes",
-  "permanent-notes": "💎 Permanent Notes",
-  "souvenirs": {
-    "title": "Souvenirs",
-    "type": "page",
-    "display": "hidden",
-    "newWindow": false,
-    "theme": {
-      "breadcrumb": false,
-      "sidebar": false,
-      "toc": false,
-      "pagination": false
-    }
-  }
+  "permanent-notes": "💎 Permanent Notes"
 }
