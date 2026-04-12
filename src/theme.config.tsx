@@ -91,7 +91,7 @@ const config: DocsThemeConfig = {
   main: ({ children }) => {
     const { frontMatter } = useConfig();
     return (
-      <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 1rem" }}>
+      <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 0.5rem" }}>
         {children}
         {frontMatter.pdf && <PdfDownload href={frontMatter.pdf} />}
       </div>

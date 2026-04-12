@@ -156,7 +156,6 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
 
     setMessages((prev) => [...prev, userMsg, assistantMsg]);
     setInput("");
-    inputRef.current?.focus();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -228,7 +227,8 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="font-plex flex-1 p-3 rounded-lg bg-slate-500/10 outline-none text-sm sm:text-base"
+            className="font-plex flex-1 p-3 rounded-lg bg-slate-500/10 outline-none text-base"
+            style={{ fontSize: '16px' }}
             placeholder="Ask my notes something..."
             spellCheck={false}
             autoComplete="off"
