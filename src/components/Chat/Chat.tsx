@@ -137,10 +137,29 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const inputBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  // keep input bar above virtual keyboard on mobile
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const onResize = () => {
+      if (inputBarRef.current) {
+        const offset = window.innerHeight - vv.height;
+        inputBarRef.current.style.bottom = `${offset}px`;
+      }
+    };
+    vv.addEventListener('resize', onResize);
+    vv.addEventListener('scroll', onResize);
+    return () => {
+      vv.removeEventListener('resize', onResize);
+      vv.removeEventListener('scroll', onResize);
+    };
+  }, []);
 
   const handleSubmit = (query: string) => {
     if (!query.trim()) return;
@@ -219,7 +238,7 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
       </div>
 
       {/* input — fixed bottom on mobile, inline on desktop */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700 p-3 sm:static sm:bg-transparent sm:dark:bg-transparent sm:backdrop-blur-none sm:border-t sm:border-gray-200 sm:dark:border-gray-700 sm:pt-3 sm:p-0">
+      <div ref={inputBarRef} className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700 p-3 sm:static sm:bg-transparent sm:dark:bg-transparent sm:backdrop-blur-none sm:border-t sm:border-gray-200 sm:dark:border-gray-700 sm:pt-3 sm:p-0">
         <div className="flex gap-2">
           <input
             ref={inputRef}
