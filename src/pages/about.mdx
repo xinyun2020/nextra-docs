@@ -9,7 +9,22 @@ I write code for a living, take photos of quiet moments, build tiny keyboards, a
 
 This site is my digital garden — a place where I think out loud, connect ideas, and write things down so I remember them. Nothing here is polished. That's the point.
 
-<div className="flex flex-row py-12 items-center justify-center gap-4">
+<div className="flex flex-col items-center py-12 gap-6">
+  <svg width="120" height="120" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Xinyun Zettelkasten logo">
+    <line x1="10" y1="26" x2="18" y2="8" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="18" y1="8" x2="28" y2="22" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="28" y1="22" x2="10" y2="26" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="18" cy="8" r="3" fill="#0AAFCE" />
+    <circle cx="10" cy="26" r="2.5" fill="#0AAFCE" opacity="0.7" />
+    <circle cx="28" cy="22" r="2.5" fill="#0AAFCE" opacity="0.7" />
+    <circle cx="18.5" cy="18.5" r="1.5" fill="#0AAFCE" opacity="0.4" />
+  </svg>
+  <div className="text-sm text-gray-500 dark:text-gray-400 max-w-md text-center leading-relaxed">
+    Three nodes, three kinds of notes — fleeting captures at the bottom-left, literature notes at the bottom-right, permanent ideas at the top. The lines are the connections between them. The faint dot in the center is the insight that emerges when you link things together. A small constellation for a knowledge graph.
+  </div>
+</div>
+
+<div className="flex flex-row py-4 items-center justify-center gap-4">
   <CustomDrawer />
 </div>
 
