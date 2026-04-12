@@ -69,13 +69,11 @@ const SponsorsLine = () => {
   return (
     <div className={styles.container}>
       <div>
-        <div className={styles.title}>The Sponsors</div>
+        <div className={styles.title}>Support this garden</div>
         <div className={`${styles.description} flex flex-row justify-center`}>
-          <GiSpoon className="text-2xl my-auto" />
-          <p className=" font-plex italic mx-4">
-            {"you can also feed me with knowledge"}
+          <p className="font-plex italic mx-4">
+            {"If something here made you think, that's the best kind of sponsorship. But if you'd like to help keep the lights on — here's how."}
           </p>
-          😋
         </div>
       </div>
       <div className={styles.wrapper}>
