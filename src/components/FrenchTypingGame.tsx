@@ -58,7 +58,26 @@ const FrenchTypingGame: React.FC = () => {
   const [langIdx, setLangIdx] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const currentLineRef = useRef<HTMLDivElement>(null);
+  const bottomBarRef = useRef<HTMLDivElement>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
+
+  // adjust fixed bottom bar when virtual keyboard opens
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const onResize = () => {
+      if (bottomBarRef.current) {
+        const offset = window.innerHeight - vv.height;
+        bottomBarRef.current.style.bottom = `${offset}px`;
+      }
+    };
+    vv.addEventListener('resize', onResize);
+    vv.addEventListener('scroll', onResize);
+    return () => {
+      vv.removeEventListener('resize', onResize);
+      vv.removeEventListener('scroll', onResize);
+    };
+  }, []);
 
   const ALL_LETTERS = [LETTER_EN, LETTER_FR, LETTER_ZH];
   const LANG_LABELS = ["EN", "FR", "中文"] as const;
@@ -277,7 +296,7 @@ const FrenchTypingGame: React.FC = () => {
       <div className="sm:hidden h-24" />
 
       {!finished ? (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700 p-3 sm:static sm:bg-transparent sm:dark:bg-transparent sm:backdrop-blur-none sm:border-0 sm:p-0 sm:space-y-3">
+        <div ref={bottomBarRef} className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700 p-3 sm:static sm:bg-transparent sm:dark:bg-transparent sm:backdrop-blur-none sm:border-0 sm:p-0 sm:space-y-3">
           <input
             ref={inputRef}
             type="text"
