@@ -213,7 +213,7 @@ const FrenchTypingGame: React.FC = () => {
         setCurrentLine((prev) => prev + 1);
         setInput("");
         inputRef.current?.focus();
-        setTimeout(() => currentLineRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 150);
+        setTimeout(() => currentLineRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
       }, 300);
     }
   };
@@ -222,7 +222,7 @@ const FrenchTypingGame: React.FC = () => {
     setCurrentLine((prev) => prev + 1);
     setInput("");
     inputRef.current?.focus();
-    setTimeout(() => currentLineRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 150);
+    setTimeout(() => currentLineRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
   };
 
   const switchLang = () => {
