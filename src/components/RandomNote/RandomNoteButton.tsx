@@ -45,8 +45,9 @@ const RandomNoteButton = () => {
       onClick={handleClick}
       disabled={isAnimating}
       className={`
-        fixed bottom-8 right-8 z-50
-        min-w-[120px] px-4 py-3
+        fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50
+        w-10 h-10 sm:w-auto sm:h-auto sm:min-w-[120px] sm:px-4 sm:py-3
+        flex items-center justify-center
         bg-white dark:bg-gray-900
         border-2 border-gray-800 dark:border-gray-200
         text-gray-800 dark:text-gray-200
@@ -59,22 +60,20 @@ const RandomNoteButton = () => {
       `}
       title="Navigate to a random note"
     >
-      <div className="flex items-center gap-2">
-        <svg
-          className={`w-4 h-4 ${isAnimating ? 'animate-spin' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-          />
-        </svg>
-        <span>Random</span>
-      </div>
+      <svg
+        className={`w-4 h-4 ${isAnimating ? 'animate-spin' : ''}`}
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+        />
+      </svg>
+      <span className="hidden sm:inline ml-2">Random</span>
     </button>
   );
 };

@@ -239,9 +239,10 @@ const FrenchTypingGame: React.FC = () => {
 
   return (
     <div className={`${fontClass} mt-6 space-y-3`}>
-      <div className={`flex flex-wrap justify-between gap-2 ${isHandwriting ? 'text-sm sm:text-base md:text-lg' : 'text-xs'} text-gray-500 dark:text-gray-400`}>
+      <div className={`flex flex-wrap items-center gap-x-3 gap-y-1 ${isHandwriting ? 'text-sm sm:text-base md:text-lg' : 'text-xs'} text-gray-500 dark:text-gray-400`}>
         <span>{wpm} WPM</span>
         <span>{accuracy}%</span>
+        <span className="flex-1" />
         <button
           onClick={() => setSoundIdx((prev) => (prev + 1) % 3)}
           className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"

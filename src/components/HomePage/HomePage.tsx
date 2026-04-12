@@ -16,17 +16,17 @@ interface HomePageProps {
 const HomePage = ({ allNotes }: HomePageProps) => {
   return (
     <>
-      <div className="mt-8 sm:mt-12 px-4 sm:px-6 mx-auto" style={{ maxWidth: '896px' }}>
-        <blockquote className="font-plex italic">
+      <div className="mt-8 sm:mt-12 px-6 sm:px-8 mx-auto" style={{ maxWidth: '896px' }}>
+        <blockquote className="font-plex italic overflow-visible">
           <a href="/about" className="no-underline relative group/learn inline-block">
             <u>Learning</u>
-            <span className="absolute bottom-full left-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap hidden group-hover/learn:block animate-pop-up shadow-lg pointer-events-none">Learn about me ✦</span>
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/learn:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Learn about me ✦</span>
           </a> in public. <a href="/fleeting-notes/favourite-fonts" className="no-underline relative group/write inline-block">
             <u>Writing</u>
-            <span className="absolute bottom-full left-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap hidden group-hover/write:block animate-pop-up shadow-lg pointer-events-none">Want to type? ⌨</span>
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/write:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Want to type? ⌨</span>
           </a> things down so I remember, <a href="/chat" className="no-underline relative group/share inline-block">
             <u>sharing</u>
-            <span className="absolute bottom-full left-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap hidden group-hover/share:block animate-pop-up shadow-lg pointer-events-none">Chat with me 💬</span>
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/share:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Chat with me 💬</span>
           </a> in case it helps you too.
         </blockquote>
       </div>

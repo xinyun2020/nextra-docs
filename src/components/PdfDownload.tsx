@@ -11,8 +11,9 @@ const PdfDownload: React.FC<PdfDownloadProps> = ({ href }) => (
     target="_blank"
     rel="noopener noreferrer"
     className={`
-      fixed bottom-24 right-8 z-50
-      min-w-[120px] px-4 py-3
+      fixed bottom-16 right-4 sm:bottom-24 sm:right-8 z-50
+      w-10 h-10 sm:w-auto sm:h-auto sm:min-w-[120px] sm:px-4 sm:py-3
+      flex items-center justify-center
       bg-white dark:bg-gray-900
       border-2 border-gray-800 dark:border-gray-200
       text-gray-800 dark:text-gray-200
@@ -25,10 +26,8 @@ const PdfDownload: React.FC<PdfDownloadProps> = ({ href }) => (
     `}
     title="Download PDF"
   >
-    <div className="flex items-center gap-2">
-      <BsFileEarmarkPdf className="w-4 h-4" />
-      <span>PDF</span>
-    </div>
+    <BsFileEarmarkPdf className="w-4 h-4" />
+    <span className="hidden sm:inline ml-2">PDF</span>
   </a>
 );
 

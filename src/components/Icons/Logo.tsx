@@ -2,7 +2,7 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div className="flex flex-row items-center hover:cursor-pointer">
+    <div className="flex flex-row items-center hover:cursor-pointer ml-1 sm:ml-2">
       <svg
         width="36"
         height="36"
