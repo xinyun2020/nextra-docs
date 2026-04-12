@@ -190,6 +190,16 @@ const FrenchTypingGame: React.FC = () => {
     [playClicky, playThocky, playCreamy][soundIdx]();
   }, [soundIdx, playClicky, playThocky, playCreamy]);
 
+  const LANG_VOICES: Record<number, string> = { 0: "en-US", 1: "fr-FR", 2: "zh-CN" };
+  const speakLine = useCallback((text: string) => {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = LANG_VOICES[langIdx] || "en-US";
+    utter.rate = 0.9;
+    window.speechSynthesis.speak(utter);
+  }, [langIdx]);
+
   const finished = currentLine >= lines.length;
   const target = finished ? "" : lines[currentLine];
 
@@ -228,6 +238,7 @@ const FrenchTypingGame: React.FC = () => {
 
     const allMatch = value.length === target.length && value.split("").every((c, i) => charsMatch(c, target[i]));
     if (allMatch) {
+      speakLine(target);
       setTimeout(() => {
         setCurrentLine((prev) => prev + 1);
         setInput("");
@@ -258,12 +269,12 @@ const FrenchTypingGame: React.FC = () => {
 
   return (
     <div className={`${fontClass} mt-6 space-y-3`}>
-      <div className={`flex items-center justify-between gap-x-2 text-xs text-gray-500 dark:text-gray-400`}>
-        <span>{wpm} WPM · {accuracy}% · {currentLine}/{lines.length}</span>
+      <div className={`flex items-center justify-between gap-x-2 text-xs text-gray-600 dark:text-gray-400`}>
+        <span role="status" aria-live="polite" aria-label={`${wpm} words per minute, ${accuracy}% accuracy, line ${currentLine} of ${lines.length}`}>{wpm} WPM · {accuracy}% · {currentLine}/{lines.length}</span>
         <span className="flex items-center gap-x-2">
-          <button onClick={() => setSoundIdx((prev) => (prev + 1) % 3)} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{SOUND_PROFILES[soundIdx]} ♪</button>
-          <button onClick={() => { const next = (fontIdx + 1) % 3; setFontIdx(next); setUserFontIdx(next); }} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{FONTS[fontIdx]} ↻</button>
-          <button onClick={switchLang} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{LANG_LABELS[langIdx]} ↻</button>
+          <button onClick={() => setSoundIdx((prev) => (prev + 1) % 3)} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label={`Sound: ${SOUND_PROFILES[soundIdx]}, click to change`}>{SOUND_PROFILES[soundIdx]} ♪</button>
+          <button onClick={() => { const next = (fontIdx + 1) % 3; setFontIdx(next); setUserFontIdx(next); }} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label={`Font: ${FONTS[fontIdx]}, click to change`}>{FONTS[fontIdx]} ↻</button>
+          <button onClick={switchLang} className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label={`Language: ${LANG_LABELS[langIdx]}, click to change`}>{LANG_LABELS[langIdx]} ↻</button>
         </span>
       </div>
 
@@ -302,15 +313,17 @@ const FrenchTypingGame: React.FC = () => {
             type="text"
             value={input}
             onChange={handleInput}
-            className={`${fontClass} w-full p-3 sm:p-4 rounded-md bg-slate-500/10 outline-none ${inputTextSize} tracking-wide`}
+            className={`${fontClass} w-full p-3 sm:p-4 rounded-md bg-slate-500/10 outline-none focus-visible:ring-2 focus-visible:ring-[#0AAFCE] ${inputTextSize} tracking-wide`}
             placeholder={["Type to read the letter...", "Tapez pour lire la lettre...", "打字来阅读这封信..."][langIdx]}
+            aria-label="Type the current line"
             spellCheck={false}
             autoComplete="off"
             autoFocus
           />
           <button
             onClick={skipLine}
-            className="text-sm py-2 px-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors mt-1 sm:mt-0"
+            className="text-sm py-2 px-3 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors mt-1 sm:mt-0"
+            aria-label="Skip to next line"
           >
             skip line →
           </button>

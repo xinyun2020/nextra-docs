@@ -21,7 +21,7 @@ const ThemeToggle = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
   return (
-    <div className={styles.container} onClick={toggleTheme}>
+    <button className={styles.container} onClick={toggleTheme} aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"} type="button">
       {isDark !== null && (
         <>
           <div className={styles.line} />
@@ -67,7 +67,7 @@ const ThemeToggle = () => {
           </div>
         </>
       )}
-    </div>
+    </button>
   );
 };
 

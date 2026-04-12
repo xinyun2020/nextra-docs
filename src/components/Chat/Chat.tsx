@@ -188,7 +188,7 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
   return (
     <div ref={containerRef} className="font-plex fixed inset-0 top-16 flex flex-col bg-white dark:bg-zinc-900 overflow-hidden" style={{ zIndex: 10, height: 'calc(100dvh - 4rem)' }}>
       {/* messages */}
-      <div className="flex-1 overflow-y-auto space-y-4 p-4">
+      <div className="flex-1 overflow-y-auto space-y-4 p-4" role="log" aria-label="Chat messages" aria-live="polite">
         {messages.map((msg, i) => (
           <div
             key={i}
@@ -247,14 +247,16 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="font-plex flex-1 p-3 rounded-lg bg-slate-500/10 outline-none text-base"
+            className="font-plex flex-1 p-3 rounded-lg bg-slate-500/10 outline-none focus-visible:ring-2 focus-visible:ring-[#0AAFCE] text-base"
             placeholder="Ask my notes something..."
+            aria-label="Search my notes"
             spellCheck={false}
             autoComplete="off"
             autoFocus
           />
           <button
             onClick={() => handleSubmit(input)}
+            aria-label="Submit search"
             className="px-4 py-3 rounded-lg bg-slate-500/10 hover:bg-slate-500/20 transition-colors text-sm font-medium"
           >
             Ask

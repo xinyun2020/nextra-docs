@@ -43,6 +43,12 @@ html[class~="dark"] .cursor {
     width: 2px;
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
 
 .underline {
   text-decoration: underline #0aafce;

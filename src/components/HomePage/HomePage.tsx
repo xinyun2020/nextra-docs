@@ -18,15 +18,15 @@ const HomePage = ({ allNotes }: HomePageProps) => {
     <>
       <div className="mt-12 sm:mt-16 px-1 sm:px-8 mx-auto" style={{ maxWidth: '896px' }}>
         <blockquote className="font-plex italic overflow-visible">
-          <a href="/about" className="no-underline relative group/learn inline-block">
+          <a href="/about" className="no-underline relative group/learn inline-block" aria-label="Learning — learn about me">
             <u>Learning</u>
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/learn:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Learn about me ✦</span>
-          </a> in public. <a href="/fleeting-notes/favourite-fonts" className="no-underline relative group/write inline-block">
+            <span role="tooltip" className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/learn:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Learn about me ✦</span>
+          </a> in public. <a href="/fleeting-notes/favourite-fonts" className="no-underline relative group/write inline-block" aria-label="Writing — try the typing game">
             <u>Writing</u>
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/write:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Want to type? ⌨</span>
-          </a> things down so I remember, <a href="/chat" className="no-underline relative group/share inline-block">
+            <span role="tooltip" className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/write:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Want to type? ⌨</span>
+          </a> things down so I remember, <a href="/chat" className="no-underline relative group/share inline-block" aria-label="Sharing — chat with my notes">
             <u>sharing</u>
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/share:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Chat with me 💬</span>
+            <span role="tooltip" className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 whitespace-nowrap opacity-0 group-hover/share:opacity-100 transition-opacity duration-200 shadow-lg pointer-events-none">Chat with me 💬</span>
           </a> in case it helps you too.
         </blockquote>
       </div>

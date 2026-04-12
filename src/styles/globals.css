@@ -18,6 +18,36 @@
               fill 0.5s cubic-bezier(0.4, 0, 0.2, 1),
               stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* focus visible ring for keyboard nav */
+:focus-visible {
+  outline: 2px solid #0AAFCE;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* skip to content link for screen readers */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+  background: #0AAFCE;
+  color: white;
+  font-size: 0.875rem;
+}
+.skip-to-content:focus {
+  left: 1rem;
+  top: 0.5rem;
+}
 
 :root {
   --shiki-color-text: #414141;

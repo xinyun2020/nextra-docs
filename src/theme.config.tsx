@@ -93,10 +93,17 @@ const config: DocsThemeConfig = {
   gitTimestamp: <></>,
   main: ({ children }) => {
     const { frontMatter } = useConfig();
+    const { asPath } = useRouter();
+    const isArticle = /^\/(fleeting|literature|permanent)-notes\//.test(asPath);
     return (
       <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 0.5rem" }}>
         {children}
         {frontMatter.pdf && <PdfDownload href={frontMatter.pdf} />}
+        {isArticle && (
+          <footer className="mt-12 pt-4 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-400 dark:text-gray-500">
+            &copy; {currentYear} Xinyun Zhang. All rights reserved.
+          </footer>
+        )}
       </div>
     );
   },
