@@ -30,7 +30,7 @@ const config: DocsThemeConfig = {
     defaultTheme: "system"
   },
   project: {
-    link: "https://github.com/XinYun2020"
+    link: ""
   },
   direction: "ltr",
   faviconGlyph: "✦",
