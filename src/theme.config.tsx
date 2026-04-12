@@ -64,6 +64,14 @@ const config: DocsThemeConfig = {
           <div style={{ background: "teal", textAlign: "center" }}>{title}</div>
         );
       }
+      const nodeIcon = (cx: number, cy: number, r: number, opacity: number) => (
+        <svg width="14" height="14" viewBox="0 0 14 14" style={{ flexShrink: 0, marginRight: 6, verticalAlign: "middle", display: "inline-block" }}>
+          <circle cx="7" cy="7" r={r} fill="#0AAFCE" opacity={opacity} />
+        </svg>
+      );
+      if (title === "Permanent Notes") return <span style={{ display: "inline-flex", alignItems: "center" }}>{nodeIcon(7, 7, 4, 1)}{title}</span>;
+      if (title === "Fleeting Notes") return <span style={{ display: "inline-flex", alignItems: "center" }}>{nodeIcon(7, 7, 3.5, 0.7)}{title}</span>;
+      if (title === "Literature Notes") return <span style={{ display: "inline-flex", alignItems: "center" }}>{nodeIcon(7, 7, 3.5, 0.7)}{title}</span>;
       return <>{title}</>;
     }
   },

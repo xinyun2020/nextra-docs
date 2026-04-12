@@ -1,4 +1,5 @@
 import { CustomDrawer } from "../../src/components/CustomDrawer";
+import { RssButton } from "../../src/components/RssButton";
 
 <div className="text-center max-w-lg mx-auto leading-relaxed text-base text-gray-700 dark:text-gray-300">
 
@@ -42,7 +43,6 @@ If something here made you think, that's the best kind of souvenir. But if you'd
 <svg width="140" height="160" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="T-shirt with constellation logo">
   <path d="M38 28L12 48V68L38 60V140H102V60L128 68V48L102 28H88C88 40 80 50 70 50C60 50 52 40 52 28H38Z" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.25" />
   <path d="M52 28C56 35 63 40 70 40C77 40 84 35 88 28" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.15" />
-  {/* exact logo from Logo.tsx — scaled 0.5x, placed at left chest */}
   <g transform="translate(38,52) scale(0.5)">
     <line x1="10" y1="26" x2="18" y2="8" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
     <line x1="18" y1="8" x2="28" y2="22" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
@@ -63,7 +63,6 @@ If something here made you think, that's the best kind of souvenir. But if you'd
   <circle cx="70" cy="46" r="2" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.2" />
   <path d="M28 90H112" stroke="currentColor" strokeWidth="1.2" opacity="0.25" />
   <path d="M112 90C112 90 132 94 132 100C132 104 118 103 112 102" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.25" />
-  {/* exact logo — scaled 0.55x, centered on front panel */}
   <g transform="translate(51,56) scale(0.55)">
     <line x1="10" y1="26" x2="18" y2="8" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
     <line x1="18" y1="8" x2="28" y2="22" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
@@ -82,7 +81,6 @@ If something here made you think, that's the best kind of souvenir. But if you'd
 <svg width="140" height="160" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fridge magnet">
   <rect x="38" y="40" width="68" height="68" rx="8" fill="currentColor" opacity="0.05" />
   <rect x="35" y="37" width="68" height="68" rx="8" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.25" />
-  {/* exact logo — scaled 0.85x, centered in magnet */}
   <g transform="translate(54,42) scale(0.85)">
     <line x1="10" y1="26" x2="18" y2="8" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
     <line x1="18" y1="8" x2="28" y2="22" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
@@ -102,7 +100,6 @@ If something here made you think, that's the best kind of souvenir. But if you'd
 <svg width="140" height="160" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Sticker">
   <path d="M100 100C100 100 105 95 103 90" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.12" />
   <circle cx="70" cy="72" r="38" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.25" />
-  {/* exact logo — scaled 0.9x, centered in circle */}
   <g transform="translate(53,52) scale(0.9)">
     <line x1="10" y1="26" x2="18" y2="8" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
     <line x1="18" y1="8" x2="28" y2="22" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
@@ -118,38 +115,31 @@ If something here made you think, that's the best kind of souvenir. But if you'd
 
 </div>
 
-<div className="font-eleyang text-lg text-gray-400 dark:text-gray-500 mb-8">coming soon</div>
+<div className="flex flex-col items-center gap-3 mt-4">
+  <a
+    className="inline-flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-medium bg-slate-500/10 hover:bg-slate-500/20 transition-colors no-underline"
+    href="https://github.com/sponsors/XinYun2020"
+    target="_blank"
+    rel="nofollow noreferrer"
+    aria-label="Become a sponsor on GitHub"
+  >
+    Sponsor on GitHub
+  </a>
+  <div className="font-eleyang text-lg text-gray-400 dark:text-gray-500">coming soon</div>
+</div>
 
 <div className="font-eleyang text-3xl tracking-wide mt-16 mb-8">Subscribe</div>
 
 Get notified when I publish new notes — no spam, no tracking, just RSS.
 
-<a
-  className="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-lg text-sm font-medium bg-slate-500/10 hover:bg-slate-500/20 transition-colors"
-  href="/feed.xml"
-  target="_blank"
-  aria-label="Subscribe via RSS"
->
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-  RSS Feed
-</a>
-
-<div className="text-sm text-gray-400 dark:text-gray-500 mt-4 max-w-sm mx-auto leading-relaxed">
-  Copy the feed URL into any RSS reader — <a href="https://feedly.com" target="_blank" rel="noopener" className="underline">Feedly</a>, <a href="https://www.inoreader.com" target="_blank" rel="noopener" className="underline">Inoreader</a>, or the reader built into your browser.
+<div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+  <RssButton label="All Notes" path="/feed.xml" />
+  <RssButton label="Permanent Notes" path="/feed-permanent.xml" />
+  <RssButton label="Literature Notes" path="/feed-literature.xml" />
 </div>
 
-<div className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8">
-
-<a
-  className="inline-block px-6 py-3 rounded-lg text-sm font-medium bg-slate-500/10 hover:bg-slate-500/20 transition-colors"
-  href="https://github.com/sponsors/XinYun2020"
-  target="_blank"
-  rel="nofollow noreferrer"
-  aria-label="Become a sponsor on GitHub"
->
-  Sponsor on GitHub
-</a>
-
+<div className="text-sm text-gray-400 dark:text-gray-500 mt-4 max-w-sm mx-auto leading-relaxed">
+  Click to copy the feed URL, then paste it into your RSS reader — <a href="https://feedly.com" target="_blank" rel="noopener" className="underline">Feedly</a>, <a href="https://www.inoreader.com" target="_blank" rel="noopener" className="underline">Inoreader</a>, or the reader built into your browser.
 </div>
 
 </div>
