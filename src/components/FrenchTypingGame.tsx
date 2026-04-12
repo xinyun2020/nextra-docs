@@ -42,7 +42,7 @@ const LETTER_ZH = [
   "很高兴你在这里。",
 ];
 
-const FONTS = ["IBM Plex Mono", "Fira Code", "Handwriting"] as const;
+const FONTS = ["IBM Plex", "Fira Code", "Handwriting"] as const;
 const FONT_CLASSES = ["font-plex italic", "font-fira", "font-eleyang"] as const;
 const SOUND_PROFILES = ["clicky", "thocky", "creamy"] as const;
 
@@ -239,29 +239,13 @@ const FrenchTypingGame: React.FC = () => {
 
   return (
     <div className={`${fontClass} mt-6 space-y-3`}>
-      <div className={`flex flex-wrap items-center gap-x-3 gap-y-1 ${isHandwriting ? 'text-sm sm:text-base md:text-lg' : 'text-xs'} text-gray-500 dark:text-gray-400`}>
-        <span>{wpm} WPM</span>
-        <span>{accuracy}%</span>
-        <span className="flex-1" />
-        <button
-          onClick={() => setSoundIdx((prev) => (prev + 1) % 3)}
-          className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-        >
-          {SOUND_PROFILES[soundIdx]} ♪
-        </button>
-        <button
-          onClick={() => { const next = (fontIdx + 1) % 3; setFontIdx(next); setUserFontIdx(next); }}
-          className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-        >
-          {FONTS[fontIdx]} ↻
-        </button>
-        <button
-          onClick={switchLang}
-          className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-        >
-          {LANG_LABELS[langIdx]} ↻
-        </button>
-        <span>{currentLine}/{lines.length}</span>
+      <div className={`flex items-center justify-between gap-x-2 text-xs text-gray-500 dark:text-gray-400`}>
+        <span>{wpm} WPM · {accuracy}% · {currentLine}/{lines.length}</span>
+        <span className="flex items-center gap-x-2">
+          <button onClick={() => setSoundIdx((prev) => (prev + 1) % 3)} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{SOUND_PROFILES[soundIdx]} ♪</button>
+          <button onClick={() => { const next = (fontIdx + 1) % 3; setFontIdx(next); setUserFontIdx(next); }} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{FONTS[fontIdx]} ↻</button>
+          <button onClick={switchLang} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{LANG_LABELS[langIdx]} ↻</button>
+        </span>
       </div>
 
       <div
