@@ -66,7 +66,7 @@ const FrenchTypingGame: React.FC = () => {
   const fontClass = FONT_CLASSES[fontIdx];
   const isHandwriting = fontIdx === 2;
   const textSize = isHandwriting ? "text-lg sm:text-2xl md:text-3xl" : "text-sm sm:text-base md:text-lg";
-  const inputTextSize = isHandwriting ? "text-lg sm:text-2xl md:text-3xl" : "text-sm sm:text-base md:text-lg";
+  const inputTextSize = isHandwriting ? "text-lg sm:text-2xl md:text-3xl" : "text-base sm:text-base md:text-lg";
 
   const normalize = (c: string) =>
     c.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
