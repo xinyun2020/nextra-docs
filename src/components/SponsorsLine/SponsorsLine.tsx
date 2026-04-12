@@ -3,7 +3,7 @@ import React from "react";
 const SponsorsLine = () => {
   return (
     <div className="text-center max-w-md mx-auto py-12">
-      <p className="font-plex italic text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">
+      <p className="font-plex italic text-gray-500 dark:text-gray-400 text-base leading-relaxed mb-8">
         If something here made you think, that's the best kind of sponsorship. But if you'd like to help keep the lights on:
       </p>
       <a
