@@ -291,7 +291,7 @@ const FrenchTypingGame: React.FC = () => {
           />
           <button
             onClick={skipLine}
-            className={`${isHandwriting ? 'text-sm sm:text-base md:text-lg' : 'text-xs'} text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors mt-1 sm:mt-0`}
+            className="text-sm py-2 px-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors mt-1 sm:mt-0"
           >
             skip line →
           </button>
