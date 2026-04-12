@@ -186,7 +186,7 @@ const Chat: React.FC<ChatProps> = ({ notes }) => {
   };
 
   return (
-    <div ref={containerRef} className="font-plex fixed inset-0 top-16 flex flex-col" style={{ zIndex: 10, height: 'calc(100dvh - 4rem)' }}>
+    <div ref={containerRef} className="font-plex fixed inset-0 top-16 flex flex-col bg-white dark:bg-zinc-900 overflow-hidden" style={{ zIndex: 10, height: 'calc(100dvh - 4rem)' }}>
       {/* messages */}
       <div className="flex-1 overflow-y-auto space-y-4 p-4">
         {messages.map((msg, i) => (
