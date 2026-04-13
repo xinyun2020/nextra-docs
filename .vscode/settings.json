@@ -1,0 +1,5 @@
+{
+  "ansible.python.interpreterPath": "/usr/local/bin/python3",
+  "typescript.tsdk": "node_modules/.pnpm/typescript@4.9.3/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}

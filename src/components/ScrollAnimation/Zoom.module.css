@@ -1,0 +1,6 @@
+.zoom {
+  position: sticky;
+  top: 20vh;
+  will-change: transform;
+  transform: scale(2.2);
+}

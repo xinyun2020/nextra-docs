@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+    image: xinyun_zet
+    restart: always
+    ports:
+      - "3000:3000"
+    container_name: xinyun_zet

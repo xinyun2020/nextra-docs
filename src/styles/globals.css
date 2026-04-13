@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,200;1,300;1,600&display=swap");
+
+@font-face {
+  font-family: 'ELEYANG Reading';
+  src: url('/ELEYANG-Reading-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+*, *::before, *::after {
+  transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              fill 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* focus visible ring for keyboard nav */
+:focus-visible {
+  outline: 2px solid #0AAFCE;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* skip to content link for screen readers */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+  background: #0AAFCE;
+  color: white;
+  font-size: 0.875rem;
+}
+.skip-to-content:focus {
+  left: 1rem;
+  top: 0.5rem;
+}
+
+:root {
+  --shiki-color-text: #414141;
+  --shiki-color-background: transparent;
+  --shiki-token-constant: #1976d2;
+  --shiki-token-string: #22863a;
+  --shiki-token-comment: #aaa;
+  --shiki-token-keyword: #d32f2f;
+  --shiki-token-parameter: #ff9800;
+  --shiki-token-function: #6f42c1;
+  --shiki-token-string-expression: #22863a;
+  --shiki-token-punctuation: #212121;
+  --shiki-token-link: #22863a;
+}
+
+.dark {
+  --shiki-color-text: #d1d1d1;
+  --shiki-token-constant: #79b8ff;
+  --shiki-token-string: #ffab70;
+  --shiki-token-comment: #6b737c;
+  --shiki-token-keyword: #f97583;
+  --shiki-token-parameter: #ff9800;
+  --shiki-token-function: #b392f0;
+  --shiki-token-string-expression: #4bb74a;
+  --shiki-token-punctuation: #bbbbbb;
+  --shiki-token-link: #ffab70;
+}
+
+@media print {
+  .cv-pdf-download-button {
+    display: none !important;
+  }
+}
+.btn {
+  @apply bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-white font-semibold h-12 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto dark:bg-sky-500 dark:hover:bg-sky-400;
+}
+
+@media (min-width: 768px) {
+  .nextra-sidebar-container {
+    display: none !important;
+  }
+}
+
+.nextra-content {
+  max-width: 100% !important;
+}
+
+a, summary {
+  border-radius: 0 !important;
+}
+
+/* balanced padding for navbar and content */
+nav.nextra-nav-container > div,
+nav.nextra-nav-container-blur > div {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+@media (min-width: 640px) {
+  nav.nextra-nav-container > div,
+  nav.nextra-nav-container-blur > div {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+u, a u, .underline {
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: #0AAFCE;
+}
+
+@keyframes coin-flip {
+  0% { transform: rotateY(0deg); }
+  40% { transform: rotateY(360deg); }
+  100% { transform: rotateY(360deg); }
+}

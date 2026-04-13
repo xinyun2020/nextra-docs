@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/feed.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xinyun Zettelkasten</title>
+    <link>https://xinyun-zettelkasten.vercel.app</link>
+    <description>All notes — learning in public, writing things down.</description>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 Apr 2026 17:58:01 GMT</lastBuildDate>
+    <atom:link href="https://xinyun-zettelkasten.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>满分答卷，零分能力 — 当AI考满分却一题没做</title>
+      <link>https://xinyun-zettelkasten.vercel.app/literature-notes/2026-04-12_berkeley-benchmark-handout</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/literature-notes/2026-04-12_berkeley-benchmark-handout</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Berkeley RDI proved a bot can score 100% on top AI benchmarks without solving a single task. What Goodhart's Law means for how we evaluate AI agents. Written in Chinese.</description>
+    </item>
+    <item>
+      <title>我如何用一台笔记本和一部手机，搭建了一个会自己进化的工作系统</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-04-11_my-system-architecture</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-04-11_my-system-architecture</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+      <description>A software engineer's personal system architecture — five layers from knowledge to mobile access, with self-improving automation in between. Written in Chinese.</description>
+    </item>
+    <item>
+      <title>The Config File That Knows Me Better Than My Mom</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-04-11_the-config-file-that-knows-me</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-04-11_the-config-file-that-knows-me</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+      <description>What happens when an engineer starts documenting herself instead of just her systems. On self-knowledge, automation, and why a terminal message at 1am felt warmer than a phone call.</description>
+    </item>
+    <item>
+      <title>The System That Builds Itself</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-04-03_the-system-that-builds-itself</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-04-03_the-system-that-builds-itself</guid>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate>
+      <description>I tried to design a writing habit. The habit designed the writing instead.</description>
+    </item>
+    <item>
+      <title>Zettelkasten Method</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2024-11-10_zettelkasten</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2024-11-10_zettelkasten</guid>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 GMT</pubDate>
+      <description>A personal knowledge management system using fleeting notes, literature notes, and permanent notes to build a network of interconnected ideas.</description>
+    </item>
+  </channel>
+</rss>

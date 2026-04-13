@@ -1,0 +1,57 @@
+---
+title: "Chat with my notes"
+---
+
+import Chat from '../components/Chat/Chat';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+export const getStaticProps = () => {
+  const NOTE_DIRECTORIES = ['literature-notes', 'permanent-notes', 'fleeting-notes'];
+  const pagesDir = path.join(process.cwd(), 'src', 'pages');
+  const notes = [];
+
+  NOTE_DIRECTORIES.forEach(dirName => {
+    const dirPath = path.join(pagesDir, dirName);
+    try {
+      const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
+      files.forEach(file => {
+        const filePath = path.join(dirPath, file);
+        const raw = fs.readFileSync(filePath, 'utf8');
+        const { data: frontmatter, content } = matter(raw);
+        const filename = file.replace(/\.mdx?$/, '');
+        const title = frontmatter.title || filename.replace(/^\d{4}-\d{2}-\d{2}_/, '').replace(/-/g, ' ');
+        const description = frontmatter.description || '';
+
+        // strip import statements and JSX tags, keep text content
+        const cleaned = (description ? description + '\n\n' : '') + content
+          .replace(/^import\s+.*$/gm, '')
+          .replace(/^export\s+.*$/gm, '')
+          .replace(/<[A-Z][^>]*\/>/g, '')
+          .replace(/<[A-Z][^>]*>[\s\S]*?<\/[A-Z][a-zA-Z.]*>/g, '')
+          .replace(/<[a-z][^>]*className[^>]*>/g, '')
+          .replace(/<\/[a-z]+>/g, '')
+          .replace(/```[\s\S]*?```/g, '')
+          .replace(/#+\s*/g, '')
+          .replace(/\*\*/g, '')
+          .replace(/\n{3,}/g, '\n\n')
+          .trim();
+
+        if (cleaned.length > 20) {
+          notes.push({
+            title,
+            path: `/${dirName}/${filename}`,
+            content: cleaned,
+          });
+        }
+      });
+    } catch {}
+  });
+
+  return { props: { notes } };
+};
+
+export default function ChatPage({ notes }) {
+  return <Chat notes={notes} />;
+}
