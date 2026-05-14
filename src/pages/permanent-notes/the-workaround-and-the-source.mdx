@@ -1,0 +1,56 @@
+---
+title: "The Workaround and the Source"
+date: "2026-05-15"
+description: "When you find the same patch in five places, the problem isn't in those five places — it's at the origin. On code, systems, and the assumptions we build around instead of through."
+tags:
+  - philosopher-engineer
+  - applied-philosophy
+  - systems-thinking
+  - examined-life
+---
+
+Yesterday I deleted 75 lines of code across 10 files. Not refactoring — removal. Every line had become unnecessary the moment I fixed one thing at the source.
+
+## The Five Workarounds
+
+The codebase had a function that five different files called. Each was asking the same question: "is this text segment actually just a single variable?" The question existed because the parse layer — where user input first enters the system — never marked pure variables as pure variables. So every downstream consumer had to re-derive the answer.
+
+Five files. Seventy-five lines. All managing a problem that should have been solved once, at the boundary where data enters.
+
+The fix wasn't a better detection function. It was going back to the parse boundary and adding the marker that should have existed from the start. Once that was in place, every workaround became dead code. I deleted them one by one. None resisted.
+
+## Your System Includes Other People
+
+Earlier this week, I learned something uncomfortable. A colleague stayed late — not because she had work, but because she saw I was still online. Her words: "I saw you were still working."
+
+I'd always thought of my pace as a personal choice. But a system model that doesn't include the people adjacent to you is incomplete. Local optimization that generates heat for neighboring nodes degrades the whole system's sustainability.
+
+This is the same structural pattern. My "work ethic" was a workaround for something I hadn't examined at the source: what am I actually optimizing for? If the answer is "I want to feel productive," that's a personal choice. If the effect is "other people feel pressured," the system boundary is drawn wrong.
+
+## When Your Tool Becomes Infrastructure
+
+My note-taking system broke recently. A hook pointed to a renamed file and failed silently for days. That's when I realized: what started as markdown files had become firmware. It had linters, unit tests, CI pipelines, coverage metrics — all the engineering discipline I apply to production code.
+
+Infrastructure has different failure modes than tools. A missed note is recoverable. A broken hook doesn't announce itself. It just silently stops doing its job.
+
+The diagnostic question isn't "do I understand every piece?" — it's "can I trace symptom to cause when something breaks?" Control comes from traceability, not memorization.
+
+## The Articulation Gap
+
+A senior colleague named my promotion gap precisely: "It's not delivery. It's forming and voicing architectural opinions."
+
+In every architecture discussion, I have reactions — which approach is cleaner, which dependency will become debt, which trade-off will bite in three months. But the distance between "having a reaction" and "saying it in a room where people are convinced" is significant.
+
+Being bilingual amplifies this — but also provides a unique tool. Writing in Chinese: fast, intuitive, messy (good for forming opinions). Writing in English: structured, precise, persuasive (good for voicing them). Two languages, two thinking modes. What I thought was a handicap turned out to be a built-in pipeline.
+
+## Back to the Source
+
+All of these are the same pattern. The workarounds I've been managing — staying visible, working harder, patching my note system, adding detection functions — aren't wrong. They work. But when you find five workarounds for the same underlying thing, the question changes from "how do I do this better?" to "what would make this unnecessary?"
+
+The 75 lines I deleted weren't bad code. They were reasonable responses to a missing piece. Once the missing piece was added at the source, they vanished.
+
+I'm starting to ask: what else in my life would vanish — not break, but become unnecessary — if I fixed something at the source instead of managing it downstream?
+
+---
+
+*This is part of my ongoing exploration of what happens when you treat your life as a system worth engineering and a question worth examining.*
