@@ -14,10 +14,8 @@ import { MY } from "../constants.ts";
 <div className="border-b border-black dark:border-white pb-2 mb-4">
 <div className="flex flex-col md:flex-row gap-3 justify-between items-start md:items-end">
 <div>
-  <h1 className="text-4xl font-bold tracking-tight mb-0.5 italic" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>
-    Alice Zhang
-  </h1>
-  <div className="text-xs font-mono opacity-60">Software Engineer</div>
+  <h1 className="text-4xl font-bold tracking-tight mb-0.5 italic" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>{"Alice Zhang"}</h1>
+  <div className="text-xs font-mono opacity-60">Software Engineer · AI Systems</div>
 </div>
 
 <div className="flex flex-col gap-0.5 text-xs font-mono md:text-right">
@@ -38,19 +36,17 @@ import { MY } from "../constants.ts";
 </div>
 
 {/* Summary Section */}
-<div className="mb-4">
+<div className="mb-6">
 <h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Professional Summary</h2>
-<p className="text-sm text-justify leading-relaxed">
-Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in distributed systems and workflow automation. Currently leading cross-team integration initiatives on Zendesk's Action Builder platform. Previously delivered $175K revenue-generating analytics dashboard and Vue 3 migration of 200+ components. Full-stack expertise in TypeScript, Golang, React, GraphQL, and gRPC with Master of Data Science in ML/NLP. Track record in technical leadership, system architecture, and engineering practice improvement.
-</p>
+<p className="text-sm text-left leading-relaxed">{"Software engineer with "}{new Date().getFullYear() - 0x7E3}{"+ years of experience in full-stack development and AI systems. Currently focused on building evaluation pipelines, automated quality gates, and developer tools that make AI products reliable at scale. Previously delivered revenue-generating analytics platforms and large-scale frontend migrations. TypeScript, Golang, Python, React, GraphQL, gRPC. Master of Data Science (ML/NLP), University of Melbourne."}</p>
 </div>
 
 {/* Professional Experience Section */}
-<div className="mb-4">
+<div className="mb-6">
 <h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Professional Experience</h2>
 
-<div className="space-y-3">
-<div className="border-l border-black dark:border-white pl-2">
+<div className="space-y-4">
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={
     "Senior Software Engineer, Zendesk, VIC, Australia"
@@ -58,17 +54,17 @@ Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in
   time={"Sep 2025 - Present"}
 />
 
-<div className="text-sm text-justify leading-relaxed">
-- Leading **cross-team MCP integration epic** from architecture through delivery, coordinating 4 engineering teams to ship AI-powered workflow automation on Zendesk's **Action Builder platform**.
-- Contributing to **technical direction** for workflow orchestration across Golang microservices, GraphQL, gRPC, and React, facilitating cross-team architecture sessions driving design consensus.
-- Introducing **engineering practices** including systematic pre-PR review and C1-C4 architecture documentation to improve code quality and team knowledge sharing.
-- Shipping **full-stack features** spanning gRPC service integration, type-safe schema migration, and date input systems, contributing to platform GA launch and subsequent milestone delivery.
+<div className="text-sm text-left leading-relaxed">
+- Built **LLM evaluation pipeline** from zero — mined production executions, clustered by pattern, curated golden scenarios per cluster. 4 deterministic scorers, regression detection across branches, self-healing loop that compounds quality automatically. Gates every prompt change before shipping.
+- Defined **typed inter-agent contracts** (JSON schema at handoff boundaries) and compound dataset generation from production failures. Team went from "try and see" to "prove it improved or it doesn't merge."
+- Led **automated code review agent** — CI/CD-triggered parallel reviewers (security, performance, correctness), multi-model routing, severity-rated findings on every PR before humans look.
+- Coordinating **4 teams** shipping AI workflow automation end-to-end (Golang, GraphQL, gRPC, React).
 </div>
 
-<CvStringToBadges items="TypeScript, Golang, React, Node.js, GraphQL, gRPC, Protocol Buffers, Zod, MySQL, Redis, Kafka, Jest, Cypress, Storybook, Jenkins, Docker, Kubernetes, AWS, Datadog, Sentry" />
+<CvStringToBadges items="TypeScript, Golang, Python, React, GraphQL, gRPC, Claude Agent SDK, LLM Evaluation, Docker, Kubernetes, AWS" />
 </div>
 
-<div className="border-l border-black dark:border-white pl-2">
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={
     "Full Stack Developer, WISE Employment, VIC, Australia"
@@ -76,7 +72,7 @@ Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in
   time={"Nov 2023 - Sep 2025"}
 />
 
-<div className="text-sm text-justify leading-relaxed">
+<div className="text-sm text-left leading-relaxed">
 - Led **Vue 2 to Vue 3 + Vite migration** across **200+ components**, architected reusable component system and headless design library.
 - Delivered internal analytics dashboard projected to generate **$175K annual revenue**, used by **hundreds of staff**.
 - Implemented secure data pipelines with AWS Blob Storage, Java-based decryption, and schema validation.
@@ -84,10 +80,10 @@ Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in
 - Mentored team on engineering best practices and facilitated technical decisions.
 </div>
 
-<CvStringToBadges items="TypeScript, JavaScript, Java, Golang, Vue, Vite, GraphQL, Headless UI, Tailwind CSS, Jest, GitLab, Docker, Azure, RedHat OCP, Figma" />
+<CvStringToBadges items="TypeScript, Java, Golang, Vue, Vite, GraphQL, Tailwind CSS, GitLab, Docker, Azure" />
 </div>
 
-<div className="border-l border-black dark:border-white pl-2">
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={
     "Software Engineer, IPIC Pty Ltd, George & Matilda, VIC, Australia"
@@ -95,35 +91,35 @@ Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in
   time={"Sep 2021 - Nov 2023"}
 />
 
-<div className="text-sm text-justify leading-relaxed">
+<div className="text-sm text-left leading-relaxed">
 - Developed finance investigation portal reducing unresolved issues by **80%**, decreasing resolution time from **8 months to 3 weeks**.
 - Built React clinical appointment system with GraphQL/Prisma/tRPC backend and custom design system.
 - Managed CI/CD pipelines using Bitbucket and Docker.
 - Partnered with finance, product, and design teams to align solutions with business objectives.
 </div>
 
-<CvStringToBadges items="TypeScript, React, Next.js, Angular, GraphQL, tRPC, Prisma, Tailwind CSS, Jest, Storybook, Bitbucket, Docker, Figma" />
+<CvStringToBadges items="TypeScript, React, Next.js, GraphQL, tRPC, Prisma, Tailwind CSS, Storybook, Docker" />
 </div>
 
-<div className="border-l border-black dark:border-white pl-2">
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={"Engineering Intern, Rose Plastic, VIC, Australia"}
   time={"Sep 2018 - Sep 2020"}
 />
-<div className="text-sm text-justify leading-relaxed">
+<div className="text-sm text-left leading-relaxed">
 - Supported system maintenance, data analysis, and requirements gathering for product development.
 </div>
 
-<CvStringToBadges items="Data Analysis, System Maintenance, Security, SOP Development, Requirements Gathering, Agile" />
+<CvStringToBadges items="Data Analysis, System Maintenance, Requirements Gathering, Agile" />
 </div>
 </div>
 </div>
 
 {/* Technical Skills Section */}
-<div className="mb-4">
+<div className="mb-6">
 <h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Technical Skills</h2>
 
-<div className="space-y-1.5 text-sm">
+<div className="space-y-1.5 text-sm leading-relaxed">
   <div>
     <span className="font-bold text-xs uppercase tracking-wide">Languages: </span>
     <span>TypeScript, JavaScript, Golang, Java, Python, SQL</span>
@@ -147,6 +143,11 @@ Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in
   <div>
     <span className="font-bold text-xs uppercase tracking-wide">Infrastructure: </span>
     <span>Docker, Kubernetes, AWS, Azure, Jenkins, GitHub Actions, GitLab, Sentry, Datadog, OpenShift</span>
+  </div>
+
+  <div>
+    <span className="font-bold text-xs uppercase tracking-wide">AI/Eval: </span>
+    <span>LLM Evaluation Pipelines, Deterministic Scoring, Multi-Agent Orchestration, Prompt Engineering, Claude Agent SDK, Braintrust</span>
   </div>
 
   <div>
@@ -185,11 +186,11 @@ Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in
 </div> */}
 
 {/* Education Section */}
-<div className="mb-4">
+<div className="mb-6">
 <h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Education</h2>
 
 <div className="space-y-3">
-<div className="border-l border-black dark:border-white pl-2">
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={`Master of Data Science | The University of Melbourne`}
   time={
@@ -198,12 +199,10 @@ Software engineer with {new Date().getFullYear() - 0x7E3}+ years specializing in
     </div>
   }
 />
-<p className="text-sm text-justify leading-relaxed">
-Full Scholarship. Specialized in NLP, ML, Applied AI, completed part-time while working full-time.
-</p>
+<p className="text-sm text-left leading-relaxed">{"Full Scholarship. Specialized in NLP, ML, Applied AI, completed part-time while working full-time."}</p>
 </div>
 
-<div className="border-l border-black dark:border-white pl-2">
+<div className="border-l border-black dark:border-white pl-3">
 <CvLabelWithTime
   label={`Bachelor of Software Engineering (Honours) | Monash University`}
   time={
@@ -212,25 +211,23 @@ Full Scholarship. Specialized in NLP, ML, Applied AI, completed part-time while 
     </div>
   }
 />
-<p className="text-sm text-justify leading-relaxed">
-Published: <a href="https://ieeexplore.ieee.org/abstract/document/9842733" className="border-b border-black dark:border-white hover:opacity-60 transition-opacity">IEEE COMPSAC 2022</a>
-</p>
+<p className="text-sm text-left leading-relaxed">{"Published: "}<a href="https://ieeexplore.ieee.org/abstract/document/9842733" className="border-b border-black dark:border-white hover:opacity-60 transition-opacity">{"IEEE COMPSAC 2022"}</a></p>
 </div>
 </div>
 </div>
 
 {/* Professional Activities & Additional Information Section */}
-<div className="mb-4">
+<div className="mb-6">
 <h2 className="text-base font-bold uppercase tracking-wider border-b border-black dark:border-white pb-1 mb-2">Additional Information</h2>
 
-<div className="space-y-2 text-sm">
-  <div className="border-l border-black dark:border-white pl-2">
+<div className="space-y-2 text-sm leading-relaxed">
+  <div className="border-l border-black dark:border-white pl-3">
     <CvLabelWithTime
       label={"Member, Chinese Association of Professionals and Scholars Australia"}
       time={"2022 - Present"}
     />
   </div>
-  <div className="border-l border-black dark:border-white pl-2">
+  <div className="border-l border-black dark:border-white pl-3">
     <CvLabelWithTime
       label={
         <span>
@@ -240,7 +237,7 @@ Published: <a href="https://ieeexplore.ieee.org/abstract/document/9842733" class
       time={"2023"}
     />
   </div>
-  <div className="border-l border-black dark:border-white pl-2">
+  <div className="border-l border-black dark:border-white pl-3">
     <CvLabelWithTime
       label={
         <span>
@@ -250,11 +247,11 @@ Published: <a href="https://ieeexplore.ieee.org/abstract/document/9842733" class
       time={"2022"}
     />
   </div>
-  <div className="border-l border-black dark:border-white pl-2">
+  <div className="border-l border-black dark:border-white pl-3">
     <span className="font-bold text-xs uppercase tracking-wide">Areas of Interest: </span>
-    <span>AI integration, developer tools, system architecture, workflow automation, language models</span>
+    <span>LLM evaluation pipelines, harness engineering, AI reliability, developer tools, system architecture, workflow automation</span>
   </div>
-  <div className="border-l border-black dark:border-white pl-2">
+  <div className="border-l border-black dark:border-white pl-3">
     <span className="font-bold text-xs uppercase tracking-wide">Languages: </span>
     <span>English (Bilingual), Mandarin Chinese (Native), Shanghainese</span>
   </div>
