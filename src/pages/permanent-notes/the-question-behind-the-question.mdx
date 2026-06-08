@@ -1,0 +1,56 @@
+---
+title: "The Question Behind the Question"
+date: "2026-05-29"
+description: "Engineers solve problems. The harder skill is knowing which problem to solve — and recognizing that some decisions make entire categories of problems disappear."
+tags:
+  - philosopher-engineer
+  - applied-philosophy
+  - systems-thinking
+  - examined-life
+---
+
+Last week our team gave a demo. The system worked. A colleague asked one question and I paused.
+
+Not because I didn't have an answer — I had several. But in that half-second of pause, I realized my answers were all one layer too shallow. The system could tell me whether something was correct. It couldn't tell me what "correct" should mean.
+
+That question started a thread I've been pulling all week.
+
+## The system that works isn't the system that serves
+
+I spent weeks building an evaluation pipeline. Automated scoring, self-healing loops, deterministic validation. It ran cleanly. Every test passed.
+
+Then someone asked: "How do you define quality at scale?"
+
+I noticed something uncomfortable: I'd built a system that could measure X with precision. I just wasn't sure X was the right thing to measure.
+
+Three years ago I had the same feeling about a note-taking system. Tags, bidirectional links, review templates — the full apparatus. It ran perfectly. I used it every day. Six months later I looked back and realized I'd barely revisited most of what I'd captured. Not because the system failed. Because I'd never asked what accumulating those notes was actually for.
+
+A system that works is not the same as a system that serves. The gap between them is a question you haven't asked yet.
+
+## The decision that makes the question disappear
+
+Later that week, I watched a colleague demo a technical spike. Two approaches to the same problem — making an AI system understand configuration changes.
+
+One approach: read raw code, reverse-engineer intent, fix errors manually when things drift. The other: build a structured model as the single source of truth. Let the AI read and write through that layer.
+
+The surface-level verdict was obvious. But what caught me was deeper: in the second approach, validation errors weren't problems to solve — they were signals the system could learn from. One decision at the foundation, and an entire class of surface problems became structurally impossible.
+
+Some decisions are load-bearing. You can repaint walls freely, but move a load-bearing wall and the building's possibilities change.
+
+Most of the time, we optimize at the surface. Tune parameters, add retries, patch edge cases. Useful, but diminishing returns. Occasionally there's a decision one layer deeper that, once made correctly, makes the surface problems disappear — not because they were solved, but because they can no longer occur.
+
+## The question behind the question
+
+The pattern I keep seeing: the interesting question is almost never the first question you ask. "How do I measure quality?" leads to "What should I be measuring?" which leads to "Which decision determines what's measurable at all?"
+
+Each step goes one layer deeper. Each step feels less like engineering and more like philosophy. But here's the thing — it's all engineering. Identifying the load-bearing decision is the most engineering thing you can do. It just requires stopping long enough to ask whether you're optimizing the right layer.
+
+The examined engineer isn't someone who thinks more. It's someone who notices when a question has a question behind it — and follows it down one level before writing the code.
+
+---
+
+This week taught me that building well is necessary but not sufficient. The system that works isn't the system that serves. The question that has an answer isn't always the question worth answering. And the decision that feels like a technical choice is sometimes the one that determines everything else.
+
+What's something you optimized precisely — only to realize later you were optimizing the wrong layer?
+
+*This is part of my ongoing exploration of what happens when you treat your life as a system worth engineering and a question worth examining.*

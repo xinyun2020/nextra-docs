@@ -6,14 +6,8 @@
     <link>https://xinyun-zettelkasten.vercel.app</link>
     <description>Notes from things I read, watch, and learn from.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Apr 2026 17:58:01 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 13:46:56 GMT</lastBuildDate>
     <atom:link href="https://xinyun-zettelkasten.vercel.app/feed-literature.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>满分答卷，零分能力 — 当AI考满分却一题没做</title>
-      <link>https://xinyun-zettelkasten.vercel.app/literature-notes/2026-04-12_berkeley-benchmark-handout</link>
-      <guid>https://xinyun-zettelkasten.vercel.app/literature-notes/2026-04-12_berkeley-benchmark-handout</guid>
-      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Berkeley RDI proved a bot can score 100% on top AI benchmarks without solving a single task. What Goodhart's Law means for how we evaluate AI agents. Written in Chinese.</description>
-    </item>
+
   </channel>
 </rss>

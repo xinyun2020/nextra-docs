@@ -6,14 +6,49 @@
     <link>https://xinyun-zettelkasten.vercel.app</link>
     <description>All notes — learning in public, writing things down.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Apr 2026 17:58:01 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 13:46:56 GMT</lastBuildDate>
     <atom:link href="https://xinyun-zettelkasten.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>满分答卷，零分能力 — 当AI考满分却一题没做</title>
-      <link>https://xinyun-zettelkasten.vercel.app/literature-notes/2026-04-12_berkeley-benchmark-handout</link>
-      <guid>https://xinyun-zettelkasten.vercel.app/literature-notes/2026-04-12_berkeley-benchmark-handout</guid>
-      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Berkeley RDI proved a bot can score 100% on top AI benchmarks without solving a single task. What Goodhart's Law means for how we evaluate AI agents. Written in Chinese.</description>
+      <title>The Question Behind the Question</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-question-behind-the-question</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-question-behind-the-question</guid>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <description>Engineers solve problems. The harder skill is knowing which problem to solve — and recognizing that some decisions make entire categories of problems disappear.</description>
+    </item>
+    <item>
+      <title>The Door Was Already Open</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-door-was-already-open</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-door-was-already-open</guid>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <description>What a week of debugging taught me about resistance, reframing, and finding the entrance that was there all along</description>
+    </item>
+    <item>
+      <title>The Workaround and the Source</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-workaround-and-the-source</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-workaround-and-the-source</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <description>When working harder is a workaround for working smarter — on comfort zones, visibility, and the architecture of how you show up.</description>
+    </item>
+    <item>
+      <title>The Systems That Watch Back</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-systems-that-watch-back</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-systems-that-watch-back</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
+      <description>What happens when the thinking frameworks you build start revealing things about you that you didn't intend to see.</description>
+    </item>
+    <item>
+      <title>You Can't Build Trust Directly</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/you-cant-build-trust-directly</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/you-cant-build-trust-directly</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+      <description>Trust, clarity, and wisdom don't get built by aiming at them. They're the residue of something else — something engineers are uniquely positioned to understand.</description>
+    </item>
+    <item>
+      <title>When Knowing Isn't Enough</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/when-knowing-isnt-enough</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/when-knowing-isnt-enough</guid>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Four moments from one week that revealed the gap between knowing a principle and living it — in engineering, in thinking, and in the decisions that actually matter.</description>
     </item>
     <item>
       <title>我如何用一台笔记本和一部手机，搭建了一个会自己进化的工作系统</title>
