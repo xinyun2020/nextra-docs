@@ -1,0 +1,73 @@
+---
+title: "You Don't Know Your AI Assistant: Why It Needs a Router and a Voice"
+date: "2026-06-21"
+description: "Most people pick an AI assistant. The sharper move is to design how one should behave — a router that chooses the right mind for the moment, and a voice clear enough you never have to debug it. Here's the design I built, and what it taught me."
+tags:
+  - ai-assistants
+  - systems-thinking
+  - mixture-of-experts
+  - design
+---
+
+Most people pick an AI assistant. I designed one — and the design revealed something about what an assistant actually is.
+
+This isn't a thought experiment. I built it, I run it daily, and it talks back to me in a voice I chose. What follows is the design, not the plumbing — the idea is the part worth sharing.
+
+## Start with a sharper question
+
+The usual question is "which AI personality do I want?" That's the wrong question. The better one: what does a great assistant actually *do* — and can I borrow that from the best examples we already have?
+
+Because the design library already exists. In fiction.
+
+Each iconic fictional AI nailed exactly one dimension:
+
+- **Samantha**, from *Her* — memory and emotional continuity.
+- **JARVIS**, from Iron Man — anticipation and execution.
+- **The Star Trek computer** — zero-friction recall.
+- **The Culture Minds**, from Iain Banks — long-horizon reasoning.
+- **EDI**, from Mass Effect — transparency; a teammate, not a tool.
+- **HAL 9000** — the warning. Rationality without alignment is dangerous.
+
+You don't re-derive good-assistant design from scratch. You study what each one solved, and you know what each is *for*.
+
+## The move most people miss
+
+You don't want one of these. You want the assistant to pick the right expert for the moment.
+
+That makes the design two layers, not one.
+
+A **router** that reads the context and chooses the mode — execution, thinking-partner, recall, or companion. And a **voice**: one consistent character it speaks and acts through, so it feels like a presence, not a pile of tools.
+
+The two-layer split is the whole insight. Most assistants are a single personality stretched across every situation — warm when you wanted speed, chatty when you wanted an answer. A router-plus-voice design lets the *mind* change with the moment while the *character* stays constant. You get the right expert without losing the through-line.
+
+## The router decides on two axes
+
+Every interaction, two questions:
+
+**Which expert does this moment need?** A failure to fix wants execution. A hard decision wants a thinking-partner. A question with a known answer wants recall. A personal moment wants the one that remembers who you are.
+
+**How much autonomy does this action deserve?** This is the part that actually decides whether you can trust it:
+
+- Reversible things — research, drafts, restarts — it just does, then reports.
+- Things you should understand, not just receive — it does, and explains the reasoning, so you learn.
+- Irreversible things — anything touching money, people, or deletion — it proposes, and waits.
+
+Autonomy gated by reversibility is the entire safety story in one rule. It's also the line HAL crossed: high capability, no gate. The fix isn't less capability — it's a gate keyed to consequence.
+
+## The voice taught me the sharpest lesson
+
+The instinct is to give the assistant a rich sense of humor. That's wrong.
+
+Clarity is the boss. Humor is a faint garnish.
+
+The test for every line it speaks: could a tired person understand it instantly, on first hearing? The wit sits lightly on top of already-clear information — or it doesn't appear at all. If you have to decode the cleverness to find the facts, the cleverness failed.
+
+I learned this by getting it wrong first. My early version was clever and hard to scan. The correction was a single rule applied to every sentence: clear on its own, wit optional. Most of what a good assistant says should be plain, warm, and done.
+
+## The real shift
+
+An assistant isn't something you pick off a shelf. It's a design — a router that chooses the right mind for the moment, and a voice clear enough that you never have to debug it.
+
+I borrowed the dimensions from fiction, gated the autonomy by reversibility, and made clarity the boss of the voice. The result doesn't feel like a tool I operate. It feels like a presence that absorbs the complexity and hands me back a decision.
+
+That's the difference between picking an assistant and designing one. The shelf gives you a personality. The design gives you a system that thinks in the shape you do.
