@@ -1,0 +1,62 @@
+---
+title: "The Optimization Tax"
+date: "2026-07-31"
+description: "When improving the system costs more than using it. The trap where efficiency feels productive while your actual output — and your mental energy — quietly declines."
+tags:
+  - philosopher-engineer
+  - examined-life
+  - systems-thinking
+  - generate-use-think
+---
+
+I spent the better part of a week optimizing how much context my tools consume. The reasoning was clean: every request carries a payload, the payload costs money, so send less. I built dashboards to see where the spend went. I routed different tiers of work to different processors — heavy judgment to the expensive one, mechanical gathering to the cheap one. I studied a benchmark showing that a system sending one-third the context achieved the same output quality. I built hooks that truncate verbose output before it ever reaches the expensive layer.
+
+Every single optimization worked. Each one shaved cost. And by Friday I noticed two things.
+
+First: the week's *actual* output — the things I shipped, the problems I solved for people, the decisions I moved forward — was thinner than the weeks before it.
+
+Second: I was mentally exhausted. Not from doing hard work. From *thinking about how to do less work*. Every "could this be cheaper?" thought was occupying cognitive space. Every routing decision required evaluation. The constant vigilance of optimization was draining the exact resource it claimed to protect.
+
+## The formula hiding in plain sight
+
+**Cost = rate x effort.**
+
+You can drive the rate down — cheaper model, less context, smarter routing. But the effort to *find and implement* those rate reductions is itself expensive. And it's expensive at the *highest* rate, because the optimization work requires the kind of architectural thinking and judgment that only the premium tier handles well.
+
+You're spending premium cognitive fuel to figure out how to burn less regular fuel. The math only works if the savings compound faster than the optimization cost accrues. And this week, they didn't.
+
+Here's the part nobody warns you about: optimization doesn't just cost time. It costs *mental presence*. When "how can this be more efficient?" becomes your default thought pattern, you've lost something harder to recover than hours. You've lost the ability to be *in* the work instead of *above* it. You're the mechanic who never drives anywhere because the engine could always be a little better.
+
+## Distance = speed x time
+
+If you want to go further, you can either go faster or travel longer. But if you spend all your travel time maintaining the engine, you're going fast and covering no ground. Worse — you're exhausted from the maintenance, so when you finally do drive, you're depleted.
+
+The trap is seductive because it *feels* productive. You're measuring. You're improving. Numbers are going down. Dashboards are going green. But the number that actually matters — problems solved per unit of mental energy — quietly declines while you're watching the other meters.
+
+I've seen this pattern before in other domains. The person who reorganizes their notes instead of writing. The team that refactors infrastructure instead of shipping features. The manager who optimizes the process instead of doing the work the process exists to enable. The shape is always the same: the meta-work feels like progress because it's hard and measurable, but it produces no output that anyone outside the system would notice or value.
+
+## Shrink the road, then stop looking at the map
+
+The real lever, when I finally saw it, wasn't "drive slower" — audit every request, throttle usage, add gates, maintain constant vigilance. It was "shrink the road" — make a structural change that's cheap by default, without anyone having to think about it ever again.
+
+A system that starts with minimal context and adds only what's needed is fundamentally different from one that starts with everything and prunes. The first one is cheap by construction. The second one is cheap by effort — and effort has a tax.
+
+The structural fix costs attention once. The vigilance approach costs attention forever. And attention is the resource I was supposedly trying to save.
+
+This connects to something I wrote about a few weeks ago — the dumb gate that can't be talked into agreeing. A gate is cheap by construction: it runs the same check every time, no judgment required, no cognitive load on the person who set it up. A reviewer who reads everything and renders an opinion is expensive by effort — powerful, but it pays the full tax every time it fires. The question isn't "which is better?" It's "which one can I afford to run on *every* change without it becoming the thing that drains me?"
+
+## What I actually changed
+
+I stopped looking at the cost dashboard daily. I made three structural changes — default context size, model routing rules, output truncation — and then I went back to doing the work the system exists to enable.
+
+The compound return on a structural fix is infinite because it costs nothing to maintain. The compound return on vigilance is negative because vigilance itself is the most expensive kind of attention. You can't optimize your way to output. At some point you have to close the hood and drive.
+
+---
+
+The examined life is supposed to make you more effective, not less. But examination has a trap built into it: you can examine so thoroughly that you never act, or you can optimize so persistently that the optimization becomes the activity. The antidote isn't to stop examining — it's to notice when the examination has become the thing eating your day, and have the discipline to say: good enough. Ship it. The engine works. Drive.
+
+When did you last stop to ask: am I optimizing the system, or am I trapped in the optimization?
+
+---
+
+*This is part of my ongoing exploration of what happens when you treat your life as a system worth engineering and a question worth examining.*
