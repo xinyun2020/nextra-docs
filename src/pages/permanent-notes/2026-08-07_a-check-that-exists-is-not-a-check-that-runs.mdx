@@ -1,0 +1,35 @@
+---
+title: "A Check That Exists Is Not a Check That Runs"
+date: "2026-08-07"
+description: "A green test suite can be lying about itself, not just about the code underneath it. The gap between 'this would catch the bug' and 'this is actually running' is invisible until it isn't."
+tags:
+  - philosopher-engineer
+  - examined-life
+  - systems-thinking
+---
+
+A while back I wrote about building dumb, mechanical gates instead of trusting a smarter judge to check your own work — a shell command that exits zero or non-zero, something with no opinion and no shared blind spot. I still believe that. This is the thing I didn't see coming: I built exactly that kind of gate, and it still failed me, in a way no amount of "make the gate dumber" would have caught.
+
+I keep a little over a hundred automated checks in my own scripts. Each one, read on its own, looks fine — a real test, a real assertion, a real pass or fail. What none of them had was a second, higher-level check confirming they were actually being run as a set. It turned out eight of them had been silently red, for who knows how long. One had failed the same way five consecutive times, and the surrounding process kept printing that failure as a soft warning — technically visible, practically invisible, exactly the shape of a signal nobody has to act on.
+
+## The gap between "exists" and "runs"
+
+A test suite gives you two different guarantees, and it's easy to conflate them: this check would catch the bug if it ran, and this check is actually running. The first is a property of the code you wrote. The second is a property of the process around it — is anything executing this thing, on a schedule, and surfacing the result somewhere a human will see it. You can have perfect coverage on the first axis and total silence on the second, and from a distance both look identical to "I have tests."
+
+A regression suite nobody runs isn't a weaker guardrail. It's a decoration. It creates the belief that something is being checked while nothing is — and that belief is exactly what stops you from building the check you actually need.
+
+## What actually fixed it wasn't more tests
+
+The fix wasn't writing better tests. It was building one thing a level up: a sweep that runs all the existing suites together and reports which ones are red and which ones hang. Once that ran, two of the eight red suites turned out to be real bugs in the tests themselves, not the code — false positives I'd been stepping over for so long that I'd stopped reading them as failures.
+
+Then, in the same week, the new sweep got reviewed the way I'd insist any other change get reviewed — by something that didn't write it. Two defects came back: one where a bad input would have silently made every suite look red at once, another where a missing configuration value quietly fell back to a default instead of failing loudly. The tool built to catch "checks that don't actually check" needed the same discipline applied to itself. There's no floor where you finally get to skip the outside check.
+
+## "It's tested" was always a claim about a process
+
+A checkmark can't prove the process behind it, because the checkmark is part of the same process it's supposed to be verifying. The move here isn't "write more tests." It's asking, on a schedule, a different question than the tests ask: not "does this pass" but "is anything actually forcing this to run, and would I know if it silently stopped."
+
+Correctness moved from expensive to cheap once. This time I learned the cheapness itself has to be checked, or it quietly becomes a story you tell yourself about a guard that's no longer standing watch.
+
+When was the last time you trusted a green checkmark, and it turned out the checkmark was the thing that had gone quiet?
+
+*This is part of my ongoing exploration of what happens when you treat your life as a system worth engineering and a question worth examining.*
