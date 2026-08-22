@@ -1,0 +1,53 @@
+---
+title: "Completeness Is a Bet You Might Not Need to Make"
+date: "2026-08-21"
+description: "Finishing a system before anyone uses it is a claim that you already know what they need. Usually you don't — and now that agents often read the document before the person does, that guess gets more expensive, not less."
+tags:
+  - philosopher-engineer
+  - systems-thinking
+  - knowledge-management
+---
+
+# Completeness Is a Bet You Might Not Need to Make
+
+We had a set of related documents with overlapping names and uneven context. Someone who already knew the system could find their way through it. A first-time reader could not tell which page was current, which rule was binding, or where to start.
+
+The obvious fix was a full cleanup: normalize every title, rewrite every intro, resolve every exception before anyone touched it again. That instinct is sincere. It also hides a claim most people never say out loud: *I already know what the reader will need, so I'll decide it for them now.*
+
+We didn't take that bet. The fix was smaller — a filename that said what the document actually was, and a short line of context at the top. Nothing else got pre-decided. What the reader needed to do next, we didn't guess. We waited to find out.
+
+## Two different bets
+
+"Ship something small" is not really the idea here — that's just MVP wearing a new outfit, and it's been said enough times to stop meaning anything. The actual difference is about whose judgment the system relies on.
+
+Write the whole thing before anyone uses it, and you're betting that you've correctly anticipated every question a reader will have. That bet can be right. It's also unverifiable until someone shows up and either finds their way or doesn't.
+
+Leave the entry point open and stop there, and you're making a different bet: that you don't need to anticipate their question, because they'll show you what it actually was. That bet is more modest, but it produces something the first one can't — real evidence. The exact place they hesitate is the exact place your document was actually thin, not the place you assumed it might be thin.
+
+## What it costs
+
+This isn't a cleaner way to avoid work. It has a real cost: you might guess wrong about what belongs in that first short context line, and you won't find out until someone hits the gap. The whole cleanup might still need doing later. What changes is *when* you find out you were wrong — before a reader ever touches it, guessing alone in a room, or right away, from someone actually trying to use it.
+
+I'd rather be wrong fast, in a way I can fix, than confidently complete in a way nobody has tested yet.
+
+## Where else this shows up
+
+A codebase does this when a new contributor can run it and make one safe change without anyone walking them through the whole architecture first. A meeting does this when the one open question is stated before ten pages of context get built around it. A personal note does this when there's a next action a stranger could act on, instead of everything the writer knows about the topic.
+
+In each case the tell is the same: does the thing in front of the reader answer their next question, or does it answer questions you assumed they'd have?
+
+## One more reader to design for
+
+There's a newer version of this problem worth naming directly. For a growing amount of real work, the person doesn't read the document first — an agent does, on their behalf, and acts on what it finds before the person ever sees the page. The agent isn't an occasional visitor alongside the human reader. It's becoming the normal way the human gets to the document at all.
+
+That changes the cost side of the bet, not the logic of it. A document padded with everything the author might one day need to explain doesn't just slow a human down — it gives an agent, standing in for that human, a bigger surface to misread, with no instinct to say "skip ahead, this part's not for you." Over-writing used to cost a reader's patience. Now the person might not even be in the room when the wrong guess gets acted on.
+
+It doesn't change the learning side either. An agent that stalls at the same entry point, or takes the task somewhere you didn't expect, is exactly the same signal a confused human gives you — evidence about what the document was missing, arriving sooner because there's less padding between the reader and the gap, and less of a person there to notice the confusion and quietly work around it.
+
+## The actual discipline
+
+The hard part isn't writing less. It's resisting the urge to pre-decide what someone else will need, because pre-deciding *feels* like care and thoroughness. Sometimes it is. Often it's just avoiding the moment where you'd find out you guessed wrong.
+
+Before I finish anything now, I ask a narrower question than "is this complete": *what am I deciding for the reader right now that I could instead let them tell me?*
+
+Usually the answer is: more than I think.
