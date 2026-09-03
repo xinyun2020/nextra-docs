@@ -1,0 +1,59 @@
+---
+title: "Intent Debt Has a Creditor"
+date: "2026-09-04"
+description: "When AI makes execution free, the thinking doesn't disappear — it moves upstream and off the books. Who pays the intent debt?"
+tags:
+  - philosopher-engineer
+  - applied-philosophy
+  - systems-thinking
+---
+
+A colleague of mine now hands almost everything to AI — full delegation, barely a second look. The output is genuinely good. The praise lands, too, and it lands on the tool: "the AI did it."
+
+But I kept noticing something nobody around us was measuring. For the people doing this well, thinking time went up, not down. The work didn't get cheaper. It moved.
+
+## The debt with a name
+
+Addy Osmani gave this pattern its name in "The Intent Debt" (O'Reilly Radar, August 2026). Technical debt lives in code. Cognitive debt lives in people. Intent debt lives in artifacts: the missing goals, constraints, and rationale that AI output silently omits. His sharpest line: an agent can't generate intent, because intent is the one input that has to come from you.
+
+His remedy is externalizing intent — specs, decision records, engineering guidelines as intent ledgers. It's a good remedy, and I'll come back to it. But it only treats one half of the debt.
+
+Every debt has two halves. There's the obligation, and there's the creditor.
+
+## Who pays
+
+When intent is not written down, the unpaid thinking doesn't vanish. It lands on whoever must make the output right. And the people paying it are being mis-measured from three directions at once.
+
+The perception gap. A randomized study from METR (2025) took experienced open-source developers and gave them AI coding tools. They ended up 19 percent slower on the tasks they took on — while believing they had been about 20 percent faster. The books don't just miss the cost. They record a profit.
+
+The skill gap. A 2026 randomized study of AI-assisted learning found that people using AI answered a group quiz at 50 percent versus 67 percent unaided — with the largest drop in debugging. Debugging is not incidental. It is precisely the skill you need to supervise AI output. The tool that makes execution cheap quietly erodes the faculty that makes execution correct.
+
+The attribution gap. A paper fittingly titled The AI Penalty aggregated 13 studies with nearly 5,000 participants: evaluators discount compensation when AI use is disclosed, because perceived human effort drops. In the wild, the same mechanism compresses into one sentence I keep coming back to: "the praise goes to the AI, but going through its content is our responsibility."
+
+## The invisible middle
+
+Put the three gaps together and you can see the gears. AI makes execution nearly free. The thinking that was bundled into execution — choosing what to build, judging whether the approach holds, verifying the result — separates out and moves upstream. It becomes invisible: no artifact, no line item, no dashboard. And it gravitates toward one specific person: the one who must make the output right.
+
+I watched this play out over a single week. Someone fully delegates. A manager looks at the result and credits the tool. Meanwhile the person in the middle — reviewing, correcting, supplying the intent that was never written down — absorbs frustration from both directions. From one side: "you have AI now, why is this taking so long?" From the other: "how can I trust this?" Explaining a problem to a human colleague compounds into team memory. Explaining it to a model, as one engineer put it, is just lost time.
+
+The extra thinking didn't disappear. It moved upstream and off the books. That's the reframe I'd offer: execution became free; intent didn't.
+
+## Receipts, not vibes
+
+Here is the useful twist. Osmani's remedy — externalize intent — is not just hygiene for better AI output. It is also the accounting fix. A decision record, a short spec, a note on what was verified and why: these make invisible thinking inspectable. Write the intent down, and the debt has a paper trail instead of a person.
+
+Two leadership moves follow. First, credit the receipts, not the tool. Ask "what did you verify?" before "what did the AI produce?" Second, treat intent work as work — if someone's review and correction time isn't visible anywhere, the accounting is wrong, and eventually the accountant is you.
+
+## What "write the intent down" looks like
+
+This sounds bureaucratic, so let me make it concrete. Intent externalization is three small artifacts, not a process re-org. A one-paragraph spec before the work: what problem this solves, what good looks like, what is explicitly out of scope. A decision record when the approach is chosen: what we picked, what we rejected, and why in one sentence a newcomer could follow. And a verification note at the end: what was checked, what was deliberately not checked, and what would break first.
+
+None of this is new. Engineering has produced versions of all three for decades — that's exactly why the vocabulary transfers. What's new is the urgency: when execution was expensive, the intent lived implicitly in the person doing the work, and the cost showed up in their hours. Now execution is cheap, the intent is the only thing left that has to come from a person, and if it isn't written down, the cost shows up as someone else's invisible afternoon.
+
+## The invoice hasn't arrived
+
+The celebration is real, and it's not wrong. Execution genuinely did get cheaper. But a debt you don't measure doesn't stay small — it compounds, and it lands on whoever is holding the middle.
+
+Intent debt has a creditor. Notice who pays, and put their name on the books.
+
+*This is part of my ongoing exploration of what happens when you treat your life as a system worth engineering and a question worth examining.*
