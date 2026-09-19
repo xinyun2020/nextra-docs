@@ -1,0 +1,53 @@
+---
+title: "Grade Inflation Is the Default"
+date: "2026-09-19"
+description: "A new Cambridge paper on self-improving AI names a problem most human systems still have — who grades the grader — and its fix travels further than the authors claim."
+tags:
+  - philosopher-engineer
+  - applied-philosophy
+  - ai
+---
+
+This summer, researchers at the University of Cambridge — with collaborators including NVIDIA and Flower Labs — released a paper about making AI systems that improve themselves without hitting a ceiling. The preprint is called "The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators," and when I first read a summary of it, my honest reaction was: isn't this obvious?
+
+The setup is easy to state: a self-improving AI gets better by trying variants of itself and keeping whatever scores higher. But if the test it's judged against never changes, the AI can only ever get as good as the test can distinguish. Once it maxes out the benchmark, "improvement" stops — or quietly curdles into gaming the metric. So the researchers let the evaluation evolve alongside the agent. The agent gets better, the exam gets harder, the bar keeps rising.
+
+Yes. Obviously. Let the teacher improve too. Any educator could have told you that.
+
+But I was reading it wrong, and the way I was wrong is the interesting part — because it's the same mistake almost every human institution is making right now.
+
+## The trap nobody names
+
+Here is what "let the evaluation evolve too" actually means if you do it naively. The student and the grader are on the same team. Nobody outside is watching. So the grader drifts lenient, the student learns to please the grader, scores climb, and nothing real improves.
+
+We have a word for this. Grade inflation. It is not a bug. It is the default state of every system that grades itself. A company reviewing its own initiative. A profession peer-reviewing its own papers. A person keeping their own scorecard. Absent a forcing mechanism, evaluators drift toward the judged. Always. The Cambridge paper's real contribution is not "evolve the evaluator too." It is a set of rules that let the evaluator evolve without the whole system lying to itself. (The team is candid that their results are narrow and preliminary; the rules, though, are the part that travels.)
+
+## Three rules that keep a self-grading system honest
+
+The paper's mechanism, stripped of its engineering, comes down to three disciplines. None of them is about intelligence. All of them are about power.
+
+**Freeze the exam while you measure.** Inside each round of improvement, the evaluation stays fixed. This sounds bureaucratic until you see why: two rulers produce no comparable measurements. The entire engine of self-improvement is "compare the variants, keep the better one" — and comparison is only valid when the yardstick holds still. The freeze isn't a restriction on exploration. The agent can roam as far as it wants. It's a guarantee that the word "better" still means something.
+
+**Promotion requires proof against facts.** At round boundaries, a candidate evaluator can replace the old one — but only after proving, against examples with known ground-truth answers, that it judges more accurately than the incumbent. Being stricter isn't enough; being harsher is easy. Being right is the job. Difficulty without accuracy is just a new way to be wrong.
+
+**Wipe the old scores.** When a new evaluator takes over, everything the previous one scored is discarded. No grade earned under the old standard carries credit into the new regime. Inflated credit, like inflated currency, does not survive a genuine reform — by design.
+
+What struck me about this list is how unglamorous it is. The paper is about recursive self-improvement, a topic that invites grandiosity. But the actual mechanism is a set of humility procedures: measure honestly, promote on evidence, reset the books. The system improves forever precisely because it refuses to let improvement be self-declared.
+
+## The reframe: a ceiling you can stand on
+
+There is one place, I think, where the authors are more modest than they should be — and one where the field reading them should be more careful.
+
+The modesty first. The paper frames the evaluator as a moving target that keeps the agent honest. Fair. But a target is still a boundary, and the deepest question about evaluation is not "how hard should the exam get?" It's "what right does the exam have to define the learner's limit?" The paper never asks this, and it doesn't need to — its agents are code. But we are not, and when we borrow this machinery for human systems — schools, workplaces, the metrics we hold ourselves to — the question becomes unavoidable.
+
+My answer: an evaluation standard should be infrastructure, not a ceiling. Infrastructure sets direction and bears load; it does not define what can be built above it. A good exam points at what mastery looks like next; it must never get to decide what the student can eventually become. Concretely, that means evaluation sits in a layered structure: facts at the bottom, immovable — real answers, real outcomes, the world's actual response. Standards in the middle, replaceable, but only ever upgraded against the facts. And search on top — the learner, the agent, the explorer — completely free, answering to no one about how it explores, only to the facts about what survives.
+
+The care now. Anything that escapes this structure collapses back into the trap. Let standards upgrade without facts and you get fashion. Let facts be redefined by whoever grades and you get politics. The whole design rests on one non-negotiable layer, and the tempting shortcut in any real institution is to make that layer negotiable too.
+
+## The part the paper doesn't say: the relationship goes both ways
+
+One more thing, and it's the most human. In the paper's framing, evaluation flows one way: down, from grader to agent. Nothing in the framework forbids something richer — the agent proposes, and the evaluator verifies. The student can bring the teacher a question the teacher didn't think to ask, and the teacher's role flips from gatekeeper to check. Rigor applied to a direction you chose yourself is not a weaker form of learning. It might be the strongest one.
+
+That, I suspect, is the real lesson hiding in this paper — less about AI than about every system we run that keeps score. Schools grading students. Organizations grading employees. Each of us grading ourselves. The exam was never the enemy. The unanchored exam is.
+
+So the question to sit with is not "am I improving?" Everyone who keeps a scorecard believes they are. It's: when my standard for "better" last changed, what fact forced the change — and if the answer is "nothing did," who exactly has been grading the grader?
