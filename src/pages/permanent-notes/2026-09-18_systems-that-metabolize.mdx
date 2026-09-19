@@ -1,0 +1,61 @@
+---
+title: "Systems That Metabolize"
+date: "2026-09-18"
+description: "Why the healthiest systems aren't built to last — they're built to metabolize: absorb, expire, regenerate."
+tags:
+  - philosopher-engineer
+  - systems
+  - metabolism
+---
+
+This week, the healthiest thing my system did was delete a document that was born the same day. A migration plan: written in the afternoon, executed by night, its conclusions absorbed into my long-term notes — and then removed, deliberately, by my own hand. Nothing was lost. Something was healed.
+
+I've spent years building a personal knowledge-and-automation system, and the instinct that governed most of it was the hamster instinct: save everything, back up everything, keep everything. Retention felt like safety. This week I finally updated that belief, and the update came from somewhere unexpected — biology class.
+
+## Monuments vs Metabolism
+
+There are two strategies for permanence, and we run both without noticing.
+
+Monuments try to last by freezing. Preserve the document, archive the email, keep the repository read-only. The monument strategy treats change as erosion — every modification is damage, so the goal is to stop time.
+
+Organisms last by metabolizing. Cells die and are replaced, constantly. Food comes in, waste goes out, and the organism persists not because its parts are permanent but because the pattern of renewal never stops. In an organism, the moment metabolism stops is the moment death begins.
+
+Most of our digital habits are monument habits. The 4,000-item bookmark collection. The downloads folder from three laptops ago. The notes app we're afraid to restructure because "we might need it someday." We treat accumulation as resilience.
+
+But a system that only accumulates isn't alive. It's a landfill with good intentions.
+
+## The gears: why code churns and records compound
+
+Here's the mechanism underneath the metaphor, from a week that stress-tested it.
+
+This week I migrated the core of my system from hundreds of legacy scripts to a new architecture. The migration ran on three disciplines, and each one is a metabolic organ:
+
+**A checklist written before the work.** Before touching anything, I enumerated the behaviors to preserve — not the functions, the observable behaviors. That checklist became the migration's contract. When the new implementation arrived, we compared it against the list, not against vibes.
+
+**A shadow comparison before the switch.** The old and new implementations ran side by side on identical inputs until their outputs agreed completely. The old version stayed in place the whole time — a compatible escape hatch, never removed in optimism.
+
+**A review pass that hunts weakened tests.** The most valuable check wasn't "did the tests pass" — it was "did anyone make the tests easier to pass." A green suite means nothing if the assertions got quietly softer. This one catches the failure mode no one photographs: the test that only passes when the network fails. (We found one. It was real.)
+
+And the week supplied the counterexample, too — proof that the monument habit has a price. A test file had sat in my scripts folder for three months, never committed to version control. A working-tree hiccup swept it away. Nothing that isn't absorbed into the system survives the system's changes. The landfill has a leaking day.
+
+That's the gears-level truth: **code churns — languages, tools, frameworks all have lifespans shorter than yours. What compounds is the record of why decisions were made.** A plan document lives for a day. A decision record — what we chose, why, and what evidence would make us reverse it — compounds for as long as you keep the system running.
+
+## The reusable model
+
+Three moves, all portable to whatever system you run — notes, code, a team, a life:
+
+**1. Date your scratch, expire it by default.** Temporary files should be born with an expiry, like milk. If a document's job is done and its conclusions haven't been absorbed into something permanent, its continued existence isn't safety — it's noise with seniority. The question isn't "might I need this?" It's "is this still true, and would I find it again if it were?"
+
+**2. Record decisions with a re-justification date.** Don't just write down what you decided — write down why, and when it should be re-examined. Then actually run the re-examination on a schedule. A choice made three years ago under three-year-old constraints isn't a decision anymore; it's a habit wearing a decision's clothes. The rotation that re-checks old choices against current reality is the single highest-leverage anti-rot mechanism I've found.
+
+**3. Keep the boundaries portable.** Wherever your system talks to something else, make the boundary a simple, documented contract — not a deep dependency. Tools will die; the interface outlives them if you keep it thin and named.
+
+None of this is about minimalism, and it isn't decluttering porn. The test isn't "is it tidy?" The test is: **does this make the next change cheaper?** A system that metabolizes well is one where every migration, every revision, every reversal leaves the next one easier — because the record got richer, not because the folder got fuller.
+
+The goal isn't to build things that last. It's to keep records that survive the things that don't.
+
+I deleted that migration plan an hour after its last conclusion landed in my notes. If my system is still running in fifty years, almost none of this week's files will still exist — and that's the plan working, not failing. The organism is still here. The cells know why they renewed.
+
+What's the oldest unexpired thing in your system — the file, the commitment, the decision you've stopped re-checking because checking feels like disrespect?
+
+*This is part of my ongoing exploration of what happens when you treat your life as a system worth engineering and a question worth examining.*
