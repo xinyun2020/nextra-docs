@@ -8,6 +8,7 @@ import { useConfig } from "nextra-theme-docs";
 import { Pre } from "./components/Pre";
 import DocslyClient from "@/components/DocslyClient";
 import PdfDownload from "./components/PdfDownload";
+import Giscus from "./components/Giscus/Giscus";
 
 const currentYear = new Date().getFullYear();
 
@@ -18,7 +19,7 @@ const config: DocsThemeConfig = {
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="alternate" type="application/rss+xml" title="Xinyun Zettelkasten" href="/feed.xml" />
+      <link rel="alternate" type="application/rss+xml" title="Xinyun Zhang" href="/feed.xml" />
     </>
   ),
   // banner: {
@@ -82,7 +83,7 @@ const config: DocsThemeConfig = {
       openGraph: {
         type: "article",
         url: `${siteUrl}${asPath}`,
-        siteName: "Xinyun Zettelkasten",
+        siteName: "Xinyun Zhang",
       },
       additionalMetaTags: [
         { name: "author", content: "Xinyun Zhang (xinyun2020)" },
@@ -97,10 +98,14 @@ const config: DocsThemeConfig = {
   gitTimestamp: <></>,
   main: ({ children }) => {
     const { frontMatter } = useConfig();
+    const { asPath } = useRouter();
+    const isNote =
+      asPath.startsWith("/permanent-notes") || asPath.startsWith("/literature-notes");
     return (
       <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 0.5rem" }}>
         {children}
         {frontMatter.pdf && <PdfDownload href={frontMatter.pdf} />}
+        {isNote && !frontMatter.giscus && <Giscus />}
       </div>
     );
   },

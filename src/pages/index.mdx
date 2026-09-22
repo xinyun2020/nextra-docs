@@ -11,7 +11,8 @@ export const getStaticProps = () => {
   NOTE_DIRECTORIES.forEach(dirName => {
     const dirPath = path.join(pagesDir, dirName);
     try {
-      const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
+      // .zh.mdx siblings are locale variants of their base note, not separate posts
+      const files = fs.readdirSync(dirPath).filter(f => (f.endsWith('.mdx') || f.endsWith('.md')) && !/\.zh\.mdx$/.test(f));
       files.forEach(file => {
         const filePath = path.join(dirPath, file);
         const content = fs.readFileSync(filePath, 'utf8');
@@ -19,7 +20,8 @@ export const getStaticProps = () => {
         const filename = file.replace(/\.mdx?$/, '');
 
         const title = frontmatter.title || filename.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-        const date = frontmatter.date || new Date().toISOString().split('T')[0];
+        // undated notes fall back to file mtime, never today's date (fabricates recency)
+        const date = frontmatter.date || fs.statSync(filePath).mtime.toISOString().split('T')[0];
         const description = frontmatter.description || '';
 
         allNotes.push({

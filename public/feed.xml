@@ -6,47 +6,173 @@
     <link>https://xinyun-zettelkasten.vercel.app</link>
     <description>All notes — learning in public, writing things down.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jun 2026 13:46:56 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 05:18:53 GMT</lastBuildDate>
     <atom:link href="https://xinyun-zettelkasten.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Grade Inflation Is the Default</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-19_grade-inflation-is-the-default</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-19_grade-inflation-is-the-default</guid>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 GMT</pubDate>
+      <description>A new Cambridge paper on self-improving AI names a problem most human systems still have — who grades the grader — and its fix travels further than the authors claim.</description>
+    </item>
+    <item>
+      <title>Systems That Metabolize</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-18_systems-that-metabolize</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-18_systems-that-metabolize</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Why the healthiest systems aren't built to last — they're built to metabolize: absorb, expire, regenerate.</description>
+    </item>
+    <item>
+      <title>Intent Debt Has a Creditor</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-04_intent-debt-has-a-creditor</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-04_intent-debt-has-a-creditor</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 GMT</pubDate>
+      <description>When AI makes execution free, the thinking doesn't disappear — it moves upstream and off the books. Who pays the intent debt?</description>
+    </item>
+    <item>
+      <title>Where Feedback Becomes Improvement</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-08-29_where-feedback-becomes-improvement</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-08-29_where-feedback-becomes-improvement</guid>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Feedback only compounds when it is captured at the surface of real work, judged against a stable standard, and translated into a small reviewed change.</description>
+    </item>
+    <item>
+      <title>Completeness Is a Bet You Might Not Need to Make</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-08-21_completeness-is-a-bet-you-might-not-need-to-make</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-08-21_completeness-is-a-bet-you-might-not-need-to-make</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Finishing a system before anyone uses it is a claim that you already know what they need. Usually you don't — and now that agents often read the document before the person does, that guess gets more expensive, not less.</description>
+    </item>
+    <item>
+      <title>Quiet Isn't the Same as Clear</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-08-15_quiet-isnt-the-same-as-clear</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-08-15_quiet-isnt-the-same-as-clear</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+      <description>A tracking system had said 'nothing to report' for months. It wasn't quiet. It was dead. The two look identical from the outside, and only one of them is fine.</description>
+    </item>
+    <item>
+      <title>A Check That Exists Is Not a Check That Runs</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-08-07_a-check-that-exists-is-not-a-check-that-runs</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-08-07_a-check-that-exists-is-not-a-check-that-runs</guid>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+      <description>A green test suite can be lying about itself, not just about the code underneath it. The gap between 'this would catch the bug' and 'this is actually running' is invisible until it isn't.</description>
+    </item>
+    <item>
+      <title>The Optimization Tax</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-31_the-optimization-tax</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-31_the-optimization-tax</guid>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
+      <description>When improving the system costs more than using it. The trap where efficiency feels productive while your actual output — and your mental energy — quietly declines.</description>
+    </item>
+    <item>
+      <title>The Research Was the Easy Part</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-18_the-research-was-the-easy-part</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-18_the-research-was-the-easy-part</guid>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <description>The implementation took ten minutes. The understanding took hours. And I refused to bank the understanding and go to sleep — which is the actual bug, and it's a system one, not a willpower one.</description>
+    </item>
+    <item>
+      <title>If You Have to Remember It, It's Broken</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-13_if-you-have-to-remember-it</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-13_if-you-have-to-remember-it</guid>
+      <pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate>
+      <description>The tasks I did well last week weren't the ones I was careful about. They were the ones I'd made impossible to do carelessly.</description>
+    </item>
+    <item>
+      <title>When the Tests Pass and It Still Isn't Ready</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-10_when-the-tests-pass</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-10_when-the-tests-pass</guid>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Correctness is the cheap part now. The scarce signal moved — and the metric you pick decides what 'done' means.</description>
+    </item>
+    <item>
+      <title>What the Systems Are For</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-03_what-the-systems-are-for</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-07-03_what-the-systems-are-for</guid>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Engineers build second brains, knowledge systems, and daily workflows. The deeper question — what are these systems actually for — has a cleaner answer than most people expect.</description>
+    </item>
+    <item>
+      <title>Verification Is the Scarce Act</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-26_verification-is-the-scarce-act</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-26_verification-is-the-scarce-act</guid>
+      <pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate>
+      <description>When making things gets cheap, the bottleneck moves to knowing they're correct. The strongest verification isn't a smarter judge — it's a dumb gate that can't lie to you.</description>
+    </item>
+    <item>
+      <title>You Don't Know Your AI Assistant: Why It Needs a Router and a Voice</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-21_you-dont-know-your-ai-assistant</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-21_you-dont-know-your-ai-assistant</guid>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Most people pick an AI assistant. The sharper move is to design how one should behave — a router that chooses the right mind for the moment, and a voice clear enough you never have to debug it. Here's the design I built, and what it taught me.</description>
+    </item>
+    <item>
+      <title>Personal-System-First: The Third Way to Build an Agent System</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-20_personal-system-first</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-20_personal-system-first</guid>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Everyone is building agent systems as platform-first (Vercel, big-company infra) or framework-first (LangGraph, Python libraries). There is a third axis nobody has named: personal-system-first — an agent system architected around one person's life, knowledge, and judgment, where the human is the irreplaceable core and the system extends them. This is the architecture, the engineering, and why the category matters now.</description>
+    </item>
+    <item>
+      <title>When the Work Stops Needing You</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-13_when-the-work-stops-needing-you</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-13_when-the-work-stops-needing-you</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The result of sustained thinking isn't that you get smarter. It's that the work starts carrying its own weight — in rooms you're not in, in decisions you didn't make.</description>
+    </item>
+    <item>
+      <title>The Architecture Between You and the Model</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-08_the-architecture-between-you-and-the-model</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-08_the-architecture-between-you-and-the-model</guid>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The industry is split on AI coding tools — too expensive or too good to need humans. Both positions ignore a third option backed by data: the layer between the engineer and the API that determines whether value compounds or costs scale. Here's the evidence.</description>
+    </item>
+    <item>
+      <title>What Compounds When You Keep Thinking</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-05_what-compounds-when-you-keep-thinking</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-06-05_what-compounds-when-you-keep-thinking</guid>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+      <description>When thinking sustains long enough, it stops needing your voice. The work becomes evidence — and evidence speaks for itself.</description>
+    </item>
+    <item>
       <title>The Question Behind the Question</title>
-      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-question-behind-the-question</link>
-      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-question-behind-the-question</guid>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-29_the-question-behind-the-question</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-29_the-question-behind-the-question</guid>
       <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
       <description>Engineers solve problems. The harder skill is knowing which problem to solve — and recognizing that some decisions make entire categories of problems disappear.</description>
     </item>
     <item>
       <title>The Door Was Already Open</title>
-      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-door-was-already-open</link>
-      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-door-was-already-open</guid>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-22_the-door-was-already-open</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-22_the-door-was-already-open</guid>
       <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
       <description>What a week of debugging taught me about resistance, reframing, and finding the entrance that was there all along</description>
     </item>
     <item>
       <title>The Workaround and the Source</title>
-      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-workaround-and-the-source</link>
-      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-workaround-and-the-source</guid>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-15_the-workaround-and-the-source</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-15_the-workaround-and-the-source</guid>
       <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
       <description>When working harder is a workaround for working smarter — on comfort zones, visibility, and the architecture of how you show up.</description>
     </item>
     <item>
       <title>The Systems That Watch Back</title>
-      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-systems-that-watch-back</link>
-      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/the-systems-that-watch-back</guid>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-08_the-systems-that-watch-back</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-08_the-systems-that-watch-back</guid>
       <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
       <description>What happens when the thinking frameworks you build start revealing things about you that you didn't intend to see.</description>
     </item>
     <item>
       <title>You Can't Build Trust Directly</title>
-      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/you-cant-build-trust-directly</link>
-      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/you-cant-build-trust-directly</guid>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-01_you-cant-build-trust-directly</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-05-01_you-cant-build-trust-directly</guid>
       <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
       <description>Trust, clarity, and wisdom don't get built by aiming at them. They're the residue of something else — something engineers are uniquely positioned to understand.</description>
     </item>
     <item>
       <title>When Knowing Isn't Enough</title>
-      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/when-knowing-isnt-enough</link>
-      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/when-knowing-isnt-enough</guid>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-04-24_when-knowing-isnt-enough</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-04-24_when-knowing-isnt-enough</guid>
       <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
       <description>Four moments from one week that revealed the gap between knowing a principle and living it — in engineering, in thinking, and in the decisions that actually matter.</description>
     </item>

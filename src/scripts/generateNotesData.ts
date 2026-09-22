@@ -15,7 +15,8 @@ const notes: string[] = [];
 Object.keys(NOTE_DIRECTORIES).forEach(dirName => {
   const dirPath = path.join(pagesDir, dirName);
   try {
-    const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
+    // .zh.mdx siblings are locale variants — one note path per note
+    const files = fs.readdirSync(dirPath).filter(f => (f.endsWith('.mdx') || f.endsWith('.md')) && !/\.zh\.mdx$/.test(f));
     files.forEach(file => {
       const filename = file.replace(/\.mdx?$/, '');
       if (EXCLUDE.includes(filename)) return;

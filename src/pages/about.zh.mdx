@@ -1,0 +1,49 @@
+import { CustomDrawer } from "../../src/components/CustomDrawer";
+import { RssButton } from "../../src/components/RssButton";
+
+<div className="text-center max-w-lg mx-auto leading-relaxed text-base text-gray-700 dark:text-gray-300">
+
+<div className="text-3xl tracking-wide mb-8">关于</div>
+
+我叫张馨云（Xinyun Zhang），是一名定居墨尔本的软件工程师。
+
+我以写代码为生，也通过写代码来理解事物的运作。我做迷你键盘，然后在上面打字打个不停。我收藏字体，就像有人收藏黑胶唱片。我拍摄那些不会静止不动的东西。我法语学得很糟，但热情十足。
+
+我相信写下来这件事。<span className="font-eleyang text-lg">好记性不如烂笔头</span>。
+
+这个网站是我的数字花园。一个我大声思考、连接想法、在灵感溜走之前把它们写下来的地方。这里没有任何东西是打磨完成的。这正是重点——混乱是思考发生的地方。
+
+<div className="flex flex-col items-center py-12 gap-6">
+  <svg width="120" height="120" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Xinyun Zettelkasten logo">
+    <line x1="10" y1="26" x2="18" y2="8" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="18" y1="8" x2="28" y2="22" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="28" y1="22" x2="10" y2="26" stroke="#0AAFCE" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="18" cy="8" r="3" fill="#0AAFCE" />
+    <circle cx="10" cy="26" r="2.5" fill="#0AAFCE" opacity="0.7" />
+    <circle cx="28" cy="22" r="2.5" fill="#0AAFCE" opacity="0.7" />
+    <circle cx="18.5" cy="18.5" r="1.5" fill="#0AAFCE" opacity="0.4" />
+  </svg>
+  <div className="text-gray-400 dark:text-gray-500 max-w-md text-center leading-relaxed">
+    三个节点，三种笔记——左下角是随手捕捉的 fleeting notes，右下角是文献笔记，顶部是沉淀下来的永久想法。线是它们之间的连接。中心那个淡淡的点，就是把事物链接起来时涌现的洞见。一个小小的星座，献给知识图谱。
+  </div>
+</div>
+
+<div className="flex flex-col items-center py-4 gap-4">
+  <CustomDrawer />
+</div>
+
+<div className="text-3xl tracking-wide mt-16 mb-8">订阅</div>
+
+有新笔记时会通知你——没有垃圾信息，没有追踪，只有 RSS。
+
+<div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+  <RssButton label="全部笔记" path="/feed.xml" />
+  <RssButton label="永久笔记" path="/feed-permanent.xml" />
+  <RssButton label="文献笔记" path="/feed-literature.xml" />
+</div>
+
+<div className="text-sm text-gray-400 dark:text-gray-500 mt-4 max-w-sm mx-auto leading-relaxed">
+  点击复制订阅链接，然后粘贴到你的 RSS 阅读器——<a href="https://feedly.com" target="_blank" rel="noopener" className="underline">Feedly</a>、<a href="https://www.inoreader.com" target="_blank" rel="noopener" className="underline">Inoreader</a>，或浏览器自带的阅读器。
+</div>
+
+</div>

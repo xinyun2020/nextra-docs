@@ -21,7 +21,8 @@ const allItems: FeedItem[] = [];
 NOTE_DIRECTORIES.forEach(dirName => {
   const dirPath = path.join(pagesDir, dirName);
   try {
-    const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
+    // .zh.mdx siblings are locale variants of their base note, not separate feed items
+    const files = fs.readdirSync(dirPath).filter(f => (f.endsWith('.mdx') || f.endsWith('.md')) && !/\.zh\.mdx$/.test(f));
     files.forEach(file => {
       const filePath = path.join(dirPath, file);
       const content = fs.readFileSync(filePath, 'utf8');
@@ -30,7 +31,8 @@ NOTE_DIRECTORIES.forEach(dirName => {
       if (EXCLUDE.includes(filename)) return;
 
       const title = frontmatter.title || filename.replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase());
-      const date = frontmatter.date || new Date().toISOString().split('T')[0];
+      // undated notes fall back to file mtime, never today's date
+      const date = frontmatter.date || fs.statSync(filePath).mtime.toISOString().split('T')[0];
       const description = frontmatter.description || '';
 
       allItems.push({ title, path: `/${dirName}/${filename}`, date, description, category: dirName });
