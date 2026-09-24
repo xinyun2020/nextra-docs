@@ -10,13 +10,15 @@ import zhRoutesJson from "../../generated/zh-routes.json";
 const zhRoutes: string[] = zhRoutesJson.zhRoutes;
 
 const LanguageToggle = () => {
-  const { locale, asPath } = useRouter();
-  const isZh = locale === "zh";
+  const { asPath } = useRouter();
+  // Detect the viewing language from the URL, NOT router.locale — the /zh rewrite
+  // runs with locale:false, so router.locale stays "en" even on translated pages.
   const basePath = asPath.split(/[?#]/)[0] || "/";
+  // Rewritten zh pages surface the literal .zh destination in asPath during SSR
+  // (/about.zh) while the browser URL is /zh/about — handle both shapes.
+  const isZh = /^\/zh(\/|$)/.test(basePath) || /\.zh$/.test(basePath);
   const enRoute = isZh
-    ? basePath === "/" || basePath.startsWith("/zh/")
-      ? basePath.replace(/^\/zh/, "") || "/"
-      : basePath
+    ? basePath.replace(/^\/zh/, "").replace(/\.zh$/, "") || "/"
     : basePath;
   const hasTranslation = zhRoutes.includes(enRoute);
   if (!hasTranslation) return null;

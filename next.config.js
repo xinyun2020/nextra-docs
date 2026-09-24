@@ -9,8 +9,16 @@ const nextConfig = {
     defaultLocale: "en",
     localeDetection: false,
   },
-  // Nextra 2 also exports .zh-suffixed files as literal orphan pages under
-  // every locale — send them to the canonical locale route
+  // Nextra 2 exports .zh-suffixed files as literal orphan routes (about.zh.mdx →
+  // /about.zh) — Next i18n CANNOT serve them at /zh/about (a locale-prefixed URL
+  // still renders pages/about.mdx, only the title localizes). Rewrite /zh/* to the
+  // literal .zh pages so translated bodies actually appear; redirects keep the
+  // orphan /about.zh URLs out of the wild.
+  async rewrites() {
+    return {
+      beforeFiles: [{ source: "/zh/:path*", destination: "/:path*.zh", locale: false }],
+    };
+  },
   async redirects() {
     return [{ source: "/:path*.zh", destination: "/:path*", permanent: true }];
   },
