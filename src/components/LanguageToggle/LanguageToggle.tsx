@@ -1,18 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import zhRoutesJson from "../../generated/zh-routes.json";
 
 // tw93-style language switch: plain one-click text link in the navbar
-// (en is the default locale, unprefixed; zh lives under /zh)
+// (en is the default locale, unprefixed; zh lives under /zh).
+// Renders ONLY where a real .zh.mdx sibling exists (generated manifest) —
+// never a button that lands on fallback English under /zh.
+const zhRoutes: string[] = zhRoutesJson.zhRoutes;
+
 const LanguageToggle = () => {
   const { locale, asPath } = useRouter();
   const isZh = locale === "zh";
   const basePath = asPath.split(/[?#]/)[0] || "/";
-  const target = isZh
-    ? basePath === "/" || basePath.startsWith("/zh")
-      ? "/"
+  const enRoute = isZh
+    ? basePath === "/" || basePath.startsWith("/zh/")
+      ? basePath.replace(/^\/zh/, "") || "/"
       : basePath
-    : `/zh${basePath === "/" ? "" : basePath}`;
+    : basePath;
+  const hasTranslation = zhRoutes.includes(enRoute);
+  if (!hasTranslation) return null;
+  const target = isZh ? enRoute : `/zh${enRoute === "/" ? "" : enRoute}`;
 
   return (
     <Link
