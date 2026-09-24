@@ -32,6 +32,11 @@ const config: DocsThemeConfig = {
   // },
   logo: <Logo />,
   darkMode: false,
+  // Language dropdown (nextra-theme-docs LocaleSwitch reads this, not next.config i18n)
+  i18n: [
+    { locale: "en", text: "English" },
+    { locale: "zh", text: "中文" },
+  ],
   primaryHue: HYPERLINK_PRIMARY_HUE,
   themeSwitch: {},
   nextThemes: {

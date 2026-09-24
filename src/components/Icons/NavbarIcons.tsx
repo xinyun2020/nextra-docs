@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { BilibiliIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from ".";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { UserButton } from "@clerk/clerk-react";
 
 const NavbarIcons = () => {
@@ -25,6 +26,7 @@ const NavbarIcons = () => {
       </div>
 
       <ThemeToggle />
+      <LanguageToggle />
       {!!userIsSignedIn && (
         <UserButton signInUrl={"/cv"} afterSignOutUrl={"/"} />
       )}
