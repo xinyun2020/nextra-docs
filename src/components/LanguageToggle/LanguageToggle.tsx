@@ -10,13 +10,16 @@ import zhRoutesJson from "../../generated/zh-routes.json";
 const zhRoutes: string[] = zhRoutesJson.zhRoutes;
 
 const LanguageToggle = () => {
-  const { asPath } = useRouter();
-  // Detect the viewing language from the URL, NOT router.locale — the /zh rewrite
-  // runs with locale:false, so router.locale stays "en" even on translated pages.
+  const { locale, asPath } = useRouter();
+  // Language state is inconsistent across rendering contexts — check ALL signals:
+  // - SSR of a rewritten page: asPath is the rewrite DESTINATION (/about.zh), locale undefined
+  // - client-side after nav: router normalizes to locale:"zh", asPath:"/about" (prefix stripped)
+  // - browser URL: /zh/about
   const basePath = asPath.split(/[?#]/)[0] || "/";
-  // Rewritten zh pages surface the literal .zh destination in asPath during SSR
-  // (/about.zh) while the browser URL is /zh/about — handle both shapes.
-  const isZh = /^\/zh(\/|$)/.test(basePath) || /\.zh$/.test(basePath);
+  const isZh =
+    locale === "zh" ||
+    /^\/zh(\/|$)/.test(basePath) ||
+    /\.zh$/.test(basePath);
   const enRoute = isZh
     ? basePath.replace(/^\/zh/, "").replace(/\.zh$/, "") || "/"
     : basePath;
