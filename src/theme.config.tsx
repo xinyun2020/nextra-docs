@@ -32,11 +32,9 @@ const config: DocsThemeConfig = {
   // },
   logo: <Logo />,
   darkMode: false,
-  // Language dropdown (nextra-theme-docs LocaleSwitch reads this, not next.config i18n)
-  i18n: [
-    { locale: "en", text: "English" },
-    { locale: "zh", text: "中文" },
-  ],
+  // NOTE: no `i18n` here on purpose — declaring it enables nextra-theme-docs' built-in
+  // locale dropdowns (sidebar bottom + footer), which navigate same-path even where no
+  // zh translation exists. The manifest-gated navbar LanguageToggle is the only switch.
   primaryHue: HYPERLINK_PRIMARY_HUE,
   themeSwitch: {},
   nextThemes: {
