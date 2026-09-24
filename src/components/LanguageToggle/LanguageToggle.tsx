@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import zhRoutesJson from "../../generated/zh-routes.json";
 
-// tw93-style language switch: plain one-click text link in the navbar
+// language switch: plain one-click text link in the navbar
 // (en is the default locale, unprefixed; zh lives under /zh).
 // Renders ONLY where a real .zh.mdx sibling exists (generated manifest) —
 // never a button that lands on fallback English under /zh.

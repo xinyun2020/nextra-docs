@@ -6,8 +6,15 @@
     <link>https://xinyun-zettelkasten.vercel.app</link>
     <description>Refined ideas that survived the filter.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 22 Sep 2026 05:18:53 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 12:44:46 GMT</lastBuildDate>
     <atom:link href="https://xinyun-zettelkasten.vercel.app/feed-permanent.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>备而不用: The Prepared-But-Unused Trap</title>
+      <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-24_the-prepared-but-unused-trap</link>
+      <guid>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-24_the-prepared-but-unused-trap</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Preparing feels like progress, but content that never ships or loops back is a system that hasn't finished its job. A last-mile rule for engineers who stockpile.</description>
+    </item>
     <item>
       <title>Grade Inflation Is the Default</title>
       <link>https://xinyun-zettelkasten.vercel.app/permanent-notes/2026-09-19_grade-inflation-is-the-default</link>

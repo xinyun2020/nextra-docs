@@ -1,6 +1,35 @@
 {
   "zhRoutes": [
     "/about",
-    "/permanent-notes/2026-09-19_grade-inflation-is-the-default"
+    "/fleeting-notes/favourite-fonts",
+    "/permanent-notes/2024-11-10_zettelkasten",
+    "/permanent-notes/2026-04-03_the-system-that-builds-itself",
+    "/permanent-notes/2026-04-11_my-system-architecture",
+    "/permanent-notes/2026-04-11_the-config-file-that-knows-me",
+    "/permanent-notes/2026-04-24_when-knowing-isnt-enough",
+    "/permanent-notes/2026-05-01_you-cant-build-trust-directly",
+    "/permanent-notes/2026-05-08_the-systems-that-watch-back",
+    "/permanent-notes/2026-05-15_the-workaround-and-the-source",
+    "/permanent-notes/2026-05-22_the-door-was-already-open",
+    "/permanent-notes/2026-05-29_the-question-behind-the-question",
+    "/permanent-notes/2026-06-05_what-compounds-when-you-keep-thinking",
+    "/permanent-notes/2026-06-08_the-architecture-between-you-and-the-model",
+    "/permanent-notes/2026-06-13_when-the-work-stops-needing-you",
+    "/permanent-notes/2026-06-20_personal-system-first",
+    "/permanent-notes/2026-06-21_you-dont-know-your-ai-assistant",
+    "/permanent-notes/2026-06-26_verification-is-the-scarce-act",
+    "/permanent-notes/2026-07-03_what-the-systems-are-for",
+    "/permanent-notes/2026-07-10_when-the-tests-pass",
+    "/permanent-notes/2026-07-13_if-you-have-to-remember-it",
+    "/permanent-notes/2026-07-18_the-research-was-the-easy-part",
+    "/permanent-notes/2026-07-31_the-optimization-tax",
+    "/permanent-notes/2026-08-07_a-check-that-exists-is-not-a-check-that-runs",
+    "/permanent-notes/2026-08-15_quiet-isnt-the-same-as-clear",
+    "/permanent-notes/2026-08-21_completeness-is-a-bet-you-might-not-need-to-make",
+    "/permanent-notes/2026-08-29_where-feedback-becomes-improvement",
+    "/permanent-notes/2026-09-04_intent-debt-has-a-creditor",
+    "/permanent-notes/2026-09-18_systems-that-metabolize",
+    "/permanent-notes/2026-09-19_grade-inflation-is-the-default",
+    "/permanent-notes/2026-09-24_the-prepared-but-unused-trap"
   ]
 }
